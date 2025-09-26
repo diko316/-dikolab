@@ -11,6 +11,12 @@ export class IAmChain<ActorName extends string> {
       set(this, TITLE_KEY, actorName);
    }
 
+   /**
+    * Defines an Actor with the given Roles.
+    *
+    * @param roles Roles to attach
+    * @returns Actor
+    */
    as<RoleNames extends readonly string[]>(...roles: RoleNames) {
       return defineActor(this[TITLE_KEY], ...roles);
    }

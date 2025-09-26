@@ -17,6 +17,8 @@ import { UsecaseTitleFrom } from '../types/usecase-title-from.type';
 import { createUsecaseTitle } from '../functions/create-usecase-title.function';
 import { getSymbolName } from '../../symbol/functions/get-symbol-name.function';
 import { AnyFunction } from '../../utils/types/utility.type';
+import { MOCK_HANDLER_KEY } from '../../utils/constants/symbol-keys.constant';
+import { UsecaseEventMap } from '../types/usecase-event-map.type';
 
 export class Usecase<
       Title extends string,
@@ -26,7 +28,8 @@ export class Usecase<
    >
    extends UsecaseSymbol<
       typeof USECASE_TYPE,
-      UsecaseTitleFrom<Title, Roles, Goal>
+      UsecaseTitleFrom<Title, Roles, Goal>,
+      UsecaseEventMap
    >
    implements UsecaseModel<Title, Roles, Handler, Goal>
 {
@@ -46,6 +49,14 @@ export class Usecase<
       return get(this, HANDLER_KEY);
    }
 
+   get [MOCK_HANDLER_KEY](): Handler | null {
+      return get(this, MOCK_HANDLER_KEY);
+   }
+
+   set [MOCK_HANDLER_KEY](handler: Handler | null) {
+      set(this, MOCK_HANDLER_KEY, handler);
+   }
+
    get [BOUNDARY_KEY](): GoalBoundary<Goal> {
       return get(this[GOAL_KEY], BOUNDARY_KEY);
    }
@@ -61,6 +72,7 @@ export class Usecase<
       set(this, TITLE_KEY, title);
       set(this, ROLES_KEY, roles);
       set(this, HANDLER_KEY, handler);
+      set(this, MOCK_HANDLER_KEY, null);
       set(this, GOAL_KEY, goal);
    }
 

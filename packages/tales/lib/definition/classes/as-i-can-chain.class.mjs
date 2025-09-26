@@ -17,6 +17,12 @@ class AsICanChain {
         set(this, ROLE_NAMES_KEY, roleNames);
         set(this, TITLE_KEY, title);
     }
+    /**
+     * Assigns Goal of the Use-case
+     *
+     * @param goal The goal of the Use-case.
+     * @returns declaration chain
+     */
     soThat(goal) {
         return new AsICanSoThatChain(this[BOUNDARY_KEY], this[ROLE_NAMES_KEY], this[TITLE_KEY], goal);
     }

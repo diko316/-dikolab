@@ -11,5 +11,11 @@ export declare class AsICanChain<Boundary extends AnyBoundary, RoleNames extends
     get [ROLE_NAMES_KEY](): RoleNames;
     get [TITLE_KEY](): ActionTitle;
     constructor(boundary: Boundary, roleNames: RoleNames, title: ActionTitle);
+    /**
+     * Assigns Goal of the Use-case
+     *
+     * @param goal The goal of the Use-case.
+     * @returns declaration chain
+     */
     soThat<Goal extends AnyGoalBoundTo<Boundary>>(goal: AnyGoal): AsICanSoThatChain<Boundary, RoleNames, ActionTitle, Goal>;
 }

@@ -31,13 +31,19 @@ export class AsChain<
       set(this, ROLE_NAMES_KEY, roleNames);
    }
 
+   /**
+    * Declares text title of the Use-case.
+    *
+    * @param title Text title of the Use-case
+    * @returns declaration chain
+    */
    iCan<ActionTitle extends string>(
-      actionTitle: ActionTitle,
+      title: ActionTitle,
    ): AsICanChain<Boundary, RoleNames, ActionTitle> {
       return new AsICanChain(
          this[BOUNDARY_KEY],
          this[ROLE_NAMES_KEY],
-         actionTitle,
+         title,
       );
    }
 }

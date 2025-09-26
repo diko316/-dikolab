@@ -9,6 +9,12 @@ class IAmChain {
     constructor(actorName) {
         set(this, TITLE_KEY, actorName);
     }
+    /**
+     * Defines an Actor with the given Roles.
+     *
+     * @param roles Roles to attach
+     * @returns Actor
+     */
     as(...roles) {
         return defineActor(this[TITLE_KEY], ...roles);
     }

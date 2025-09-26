@@ -13,6 +13,7 @@ export declare const STATE_KEY: unique symbol;
 export declare const GOAL_KEY: unique symbol;
 export declare const GOAL_HANDLER_KEY: unique symbol;
 export declare const HANDLER_KEY: unique symbol;
+export declare const MOCK_HANDLER_KEY: unique symbol;
 export declare const USECASE_KEY: unique symbol;
 export declare const STORY_KEY: unique symbol;
 export declare const TRANSACTION_SESSION: unique symbol;

@@ -14,6 +14,7 @@ const BOUNDARY_KEY = Symbol('Boundary');
 const SUBTYPE_KEY = Symbol('Subtype');
 const GOAL_KEY = Symbol('Goal');
 const HANDLER_KEY = Symbol('Handler');
+const MOCK_HANDLER_KEY = Symbol('Mock Handler');
 const TRANSACTION_SESSION = Symbol('Transaction Session');
 const TRANSACTION_SIGNATURE = Symbol('Transaction Signature');
 
@@ -137,11 +138,23 @@ class IAmChain {
     constructor(actorName) {
         privateParts.set(this, TITLE_KEY, actorName);
     }
+    /**
+     * Defines an Actor with the given Roles.
+     *
+     * @param roles Roles to attach
+     * @returns Actor
+     */
     as(...roles) {
         return defineActor(this[TITLE_KEY], ...roles);
     }
 }
 
+/**
+ * A chain call to create Actor and attached roles
+ *
+ * @param name Actor name
+ * @returns Chain declaration instance of Actor.
+ */
 function iAm(name) {
     if (!name || typeof name !== 'string') {
         throw new TypeError(`"${name}" name parameter is invald.`);
@@ -252,6 +265,12 @@ class Usecase extends UsecaseSymbol {
     get [HANDLER_KEY]() {
         return privateParts.get(this, HANDLER_KEY);
     }
+    get [MOCK_HANDLER_KEY]() {
+        return privateParts.get(this, MOCK_HANDLER_KEY);
+    }
+    set [MOCK_HANDLER_KEY](handler) {
+        privateParts.set(this, MOCK_HANDLER_KEY, handler);
+    }
     get [BOUNDARY_KEY]() {
         return privateParts.get(this[GOAL_KEY], BOUNDARY_KEY);
     }
@@ -260,6 +279,7 @@ class Usecase extends UsecaseSymbol {
         privateParts.set(this, TITLE_KEY, title);
         privateParts.set(this, ROLES_KEY, roles);
         privateParts.set(this, HANDLER_KEY, handler);
+        privateParts.set(this, MOCK_HANDLER_KEY, null);
         privateParts.set(this, GOAL_KEY, goal);
     }
     toString() {
@@ -291,6 +311,12 @@ class AsICanSoThatChain {
         privateParts.set(this, TITLE_KEY, title);
         privateParts.set(this, GOAL_KEY, goal);
     }
+    /**
+     * Attaches handler function to be executed when Use-case is performed.
+     *
+     * @param handler Use-case execution handler function.
+     * @returns Usecase
+     */
     implementedAs(handler) {
         const roles = getOrDefineRoles(...this[ROLE_NAMES_KEY]);
         const title = this[TITLE_KEY];
@@ -314,6 +340,12 @@ class AsICanChain {
         privateParts.set(this, ROLE_NAMES_KEY, roleNames);
         privateParts.set(this, TITLE_KEY, title);
     }
+    /**
+     * Assigns Goal of the Use-case
+     *
+     * @param goal The goal of the Use-case.
+     * @returns declaration chain
+     */
     soThat(goal) {
         return new AsICanSoThatChain(this[BOUNDARY_KEY], this[ROLE_NAMES_KEY], this[TITLE_KEY], goal);
     }
@@ -330,8 +362,14 @@ class AsChain {
         privateParts.set(this, BOUNDARY_KEY, boundary);
         privateParts.set(this, ROLE_NAMES_KEY, roleNames);
     }
-    iCan(actionTitle) {
-        return new AsICanChain(this[BOUNDARY_KEY], this[ROLE_NAMES_KEY], actionTitle);
+    /**
+     * Declares text title of the Use-case.
+     *
+     * @param title Text title of the Use-case
+     * @returns declaration chain
+     */
+    iCan(title) {
+        return new AsICanChain(this[BOUNDARY_KEY], this[ROLE_NAMES_KEY], title);
     }
 }
 
@@ -342,14 +380,20 @@ class Scope {
     constructor(boundary) {
         privateParts.set(this, BOUNDARY_KEY, boundary);
     }
+    /**
+     * Creates Goal to be used for declaring a Use-case
+     *
+     * @param title Unique goal title of what you want to achieve.
+     * @returns Goal
+     */
     defineGoal(title) {
         return defineGoal(title, this[BOUNDARY_KEY]);
     }
     /**
-     * Creates definition of Roles that can execute the Use-case
+     * Creates declaration of Roles that guards the Use-case execution
      *
      * @param roles Role names or Roles included in the context
-     * @returns definition chain object
+     * @returns declaration chain object
      */
     as(...roles) {
         const roleNames = roles.map((roleOrName) => {
@@ -365,12 +409,26 @@ class Scope {
     }
 }
 
+/**
+ * Defines a Boundary and declaration scope.
+ *
+ * @param name Name of the Boundary in this format `${Type}:${Title}`
+ * @returns declaration Scope
+ */
 function defineScope(name) {
     const [type, title] = createBoundaryNameDetails(name);
     const boundary = defineBoundary(type, title);
     return new Scope(boundary);
 }
 
+/**
+ * Disptaches Target Symbol event.
+ *
+ * @param symbol Target symbol. may be one of the following: Actor,
+ * Role, Usecase, Goal, Boundary
+ * @param type Event type
+ * @param args Parameters of the dispatched event.
+ */
 function emitSymbolEvent(symbol, type, ...args) {
     symbol[EVENT_EMITTER_KEY].emit(type, ...args);
 }
@@ -410,30 +468,60 @@ class Transaction {
         privateParts.set(this, TRANSACTION_SESSION, data);
         privateParts.set(this, ACTOR_KEY, actor);
     }
+    /**
+     * Retrieves Session data based from "name" key parameter.
+     *
+     * @param name Key of session data
+     * @returns value of store session data. Or, undefined if not found
+     */
     get(name) {
         const session = this[TRANSACTION_SESSION];
         return Object.prototype.hasOwnProperty.call(session, name)
             ? session[name]
             : undefined;
     }
+    /**
+     * Creates new transaction with overridden Session data
+     *
+     * @param overrides session data overrides
+     * @returns Transaction
+     */
     override(overrides) {
         const session = this[TRANSACTION_SESSION];
         const newData = Object.assign({}, session, overrides);
         return new Transaction(newData, this[ACTOR_KEY]);
     }
+    /**
+     * Performs a Use-case and returns result of the Use-case handler.
+     *
+     * @param usecase The Use-case to perform allowed by Roles
+     * @param params Use case handler parameters
+     * @returns Result of perform Use-case
+     */
     async perform(usecase, ...params) {
         const roles = usecase[ROLES_KEY];
         const actor = this[ACTOR_KEY];
         if (!isActorAllowToPerform(actor, roles)) {
             throw new Error(`${this[ACTOR_KEY]} is not allowed to perform "${usecase}"`);
         }
-        const handler = usecase[HANDLER_KEY];
+        // if no mock handler, use the original handler
+        const handler = (usecase[MOCK_HANDLER_KEY] ||
+            usecase[HANDLER_KEY]);
         const transaction = new Transaction(createSessionData(this[TRANSACTION_SESSION]), actor);
         const result = await handler(...params, transaction);
+        emitSymbolEvent(usecase, 'perform', result, usecase, actor);
+        const goal = usecase[GOAL_KEY];
+        emitSymbolEvent(goal, 'achieved', goal, usecase, result);
         return result;
     }
 }
 
+/**
+ * Assumes actor to perform allowed Use-case based on Roles.
+ *
+ * @param actor Actor to assume for later perform Use-case
+ * @returns Transaction
+ */
 function assume(actor) {
     const transaction = new Transaction({}, actor);
     if (actor instanceof Actor) {
@@ -442,14 +530,35 @@ function assume(actor) {
     return transaction;
 }
 
+/**
+ * Listens to Symbol events
+ *
+ * @param symbol Target symbol. may be one of the following: Actor,
+ * Role, Usecase, Goal, Boundary
+ * @param type Event type
+ * @param listener the function callback to execute when event is dispatched.
+ */
 function listenSymbolEvent(symbol, type, listener) {
     symbol[EVENT_EMITTER_KEY].on(type, listener);
 }
 
+/**
+ * Removes event listener registered in the Target symbol
+ *
+ * @param symbol Target symbol. may be one of the following: Actor,
+ * Role, Usecase, Goal, Boundary
+ * @param type Event Name
+ * @param listener The registered event listener callback function.
+ */
 function unlistenSymbolEvent(symbol, type, listener) {
     symbol[EVENT_EMITTER_KEY].removeListener(type, listener);
 }
 
+/**
+ * Clears all event listeners of all Symbols.
+ * Target symbols. may be one of the following: Actor,
+ * Role, Usecase, Goal, Boundary
+ */
 function clearAllSymbolListeners() {
     let eventEmitter;
     SYMBOL_LOOKUP.forEach((symbol) => {
@@ -461,21 +570,48 @@ function clearAllSymbolListeners() {
     eventEmitter = null;
 }
 
+/**
+ * Removes all event listeners of the Target symbol registered for event type.
+ *
+ * @param symbol Target symbol. may be one of the following: Actor,
+ * Role, Usecase, Goal, Boundary
+ * @param type Event Name
+ */
 function clearSymbolEventListeners(symbol, type) {
     symbol[EVENT_EMITTER_KEY].removeAllListeners(type);
 }
 
+/**
+ * Unregisters Symbol. This is only used for running Unit tests.
+ */
 function clearSymbols() {
     SYMBOL_LOOKUP.clear();
 }
 
+function mockUsecaseHandler(usecase, handler) {
+    usecase[MOCK_HANDLER_KEY] = handler;
+    return usecase;
+}
+
+function clearMockeUsecaseHandler(usecase) {
+    usecase[MOCK_HANDLER_KEY] = null;
+    return usecase;
+}
+
+exports.Actor = Actor;
+exports.Boundary = Boundary;
+exports.Goal = Goal;
+exports.Role = Role;
 exports.Transaction = Transaction;
+exports.Usecase = Usecase;
 exports.assume = assume;
 exports.clearAllListeners = clearAllSymbolListeners;
 exports.clearListeners = clearSymbolEventListeners;
+exports.clearMockeUsecaseHandler = clearMockeUsecaseHandler;
 exports.clearSymbols = clearSymbols;
 exports.defineScope = defineScope;
 exports.iAm = iAm;
 exports.listen = listenSymbolEvent;
+exports.mockUsecaseHandler = mockUsecaseHandler;
 exports.unlisten = unlistenSymbolEvent;
 //# sourceMappingURL=index.js.map

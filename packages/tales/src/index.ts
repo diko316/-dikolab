@@ -10,6 +10,14 @@ import { clearSymbolEventListeners as clearListeners } from './symbol/functions/
 import { Transaction } from './usecase/classes/transaction.class';
 
 import { clearSymbols } from './symbol/functions/clear-symbols.function';
+import { mockUsecaseHandler } from './usecase/functions/mock-usecase-handler.funtion';
+import { clearMockeUsecaseHandler } from './usecase/functions/clear-mock-usecase-handler.function';
+
+import { Actor } from './actor/classes/actor.class';
+import { Role } from './actor/classes/role.class';
+import { Boundary } from './boundary/classes/boundary.class';
+import { Goal } from './goal/classes/goal.class';
+import { Usecase } from './usecase/classes/usecase.class';
 
 export {
    // Definitions
@@ -25,9 +33,18 @@ export {
    clearListeners,
    clearAllListeners,
 
+   // Available Symbols
+   Actor,
+   Role,
+   Boundary,
+   Goal,
+   Usecase,
+
    // utility:execution
    Transaction,
 
    // utility:testing
    clearSymbols,
+   mockUsecaseHandler,
+   clearMockeUsecaseHandler,
 };

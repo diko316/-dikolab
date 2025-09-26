@@ -4,6 +4,12 @@ import { Transaction } from '../../usecase/classes/transaction.class';
 
 import { Actor } from '../../actor/classes/actor.class';
 
+/**
+ * Assumes actor to perform allowed Use-case based on Roles.
+ *
+ * @param actor Actor to assume for later perform Use-case
+ * @returns Transaction
+ */
 export function assume<Source extends AnyActor>(actor: Source) {
    const transaction = new Transaction({}, actor);
 

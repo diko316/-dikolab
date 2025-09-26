@@ -45,6 +45,12 @@ export class AsICanChain<
       set(this, TITLE_KEY, title);
    }
 
+   /**
+    * Assigns Goal of the Use-case
+    *
+    * @param goal The goal of the Use-case.
+    * @returns declaration chain
+    */
    soThat<Goal extends AnyGoalBoundTo<Boundary>>(goal: AnyGoal) {
       return new AsICanSoThatChain(
          this[BOUNDARY_KEY],
