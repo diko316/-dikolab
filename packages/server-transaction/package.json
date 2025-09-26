@@ -1,0 +1,12 @@
+{
+  "name": "@dikolab/server-transaction",
+  "version": "1.0.0",
+  "description": "Server request and responses are managed here",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Diko",
+  "license": "ISC"
+}

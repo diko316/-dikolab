@@ -1,0 +1,27 @@
+{
+   "compileOnSave": false,
+   "compilerOptions": {
+      "rootDir": ".",
+      "sourceMap": true,
+      "declaration": true,
+      "module": "preserve",
+      "moduleResolution": "bundler",
+      "skipLibCheck": true,
+      "strictNullChecks": true,
+      "forceConsistentCasingInFileNames": true,
+
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "importHelpers": false,
+      "target": "es2022",
+      "typeRoots": ["node_modules/@types"],
+      "lib": ["ES2022"],
+      "skipDefaultLibCheck": true,
+      "baseUrl": "./"
+   },
+   "references": [
+      { "@dikolab/server-route": "packages/server-route/src" } // Optional: for path aliases
+   ],
+   "exclude": ["node_modules", "tmp", "packages/*/dist/**/*"]
+}

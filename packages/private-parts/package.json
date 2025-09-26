@@ -1,0 +1,37 @@
+{
+   "name": "@dikolab/private-parts",
+   "version": "0.5.4",
+   "description": "WeakMap storage for private data accessible by object instance and key string",
+   "publishConfig": {
+      "access": "public"
+   },
+   "files": [
+      "lib/**/*"
+   ],
+   "type": "module",
+   "main": "./lib/index.js",
+   "module": "./lib/index.mjs",
+   "engines": {
+      "typescript": ">=5.1.3"
+   },
+   "exports": {
+      ".": {
+         "types": "./lib/index.d.ts",
+         "require": "./lib/index.js",
+         "import": "./lib/index.mjs"
+      }
+   },
+   "scripts": {
+      "lint": "eslint",
+      "test": "vitest",
+      "build": "rollup -c rollup.config.js",
+      "prepublishOnly": "npm run lint && npm run test -- --run && npm run build",
+      "prepare": "npm run build"
+   },
+   "keywords": [
+      "Private",
+      "WeakMap"
+   ],
+   "author": "Diko TechSlave",
+   "license": "ISC"
+}

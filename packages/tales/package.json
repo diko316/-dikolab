@@ -1,0 +1,21 @@
+{
+   "name": "@dikolab/tales",
+   "version": "1.0.0",
+   "description": "Helper for organizing structure of the project based on simple Use-case ideology",
+   "main": "index.mjs",
+   "scripts": {
+      "test": "vitest",
+      "lint": "eslint",
+      "lint:fix": "eslint --fix",
+      "build": "tsc"
+   },
+   "repository": {
+      "type": "git",
+      "url": "dconsunji-github:dconsunji/test-npm-workspace.git"
+   },
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "@dikolab/private-parts": "^0.5.4"
+   }
+}

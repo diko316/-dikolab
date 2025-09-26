@@ -1,0 +1,19 @@
+{
+   "name": "@dikolab/server",
+   "version": "1.0.0",
+   "description": "The RESTful API server",
+   "main": "index.mjs",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "tsc"
+   },
+   "repository": {
+      "type": "git",
+      "url": "dconsunji-github:dconsunji/test-npm-workspace.git"
+   },
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "@dikolab/server-route": "file:../server-route"
+   }
+}
