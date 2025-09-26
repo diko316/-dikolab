@@ -62,6 +62,12 @@ export class AsICanSoThatChain<
       set(this, GOAL_KEY, goal);
    }
 
+   /**
+    * Attaches handler function to be executed when Use-case is performed.
+    *
+    * @param handler Use-case execution handler function.
+    * @returns Usecase
+    */
    implementedAs<Handler extends AnyFunction>(
       handler: Handler,
    ): Usecase<ActionTitle, ResolveRoles<RoleNames>, Handler, Goal> {

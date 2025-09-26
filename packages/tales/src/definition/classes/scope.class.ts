@@ -22,6 +22,12 @@ export class Scope<Boundary extends AnyBoundary> {
       set(this, BOUNDARY_KEY, boundary);
    }
 
+   /**
+    * Creates Goal to be used for declaring a Use-case
+    *
+    * @param title Unique goal title of what you want to achieve.
+    * @returns Goal
+    */
    defineGoal<Title extends string>(
       title: Title,
    ): Goal<Title, Boundary> {
@@ -29,10 +35,10 @@ export class Scope<Boundary extends AnyBoundary> {
    }
 
    /**
-    * Creates definition of Roles that can execute the Use-case
+    * Creates declaration of Roles that guards the Use-case execution
     *
     * @param roles Role names or Roles included in the context
-    * @returns definition chain object
+    * @returns declaration chain object
     */
    as<Targets extends readonly (string | AnyRole)[]>(
       ...roles: Targets

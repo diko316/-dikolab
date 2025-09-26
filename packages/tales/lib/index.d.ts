@@ -7,4 +7,11 @@ import { clearAllSymbolListeners as clearAllListeners } from './symbol/functions
 import { clearSymbolEventListeners as clearListeners } from './symbol/functions/clear-symbol-event-listeners.function';
 import { Transaction } from './usecase/classes/transaction.class';
 import { clearSymbols } from './symbol/functions/clear-symbols.function';
-export { iAm, defineScope, assume, listen, unlisten, clearListeners, clearAllListeners, Transaction, clearSymbols, };
+import { mockUsecaseHandler } from './usecase/functions/mock-usecase-handler.funtion';
+import { clearMockeUsecaseHandler } from './usecase/functions/clear-mock-usecase-handler.function';
+import { Actor } from './actor/classes/actor.class';
+import { Role } from './actor/classes/role.class';
+import { Boundary } from './boundary/classes/boundary.class';
+import { Goal } from './goal/classes/goal.class';
+import { Usecase } from './usecase/classes/usecase.class';
+export { iAm, defineScope, assume, listen, unlisten, clearListeners, clearAllListeners, Actor, Role, Boundary, Goal, Usecase, Transaction, clearSymbols, mockUsecaseHandler, clearMockeUsecaseHandler, };

@@ -13,8 +13,14 @@ class AsChain {
         set(this, BOUNDARY_KEY, boundary);
         set(this, ROLE_NAMES_KEY, roleNames);
     }
-    iCan(actionTitle) {
-        return new AsICanChain(this[BOUNDARY_KEY], this[ROLE_NAMES_KEY], actionTitle);
+    /**
+     * Declares text title of the Use-case.
+     *
+     * @param title Text title of the Use-case
+     * @returns declaration chain
+     */
+    iCan(title) {
+        return new AsICanChain(this[BOUNDARY_KEY], this[ROLE_NAMES_KEY], title);
     }
 }
 

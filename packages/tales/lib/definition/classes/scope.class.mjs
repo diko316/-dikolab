@@ -11,14 +11,20 @@ class Scope {
     constructor(boundary) {
         set(this, BOUNDARY_KEY, boundary);
     }
+    /**
+     * Creates Goal to be used for declaring a Use-case
+     *
+     * @param title Unique goal title of what you want to achieve.
+     * @returns Goal
+     */
     defineGoal(title) {
         return defineGoal(title, this[BOUNDARY_KEY]);
     }
     /**
-     * Creates definition of Roles that can execute the Use-case
+     * Creates declaration of Roles that guards the Use-case execution
      *
      * @param roles Role names or Roles included in the context
-     * @returns definition chain object
+     * @returns declaration chain object
      */
     as(...roles) {
         const roleNames = roles.map((roleOrName) => {

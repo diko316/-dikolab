@@ -9,9 +9,14 @@ import {
 } from '../../utils/constants/symbol-keys.constant';
 import { GoalName } from '../types/goal-name.type';
 import { createGoalName } from '../functions/create-goal-name.function';
+import { GoalEventMap } from '../types/goal-event-map.type';
 
 export class Goal<Title extends string, Boundary extends AnyBoundary>
-   extends UsecaseSymbol<typeof GOAL_TYPE, GoalName<Title, Boundary>>
+   extends UsecaseSymbol<
+      typeof GOAL_TYPE,
+      GoalName<Title, Boundary>,
+      GoalEventMap
+   >
    implements GoalModel<Title, Boundary>
 {
    get [TITLE_KEY](): Title {

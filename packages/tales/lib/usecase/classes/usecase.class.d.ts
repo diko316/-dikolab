@@ -7,11 +7,15 @@ import { GoalBoundary } from '../../goal/types/goal-boundary.type';
 import { AnyRole } from '../../actor/types/utility.type';
 import { UsecaseTitleFrom } from '../types/usecase-title-from.type';
 import { AnyFunction } from '../../utils/types/utility.type';
-export declare class Usecase<Title extends string, Roles extends readonly AnyRole[], Handler extends AnyFunction, Goal extends AnyGoal> extends UsecaseSymbol<typeof USECASE_TYPE, UsecaseTitleFrom<Title, Roles, Goal>> implements UsecaseModel<Title, Roles, Handler, Goal> {
+import { MOCK_HANDLER_KEY } from '../../utils/constants/symbol-keys.constant';
+import { UsecaseEventMap } from '../types/usecase-event-map.type';
+export declare class Usecase<Title extends string, Roles extends readonly AnyRole[], Handler extends AnyFunction, Goal extends AnyGoal> extends UsecaseSymbol<typeof USECASE_TYPE, UsecaseTitleFrom<Title, Roles, Goal>, UsecaseEventMap> implements UsecaseModel<Title, Roles, Handler, Goal> {
     get [TITLE_KEY](): Title;
     get [ROLES_KEY](): Roles;
     get [GOAL_KEY](): Goal;
     get [HANDLER_KEY](): Handler;
+    get [MOCK_HANDLER_KEY](): Handler | null;
+    set [MOCK_HANDLER_KEY](handler: Handler | null);
     get [BOUNDARY_KEY](): GoalBoundary<Goal>;
     constructor(title: Title, roles: Roles, goal: Goal, handler: Handler);
     toString(): string;

@@ -23,6 +23,12 @@ class AsICanSoThatChain {
         set(this, TITLE_KEY, title);
         set(this, GOAL_KEY, goal);
     }
+    /**
+     * Attaches handler function to be executed when Use-case is performed.
+     *
+     * @param handler Use-case execution handler function.
+     * @returns Usecase
+     */
     implementedAs(handler) {
         const roles = getOrDefineRoles(...this[ROLE_NAMES_KEY]);
         const title = this[TITLE_KEY];

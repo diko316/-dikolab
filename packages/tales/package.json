@@ -9,7 +9,7 @@
    "license": "ISC",
    "repository": {
       "type": "git",
-      "url": "git@github.com:diko316/-dikolab.git",
+      "url": "git+https://github.com/diko316/-dikolab.git",
       "directory": "packages/tales"
    },
    "files": [

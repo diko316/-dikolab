@@ -17,6 +17,7 @@ export const GOAL_KEY: unique symbol = Symbol('Goal');
 export const GOAL_HANDLER_KEY: unique symbol = Symbol('Goal Handler');
 
 export const HANDLER_KEY: unique symbol = Symbol('Handler');
+export const MOCK_HANDLER_KEY: unique symbol = Symbol('Mock Handler');
 
 export const USECASE_KEY: unique symbol = Symbol('Usecase');
 export const STORY_KEY: unique symbol = Symbol('Story');

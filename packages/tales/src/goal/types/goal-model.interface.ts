@@ -6,12 +6,17 @@ import {
 } from '../../utils/constants/symbol-keys.constant';
 
 import { GOAL_TYPE } from '../../utils/constants/symbol-tag.constant';
+import { GoalEventMap } from './goal-event-map.type';
 import { GoalName } from './goal-name.type';
 
 export interface GoalModel<
    Title extends string,
    Boundary extends AnyBoundary,
-> extends UsecaseSymbol<typeof GOAL_TYPE, GoalName<Title, Boundary>> {
+> extends UsecaseSymbol<
+      typeof GOAL_TYPE,
+      GoalName<Title, Boundary>,
+      GoalEventMap
+   > {
    readonly [TITLE_KEY]: Title;
    readonly [BOUNDARY_KEY]: Boundary;
 }

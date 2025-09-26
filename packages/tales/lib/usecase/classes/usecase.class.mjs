@@ -1,7 +1,7 @@
 import { get, set } from '@dikolab/private-parts';
 import { UsecaseSymbol } from '../../symbol/classes/usecase-symbol.class.mjs';
 import { USECASE_TYPE } from '../../utils/constants/symbol-tag.constant.mjs';
-import { TITLE_KEY, ROLES_KEY, GOAL_KEY, HANDLER_KEY, BOUNDARY_KEY } from '../../utils/constants/symbol-keys.constant.mjs';
+import { TITLE_KEY, ROLES_KEY, GOAL_KEY, HANDLER_KEY, MOCK_HANDLER_KEY, BOUNDARY_KEY } from '../../utils/constants/symbol-keys.constant.mjs';
 import { createUsecaseTitle } from '../functions/create-usecase-title.function.mjs';
 import { getSymbolName } from '../../symbol/functions/get-symbol-name.function.mjs';
 
@@ -18,6 +18,12 @@ class Usecase extends UsecaseSymbol {
     get [HANDLER_KEY]() {
         return get(this, HANDLER_KEY);
     }
+    get [MOCK_HANDLER_KEY]() {
+        return get(this, MOCK_HANDLER_KEY);
+    }
+    set [MOCK_HANDLER_KEY](handler) {
+        set(this, MOCK_HANDLER_KEY, handler);
+    }
     get [BOUNDARY_KEY]() {
         return get(this[GOAL_KEY], BOUNDARY_KEY);
     }
@@ -26,6 +32,7 @@ class Usecase extends UsecaseSymbol {
         set(this, TITLE_KEY, title);
         set(this, ROLES_KEY, roles);
         set(this, HANDLER_KEY, handler);
+        set(this, MOCK_HANDLER_KEY, null);
         set(this, GOAL_KEY, goal);
     }
     toString() {

@@ -8,5 +8,11 @@ export declare class AsChain<Boundary extends AnyBoundary, RoleNames extends rea
     get [BOUNDARY_KEY](): Boundary;
     get [ROLE_NAMES_KEY](): RoleNames;
     constructor(boundary: Boundary, roleNames: RoleNames);
-    iCan<ActionTitle extends string>(actionTitle: ActionTitle): AsICanChain<Boundary, RoleNames, ActionTitle>;
+    /**
+     * Declares text title of the Use-case.
+     *
+     * @param title Text title of the Use-case
+     * @returns declaration chain
+     */
+    iCan<ActionTitle extends string>(title: ActionTitle): AsICanChain<Boundary, RoleNames, ActionTitle>;
 }

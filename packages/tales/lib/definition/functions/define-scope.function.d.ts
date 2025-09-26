@@ -1,2 +1,8 @@
 import { Scope } from '../classes/scope.class';
-export declare function defineScope<Type extends string, Title extends string>(name: `${Type}:${Title}`): Scope<import("../../boundary/classes/boundary.class").Boundary<Type, Title>>;
+/**
+ * Defines a Boundary and declaration scope.
+ *
+ * @param name Name of the Boundary in this format `${Type}:${Title}`
+ * @returns declaration Scope
+ */
+export declare function defineScope<Type extends string, Title extends string>(name: `${Type}:${Title}`): Scope<import("../..").Boundary<Type, Title>>;

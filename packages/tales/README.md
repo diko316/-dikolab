@@ -79,8 +79,6 @@ export class SomeUserController {
 
 ## TODO
 
-1. Stabilize Event driven Usecase symbols.
-2. Mockable and testable Usecase handlers
-3. Implement plugins for flexibility
-4. State Management store
+1. Implement plugins for flexibility
+2. State Management and Store
 
