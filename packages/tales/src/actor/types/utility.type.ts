@@ -1,4 +1,3 @@
-import { UsecaseSymbolEventMap } from '../../symbol/types/usecase-symbol-event.type';
 import {
    PrependTuple,
    StringifyTuple,
@@ -68,19 +67,6 @@ export type ResolveRoleNames<Sources> = Sources extends [
         ? [ResolveRoleName<First>]
         : []
      : [];
-
-// const r1 = new Role('admin');
-// const r2 = new Role('user');
-
-// const roles = [r1, r2];
-// const croles = [r1, r2] as const;
-
-// type rn1 = RoleNames<typeof roles>;
-// type rn2 = RoleNames<typeof croles>;
-
-// type S1 = StringifyRoles<typeof roles>;
-// type S2 = StringifyRoles<typeof croles>;
-
 export type AnyActor = ActorModel<string, readonly AnyRole[]>;
 
 export type ActorRoles<Actor extends AnyActor> =
@@ -93,7 +79,3 @@ export type ActorName<Actor extends AnyActor> =
 
 export type ActorRoleOptions<Actor extends AnyActor> =
    readonly RoleModel<RoleNames<ActorRoles<Actor>>[number]>[];
-
-// type Admin = ActorModel<'admin', [RoleModel<'admin'>]>;
-
-// type Map = UsecaseSymbolEventMap<AnyActor>;

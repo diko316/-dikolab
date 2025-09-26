@@ -1,4 +1,3 @@
-import { clearSymbols } from './symbol/functions/clear-symbols.function';
 import { iAm } from './definition/functions/i-am.function';
 import { defineScope } from './definition/functions/define-scope.function';
 import { assume } from './execution/functions/assume.function';
@@ -7,6 +6,10 @@ import { listenSymbolEvent as listen } from './symbol/functions/listen-symbol-ev
 import { unlistenSymbolEvent as unlisten } from './symbol/functions/unlisten-symbol-event.function';
 import { clearAllSymbolListeners as clearAllListeners } from './symbol/functions/clear-all-symbol-event-listeners.function';
 import { clearSymbolEventListeners as clearListeners } from './symbol/functions/clear-symbol-event-listeners.function';
+
+import { Transaction } from './usecase/classes/transaction.class';
+
+import { clearSymbols } from './symbol/functions/clear-symbols.function';
 
 export {
    // Definitions
@@ -22,6 +25,9 @@ export {
    clearListeners,
    clearAllListeners,
 
-   // utility
+   // utility:execution
+   Transaction,
+
+   // utility:testing
    clearSymbols,
 };

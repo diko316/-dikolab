@@ -1,14 +1,11 @@
-import {
-   ActorRoleOptions,
-   AnyActor,
-   AnyRole,
-} from '../../actor/types/utility.type';
+import { AnyRole } from '../../actor/types/utility.type';
 import { AnyGoal } from '../../goal/types/utility.type';
 import { AnyType } from '../../utils/types/utility.type';
 import {
    NotTransaction,
    TransactionLike,
 } from './transaction-like.type';
+
 // cyclic
 import { TransactionModel } from './transaction-model.type';
 

@@ -5,6 +5,11 @@
    "publishConfig": {
       "access": "public"
    },
+   "repository": {
+      "type": "git",
+      "url": "git@github.com:diko316/-dikolab.git",
+      "directory": "packages/tales"
+   },
    "files": [
       "lib/**/*"
    ],

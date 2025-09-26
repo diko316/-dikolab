@@ -20,13 +20,3 @@ export function defineActor<
 
    return new Actor(name, roles);
 }
-
-// const r1 = defineRole('admin');
-// const r2 = defineRole('guest');
-
-// export const a1 = defineActor('diko', 'admin', 'guest');
-// export const a2 = defineActor('cha');
-
-// export const test = new Actor('diko', [r1, r2]);
-
-// export const actorRoles = getActorRoles(a1);

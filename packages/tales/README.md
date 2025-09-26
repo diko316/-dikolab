@@ -1,6 +1,10 @@
 # Tales
 
+Organize scripts based on a high-level Use-case methodology as a startup intent of the package. Additional features will be introduced in upcoming releases.
+
 ## Usage
+
+The following sections provide examples of how to declare components of a Use Case and run them.
 
 ### Declarations
 
@@ -71,3 +75,12 @@ export class SomeUserController {
    }
 }
 ```
+
+
+## TODO
+
+1. Stabilize Event driven Usecase symbols.
+2. Mockable and testable Usecase handlers
+3. Implement plugins for flexibility
+4. State Management store
+
