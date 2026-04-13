@@ -1,0 +1,25 @@
+{
+   "compileOnSave": false,
+   "compilerOptions": {
+      "rootDir": ".",
+      "sourceMap": true,
+      "declaration": false,
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "importHelpers": true,
+      "target": "es2015",
+      "module": "esnext",
+      "lib": ["es2020", "dom"],
+      "skipLibCheck": true,
+      "skipDefaultLibCheck": true,
+      "baseUrl": ".",
+      "paths": {
+         "ng-lib": ["libs/ng-lib/src/index.ts"],
+         "platform-agnostic-lib": [
+            "libs/platform-agnostic-lib/src/index.ts"
+         ]
+      }
+   },
+   "exclude": ["node_modules", "tmp"]
+}

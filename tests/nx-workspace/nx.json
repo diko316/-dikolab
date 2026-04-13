@@ -1,0 +1,82 @@
+{
+   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+   "targetDefaults": {
+      "@angular-devkit/build-angular:browser": {
+         "cache": true,
+         "dependsOn": ["^build"],
+         "inputs": ["default", "^default"]
+      },
+      "@nx/eslint:lint": {
+         "cache": true,
+         "inputs": [
+            "default",
+            "{workspaceRoot}/.eslintrc.json",
+            "{workspaceRoot}/.eslintignore",
+            "{workspaceRoot}/eslint.config.mjs"
+         ]
+      },
+      "@nx/vite:test": {
+         "cache": true,
+         "inputs": ["default", "^default"]
+      }
+   },
+   "generators": {
+      "@nx/angular:application": {
+         "e2eTestRunner": "none",
+         "linter": "eslint",
+         "style": "scss",
+         "unitTestRunner": "vitest"
+      },
+      "@nx/angular:library": {
+         "linter": "eslint",
+         "unitTestRunner": "vitest"
+      },
+      "@nx/angular:component": {
+         "style": "css"
+      }
+   },
+   "plugins": [
+      {
+         "plugin": "@nx/rollup/plugin",
+         "options": {
+            "buildTargetName": "build",
+            "buildDepsTargetName": "build-deps",
+            "watchDepsTargetName": "watch-deps"
+         }
+      },
+      {
+         "plugin": "@nx/js/typescript",
+         "options": {
+            "typecheck": {
+               "targetName": "typecheck"
+            },
+            "build": {
+               "targetName": "build",
+               "configName": "tsconfig.lib.json",
+               "buildDepsName": "build-deps",
+               "watchDepsName": "watch-deps"
+            }
+         }
+      },
+      {
+         "plugin": "@nx/eslint/plugin",
+         "options": {
+            "targetName": "eslint:lint"
+         }
+      },
+      {
+         "plugin": "@nx/vite/plugin",
+         "options": {
+            "buildTargetName": "build",
+            "testTargetName": "vite:test",
+            "serveTargetName": "serve",
+            "devTargetName": "dev",
+            "previewTargetName": "preview",
+            "serveStaticTargetName": "serve-static",
+            "typecheckTargetName": "vite:typecheck",
+            "buildDepsTargetName": "vite:build-deps",
+            "watchDepsTargetName": "vite:watch-deps"
+         }
+      }
+   ]
+}

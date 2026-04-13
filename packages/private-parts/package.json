@@ -1,14 +1,25 @@
 {
    "name": "@dikolab/private-parts",
-   "version": "0.5.4",
+   "version": "0.6.0",
    "description": "WeakMap storage for private data accessible by object instance and key string",
    "publishConfig": {
       "access": "public"
    },
+   "keywords": [
+      "Private",
+      "WeakMap"
+   ],
+   "author": "Diko TechSlave <diko316@gmail.com>",
+   "license": "ISC",
    "repository": {
       "type": "git",
       "url": "git@github.com:diko316/-dikolab.git",
-      "directory": "packages/tales"
+      "directory": "packages/private-parts"
+   },
+   "homepage": "https://github.com/diko316/-dikolab/blob/main/packages/private-parts/README.md",
+   "bugs": {
+      "url": "https://github.com/diko316/-dikolab/issues",
+      "email": "diko316@gmail.com"
    },
    "files": [
       "lib/**/*"
@@ -16,6 +27,7 @@
    "type": "module",
    "main": "./lib/index.js",
    "module": "./lib/index.mjs",
+   "types": "./lib/index.d.ts",
    "engines": {
       "typescript": ">=5.1.3"
    },
@@ -28,15 +40,8 @@
    },
    "scripts": {
       "lint": "eslint",
-      "test": "vitest",
+      "test": "vitest --run",
       "build": "rollup -c rollup.config.js",
-      "prepublishOnly": "npm run lint && npm run test -- --run && npm run build",
-      "prepare": "npm run build"
-   },
-   "keywords": [
-      "Private",
-      "WeakMap"
-   ],
-   "author": "Diko TechSlave",
-   "license": "ISC"
+      "prepublishOnly": "npm run lint && npm run test && npm run build"
+   }
 }

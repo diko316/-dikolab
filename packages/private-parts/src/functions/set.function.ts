@@ -1,8 +1,5 @@
+import { GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER } from '../constants/global-contextual-private-parts-manager.contsant';
 import { AnyPropertyName, ObjectInstance } from '../types/utility.type';
-import { createInstanceKeyset } from './create-instance-key-set.function';
-import { createInstanceValueMap } from './create-instance-value-map.function';
-import { getInstanceKeyset } from './get-instance-key-set.function';
-import { getInstanceValueMap } from './get-instance-value-map.function';
 
 export function set<
    Value,
@@ -13,18 +10,12 @@ export function set<
    propertyName: PropertyName,
    value: Value,
 ): void {
-   const repo =
-      getInstanceValueMap(propertyName) ||
-      createInstanceValueMap(propertyName);
-
-   const keys =
-      getInstanceKeyset(instance) || createInstanceKeyset(instance);
-
-   // add keys if do not exist
-   if (!keys.has(propertyName)) {
-      keys.add(propertyName);
-   }
-
-   // set or replace value
-   repo.set(instance, value);
+   GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER.set(
+      instance,
+      propertyName,
+      value as PropertyName extends keyof Instance
+         ? Instance[PropertyName]
+         : // eslint-disable-next-line @typescript-eslint/no-explicit-any
+           any,
+   );
 }

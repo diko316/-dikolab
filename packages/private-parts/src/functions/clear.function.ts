@@ -1,30 +1,8 @@
-import { getInstanceKeyset } from './get-instance-key-set.function';
-import { getInstanceValueMap } from './get-instance-value-map.function';
-import { INSTANCE_KEY_MAP } from '../constants/instance-keys-map.constant';
 import { ObjectInstance } from '../types/utility.type';
+import { GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER } from '../constants/global-contextual-private-parts-manager.contsant';
 
 export function clear<Instance extends object>(
    instance: ObjectInstance<Instance>,
 ): void {
-   const keyset = getInstanceKeyset(instance);
-
-   // return early, no keys registered!
-   if (!keyset) {
-      return;
-   }
-
-   // delete all associated properties by each key
-   keyset.forEach((key) => {
-      const propertyMap = getInstanceValueMap(key);
-
-      // return early, already garbage collected :-D
-      if (!propertyMap) {
-         return;
-      }
-
-      propertyMap.delete(instance);
-   });
-
-   // delete keyset
-   INSTANCE_KEY_MAP.map?.delete(instance);
+   GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER.clear(instance);
 }

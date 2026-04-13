@@ -1,9 +1,7 @@
-import { ACCESSOR_KEY_MAP } from '../constants/accessor-key-map.constant.mjs';
-import { INSTANCE_KEY_MAP } from '../constants/instance-keys-map.constant.mjs';
+import { GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER } from '../constants/global-contextual-private-parts-manager.contsant.mjs';
 
 function clearAll() {
-    INSTANCE_KEY_MAP.map = null;
-    ACCESSOR_KEY_MAP.clear();
+    GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER.clearAll();
 }
 
 export { clearAll };

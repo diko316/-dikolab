@@ -1,0 +1,312 @@
+{
+  "version": "6.0",
+  "nxVersion": "22.0.2",
+  "pathMappings": {
+    "ng-lib": [
+      "libs/ng-lib/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [
+    {
+      "name": "@nx/rollup/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    },
+    {
+      "name": "@nx/js/typescript",
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        },
+        "build": {
+          "targetName": "build",
+          "configName": "tsconfig.lib.json",
+          "buildDepsName": "build-deps",
+          "watchDepsName": "watch-deps"
+        }
+      }
+    }
+  ],
+  "fileMap": {
+    "nonProjectFiles": [],
+    "projectFileMap": {
+      "my-workspace": [
+        {
+          "file": ".gitignore",
+          "hash": "162262359027611656"
+        },
+        {
+          "file": ".prettierignore",
+          "hash": "5407418692668764289"
+        },
+        {
+          "file": ".prettierrc",
+          "hash": "3892606527068738413"
+        },
+        {
+          "file": "eslint.config.mjs",
+          "hash": "9956061964244665295",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "nx.json",
+          "hash": "8304188409274375542"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "11425759926784422174"
+        },
+        {
+          "file": "package.json",
+          "hash": "14852658067342985116",
+          "deps": [
+            "npm:@analogjs/vite-plugin-angular",
+            "npm:@analogjs/vitest-angular",
+            "npm:@angular-devkit/build-angular",
+            "npm:@angular-devkit/core",
+            "npm:@angular-devkit/schematics",
+            "npm:@angular/build",
+            "npm:@angular/cli",
+            "npm:@angular/compiler-cli",
+            "npm:@angular/language-service",
+            "npm:@eslint/js",
+            "npm:@nx/angular",
+            "npm:@nx/eslint",
+            "npm:@nx/eslint-plugin",
+            "npm:@nx/js",
+            "npm:@nx/node",
+            "npm:@nx/rollup",
+            "npm:@nx/vite",
+            "npm:@nx/web",
+            "npm:@schematics/angular",
+            "npm:@swc-node/register",
+            "npm:@swc/core",
+            "npm:@swc/helpers",
+            "npm:@types/node",
+            "npm:@typescript-eslint/utils",
+            "npm:@vitest/coverage-v8",
+            "npm:@vitest/ui",
+            "npm:angular-eslint",
+            "npm:eslint",
+            "npm:eslint-config-prettier",
+            "npm:jiti",
+            "npm:jsdom",
+            "npm:nx",
+            "npm:prettier",
+            "npm:rollup",
+            "npm:tslib",
+            "npm:typescript",
+            "npm:typescript-eslint",
+            "npm:vite",
+            "npm:vitest",
+            "npm:@angular/common",
+            "npm:@angular/compiler",
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/platform-browser",
+            "npm:@angular/router",
+            "npm:rxjs",
+            "npm:zone.js"
+          ]
+        },
+        {
+          "file": "tsconfig.base.json",
+          "hash": "8708952962196197038"
+        },
+        {
+          "file": "vitest.workspace.ts",
+          "hash": "16536189400839561813"
+        }
+      ],
+      "ng-lib": [
+        {
+          "file": "libs/ng-lib/README.md",
+          "hash": "951519057538006561"
+        },
+        {
+          "file": "libs/ng-lib/eslint.config.mjs",
+          "hash": "13037105852023321249",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "libs/ng-lib/project.json",
+          "hash": "18058740732221616799"
+        },
+        {
+          "file": "libs/ng-lib/src/index.ts",
+          "hash": "9589338441053799117"
+        },
+        {
+          "file": "libs/ng-lib/src/lib/ng-lib/ng-lib.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "libs/ng-lib/src/lib/ng-lib/ng-lib.html",
+          "hash": "5553346683111620841"
+        },
+        {
+          "file": "libs/ng-lib/src/lib/ng-lib/ng-lib.spec.ts",
+          "hash": "14361885240143961663",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/ng-lib/src/lib/ng-lib/ng-lib.ts",
+          "hash": "7403153364390040630",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/ng-lib/src/test-setup.ts",
+          "hash": "11744184097251850825",
+          "deps": [
+            "npm:@angular/compiler",
+            "npm:@analogjs/vitest-angular",
+            "npm:@angular/platform-browser",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/ng-lib/tsconfig.json",
+          "hash": "7143190478602398620"
+        },
+        {
+          "file": "libs/ng-lib/tsconfig.lib.json",
+          "hash": "12069110133575884149"
+        },
+        {
+          "file": "libs/ng-lib/tsconfig.spec.json",
+          "hash": "11003271944333959989"
+        },
+        {
+          "file": "libs/ng-lib/vite.config.mts",
+          "hash": "3386858176589928596",
+          "deps": [
+            "npm:vite",
+            "npm:@analogjs/vite-plugin-angular",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "angular-app": [
+        {
+          "file": "apps/angular-app/eslint.config.mjs",
+          "hash": "12261632104204592852",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "apps/angular-app/project.json",
+          "hash": "16619329787532926049"
+        },
+        {
+          "file": "apps/angular-app/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/angular-app/src/app/app.config.ts",
+          "hash": "13439983191620814311",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/angular-app/src/app/app.html",
+          "hash": "11987652264972370457"
+        },
+        {
+          "file": "apps/angular-app/src/app/app.routes.ts",
+          "hash": "6185150965714414910",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/angular-app/src/app/app.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/angular-app/src/app/app.spec.ts",
+          "hash": "1154865409523172181",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/angular-app/src/app/app.ts",
+          "hash": "15938289650885073763",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/angular-app/src/app/nx-welcome.ts",
+          "hash": "14340881936419653318",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "apps/angular-app/src/index.html",
+          "hash": "13642952764665909629"
+        },
+        {
+          "file": "apps/angular-app/src/main.ts",
+          "hash": "3314327030169821486",
+          "deps": [
+            "npm:@angular/platform-browser"
+          ]
+        },
+        {
+          "file": "apps/angular-app/src/styles.scss",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "apps/angular-app/src/test-setup.ts",
+          "hash": "4016681998016270294",
+          "deps": [
+            "npm:@angular/compiler",
+            "npm:@analogjs/vitest-angular",
+            "npm:@angular/platform-browser",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/angular-app/tsconfig.app.json",
+          "hash": "13857379676808871172"
+        },
+        {
+          "file": "apps/angular-app/tsconfig.json",
+          "hash": "583593479268933486"
+        },
+        {
+          "file": "apps/angular-app/tsconfig.spec.json",
+          "hash": "11003271944333959989"
+        },
+        {
+          "file": "apps/angular-app/vite.config.mts",
+          "hash": "13799884968594281292",
+          "deps": [
+            "npm:vite",
+            "npm:@analogjs/vite-plugin-angular",
+            "npm:@nx/vite"
+          ]
+        }
+      ]
+    }
+  },
+  "externalNodesHash": "10353748862850889421"
+}

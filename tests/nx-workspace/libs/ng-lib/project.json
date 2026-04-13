@@ -1,0 +1,20 @@
+{
+   "name": "ng-lib",
+   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+   "sourceRoot": "libs/ng-lib/src",
+   "prefix": "lib",
+   "projectType": "library",
+   "tags": [],
+   "targets": {
+      "test": {
+         "executor": "@nx/vite:test",
+         "outputs": ["{options.reportsDirectory}"],
+         "options": {
+            "reportsDirectory": "../../coverage/libs/ng-lib"
+         }
+      },
+      "lint": {
+         "executor": "@nx/eslint:lint"
+      }
+   }
+}

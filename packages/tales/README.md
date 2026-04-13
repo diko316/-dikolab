@@ -76,6 +76,25 @@ export class SomeUserController {
 }
 ```
 
+### Listening to events
+
+You can listen to events by using listen().
+
+```ts
+import { listen } from '@dikolab/tales';
+
+import { MakePaymentUsecase } from './payments/usecases/make-payment.usecase.ts';
+
+listen(MakePaymentUsecase, 'perform',
+   (result, usecase) => {
+      console.log(`Use-case performed successfully: ${usecase}`);
+      console.log(`Result is: ${result}`);
+   }
+);
+
+
+```
+
 
 ## TODO
 

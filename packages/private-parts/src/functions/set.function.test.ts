@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { ACCESSOR_KEY_MAP } from '../constants/accessor-key-map.constant';
 import { set } from './set.function';
 import { get } from './get.function';
 import { clearAll } from './clear-all.function';
+import { GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER } from '../constants/global-contextual-private-parts-manager.contsant';
 
 describe('set(instance: Instance, propertyName: PropertyName, value: any)', () => {
    interface Sample {
@@ -26,25 +26,14 @@ describe('set(instance: Instance, propertyName: PropertyName, value: any)', () =
       instance = new Class();
    });
 
-   it('should create internal weakmap if not yet created.', () => {
-      const before = ACCESSOR_KEY_MAP.get(propertyName);
-
-      expect(before).toBeUndefined();
-
-      set(instance, propertyName, propertyValue);
-
-      const now = ACCESSOR_KEY_MAP.get(propertyName);
-
-      expect(now).toBeDefined();
-   });
-
    it('should set property value referenced by the instance.', () => {
       set(instance, propertyName, propertyValue);
 
-      const weakmap = ACCESSOR_KEY_MAP.get(propertyName);
-      const result = weakmap?.get(instance);
+      const result = GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER.get(
+         instance,
+         propertyName,
+      );
 
-      expect(weakmap).toBeDefined();
       expect(result).toBe(propertyValue);
       expect(get(instance, propertyName)).toBe(propertyValue);
    });

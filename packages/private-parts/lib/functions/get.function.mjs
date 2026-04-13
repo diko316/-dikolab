@@ -1,11 +1,7 @@
-import { getInstanceValueMap } from './get-instance-value-map.function.mjs';
+import { GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER } from '../constants/global-contextual-private-parts-manager.contsant.mjs';
 
 function get(instance, propertyName) {
-    const repo = getInstanceValueMap(propertyName);
-    if (!repo) {
-        return undefined;
-    }
-    return repo.get(instance);
+    return GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER.get(instance, propertyName);
 }
 
 export { get };

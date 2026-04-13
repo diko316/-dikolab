@@ -1,0 +1,53 @@
+{
+  "4727611974245498485": {
+    "build": {
+      "command": "rollup -c rollup.config.cjs",
+      "options": {
+        "cwd": "libs/platform-agnostic-lib"
+      },
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "rollup"
+          ]
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/dist/libs/platform-agnostic-lib"
+      ],
+      "metadata": {
+        "technologies": [
+          "rollup"
+        ],
+        "description": "Run Rollup",
+        "help": {
+          "command": "npx rollup --help",
+          "example": {
+            "options": {
+              "sourcemap": true,
+              "watch": true
+            }
+          }
+        }
+      }
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects platform-agnostic-lib --includeDependentProjects -- npx nx build-deps platform-agnostic-lib"
+    }
+  }
+}
