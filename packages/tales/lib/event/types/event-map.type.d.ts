@@ -1,4 +1,4 @@
-import { AnyFunction, AnyList, AnyType } from '../../utils/types/utility.type';
+import type { AnyFunction, AnyList, AnyType } from '../../utils/types/utility.type';
 export type DefaultEventMap = [never];
 export type EventMap<Map> = Record<keyof Map, AnyList> | DefaultEventMap;
 export type AnyEventMap = DefaultEventMap | Record<string, AnyList>;

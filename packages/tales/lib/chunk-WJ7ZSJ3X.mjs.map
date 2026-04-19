@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/usecase/functions/create-session-data.function.ts"],
+  "sourcesContent": ["import { get, set } from '@dikolab/private-parts';\n\nexport function createSessionData<Data extends object>(\n   data: Data,\n): Readonly<Data> {\n   return (Object.keys(data) as (keyof Data)[]).reduce(\n      (newData, key) => {\n         set(newData, key, data[key]);\n         Object.defineProperty(newData, key, {\n            enumerable: true,\n            configurable: false,\n            get() {\n               // eslint-disable-next-line @typescript-eslint/no-unsafe-return\n               return get(newData, key);\n            },\n         });\n\n         return newData;\n      },\n      {} as Readonly<Data>,\n   );\n}\n"],
+  "mappings": ";AAAA,SAAS,KAAK,WAAW;AAElB,SAAS,kBACb,MACe;AACf,SAAQ,OAAO,KAAK,IAAI,EAAqB;AAAA,IAC1C,CAAC,SAAS,QAAQ;AACf,UAAI,SAAS,KAAK,KAAK,GAAG,CAAC;AAC3B,aAAO,eAAe,SAAS,KAAK;AAAA,QACjC,YAAY;AAAA,QACZ,cAAc;AAAA,QACd,MAAM;AAEH,iBAAO,IAAI,SAAS,GAAG;AAAA,QAC1B;AAAA,MACH,CAAC;AAED,aAAO;AAAA,IACV;AAAA,IACA,CAAC;AAAA,EACJ;AACH;",
+  "names": []
+}

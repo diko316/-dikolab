@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/actor/functions/define-actor.function.ts"],
+  "sourcesContent": ["import { Actor } from '../classes/actor.class';\nimport type { Role } from '../classes/role.class';\nimport type { ResolveRoles } from '../types/utility.type';\nimport { getOrDefineRoles } from './get-or-define-roles.function';\n\nexport function defineActor<\n   Name extends string,\n   RoleNames extends readonly string[],\n>(name: Name, ...roleOrNames: RoleNames) {\n   if (!name || typeof name !== 'string') {\n      throw new TypeError(`\"${name}\" name parameter is invald.`);\n   }\n\n   // get role or create if do not exist!\n   const [role] = getOrDefineRoles(name) as [Role<Name>];\n   const others = getOrDefineRoles(\n      ...roleOrNames,\n   ) as ResolveRoles<RoleNames>;\n   const roles = [role, ...others] as const;\n\n   return new Actor(name, roles);\n}\n"],
+  "mappings": ";;;;;;;;AAKO,SAAS,YAGd,SAAe,aAAwB;AACtC,MAAI,CAAC,QAAQ,OAAO,SAAS,UAAU;AACpC,UAAM,IAAI,UAAU,IAAI,IAAI,6BAA6B;AAAA,EAC5D;AAGA,QAAM,CAAC,IAAI,IAAI,iBAAiB,IAAI;AACpC,QAAM,SAAS;AAAA,IACZ,GAAG;AAAA,EACN;AACA,QAAM,QAAQ,CAAC,MAAM,GAAG,MAAM;AAE9B,SAAO,IAAI,MAAM,MAAM,KAAK;AAC/B;",
+  "names": []
+}

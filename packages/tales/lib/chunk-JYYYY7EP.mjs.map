@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/utils/constants/symbol-tag.constant.ts"],
+  "sourcesContent": ["export const ACTOR_TYPE = 'Actor';\nexport const ROLE_TYPE = 'Role';\nexport const BOUNDARY_TYPE = 'Boundary';\nexport const ACTION_TYPE = 'Action';\nexport const USECASE_TYPE = 'Usecase';\nexport const GOAL_TYPE = 'Goal';\n"],
+  "mappings": ";AAAO,IAAM,aAAa;AACnB,IAAM,YAAY;AAClB,IAAM,gBAAgB;AACtB,IAAM,cAAc;AACpB,IAAM,eAAe;AACrB,IAAM,YAAY;",
+  "names": []
+}

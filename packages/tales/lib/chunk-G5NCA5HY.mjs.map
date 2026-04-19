@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/symbol/functions/emit-symbol-event.function.ts"],
+  "sourcesContent": ["import { EVENT_EMITTER_KEY } from '../../event/constants/event-keys';\nimport type { AnyEventMap } from '../../event/types/event-map.type';\nimport type { AnyList } from '../../utils/types/utility.type';\nimport type { UsecaseSymbolEventMap } from '../types/usecase-symbol-event.type';\nimport type { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';\n\n/**\n * Disptaches Target Symbol event.\n *\n * @param symbol Target symbol. may be one of the following: Actor,\n * Role, Usecase, Goal, Boundary\n * @param type Event type\n * @param args Parameters of the dispatched event.\n */\nexport function emitSymbolEvent<\n   Source extends UsecaseSymbolModel<string, string, AnyEventMap>,\n   Type extends keyof UsecaseSymbolEventMap<Source>,\n   Params extends UsecaseSymbolEventMap<Source>[Type],\n>(\n   symbol: Source,\n   type: Type,\n   ...args: Params extends AnyList ? [...Params] : []\n): void {\n   symbol[EVENT_EMITTER_KEY].emit(type, ...args);\n}\n"],
+  "mappings": ";;;;;AAcO,SAAS,gBAKb,QACA,SACG,MACE;AACL,SAAO,iBAAiB,EAAE,KAAK,MAAM,GAAG,IAAI;AAC/C;",
+  "names": []
+}

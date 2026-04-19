@@ -1,6 +1,6 @@
 import { get, set } from '@dikolab/private-parts';
 import { SYMBOL_LOOKUP } from '../constants/symbol-lookup.constant';
-import {
+import type {
    UsecaseSymbolLike,
    UsecaseSymbolModel,
 } from '../types/usecase-symbol-model.interface';
@@ -9,12 +9,12 @@ import {
    NAME_KEY,
    TYPE_KEY,
 } from '../../utils/constants/symbol-keys.constant';
-import { UsecaseSymbolJSON } from '../types/usecase-symbol-json.interface';
-import { UsecaseSymbolId } from '../types/utility.type';
+import type { UsecaseSymbolJSON } from '../types/usecase-symbol-json.interface';
+import type { UsecaseSymbolId } from '../types/utility.type';
 import { createSymbolId } from '../functions/create-symbol-id.function';
 import { EVENT_EMITTER_KEY } from '../../event/constants/event-keys';
 import EventEmitter from 'events';
-import {
+import type {
    AnyEventMap,
    DefaultEventMap,
 } from '../../event/types/event-map.type';
@@ -29,18 +29,22 @@ export abstract class UsecaseSymbol<
       UsecaseSymbolJSON<Type, Name>
 {
    get [TYPE_KEY](): Type {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, TYPE_KEY);
    }
 
    get [NAME_KEY](): Name {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, NAME_KEY);
    }
 
    get [ID_KEY](): UsecaseSymbolId<Type, Name> {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, ID_KEY);
    }
 
    get [EVENT_EMITTER_KEY](): EventEmitter<EventMap> {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, EVENT_EMITTER_KEY);
    }
 
@@ -73,8 +77,8 @@ export abstract class UsecaseSymbol<
 
    toJSON() {
       return {
-         type: this[TYPE_KEY] as Type,
-         name: this[NAME_KEY] as Name,
+         type: this[TYPE_KEY],
+         name: this[NAME_KEY],
       };
    }
 }

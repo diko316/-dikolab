@@ -1,14 +1,14 @@
 import { UsecaseSymbol } from '../../symbol/classes/usecase-symbol.class';
 import { USECASE_TYPE } from '../../utils/constants/symbol-tag.constant';
 import { BOUNDARY_KEY, GOAL_KEY, HANDLER_KEY, ROLES_KEY, TITLE_KEY } from '../../utils/constants/symbol-keys.constant';
-import { UsecaseModel } from '../types/usecase-model.interface';
-import { AnyGoal } from '../../goal/types/utility.type';
-import { GoalBoundary } from '../../goal/types/goal-boundary.type';
-import { AnyRole } from '../../actor/types/utility.type';
-import { UsecaseTitleFrom } from '../types/usecase-title-from.type';
-import { AnyFunction } from '../../utils/types/utility.type';
+import type { UsecaseModel } from '../types/usecase-model.interface';
+import type { AnyGoal } from '../../goal/types/utility.type';
+import type { GoalBoundary } from '../../goal/types/goal-boundary.type';
+import type { AnyRole } from '../../actor/types/utility.type';
+import type { UsecaseTitleFrom } from '../types/usecase-title-from.type';
+import type { AnyFunction } from '../../utils/types/utility.type';
 import { MOCK_HANDLER_KEY } from '../../utils/constants/symbol-keys.constant';
-import { UsecaseEventMap } from '../types/usecase-event-map.type';
+import type { UsecaseEventMap } from '../types/usecase-event-map.type';
 export declare class Usecase<Title extends string, Roles extends readonly AnyRole[], Handler extends AnyFunction, Goal extends AnyGoal> extends UsecaseSymbol<typeof USECASE_TYPE, UsecaseTitleFrom<Title, Roles, Goal>, UsecaseEventMap> implements UsecaseModel<Title, Roles, Handler, Goal> {
     get [TITLE_KEY](): Title;
     get [ROLES_KEY](): Roles;

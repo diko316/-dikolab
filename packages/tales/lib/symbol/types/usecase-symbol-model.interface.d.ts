@@ -1,7 +1,7 @@
-import { EventDriven } from '../../event/types/event-driven.interface';
-import { AnyEventMap, DefaultEventMap } from '../../event/types/event-map.type';
-import { ID_KEY, NAME_KEY, TYPE_KEY } from '../../utils/constants/symbol-keys.constant';
-import { UsecaseSymbolId } from './utility.type';
+import type { EventDriven } from '../../event/types/event-driven.interface';
+import type { AnyEventMap, DefaultEventMap } from '../../event/types/event-map.type';
+import type { ID_KEY, NAME_KEY, TYPE_KEY } from '../../utils/constants/symbol-keys.constant';
+import type { UsecaseSymbolId } from './utility.type';
 export interface UsecaseSymbolModel<Type extends string, Name extends string, EventMap extends AnyEventMap = DefaultEventMap> extends EventDriven<EventMap> {
     readonly [TYPE_KEY]: Type;
     readonly [NAME_KEY]: Name;

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/symbol/functions/create-symbol-id.function.ts"],
+  "sourcesContent": ["import type { UsecaseSymbolId } from '../types/utility.type';\n\nexport function createSymbolId<\n   Type extends string,\n   Name extends string,\n>(type: Type, name: Name): UsecaseSymbolId<Type, Name>;\n\nexport function createSymbolId<\n   Type extends string,\n   Name extends string,\n>(id: string): UsecaseSymbolId<Type, Name>;\n\nexport function createSymbolId(\n   typeOrId: string,\n   name?: string,\n): string {\n   if (typeof name === 'string') {\n      return `${typeOrId}<${name}>`;\n   }\n\n   return typeOrId;\n}\n"],
+  "mappings": ";AAYO,SAAS,eACb,UACA,MACO;AACP,MAAI,OAAO,SAAS,UAAU;AAC3B,WAAO,GAAG,QAAQ,IAAI,IAAI;AAAA,EAC7B;AAEA,SAAO;AACV;",
+  "names": []
+}

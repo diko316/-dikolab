@@ -14,7 +14,7 @@ export function createBoundaryNameDetails<
 
    const type = rawType.trim() as Type;
    const title = rawTitle.trim() as Title;
-   const id = `${type}:${title}` as `${Type}:${Title}`;
+   const id = `${type}:${title}`;
 
    return [type, title, id] as const;
 }

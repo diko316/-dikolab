@@ -1,25 +1,17 @@
-import { AnyPropertyName, ObjectInstance } from './utility.type';
+import type { AnyPropertyName } from './utility.type';
 
 export interface ContextualPrivatePart {
-   get<Instance extends object, PropertyName extends AnyPropertyName>(
-      instance: ObjectInstance<Instance>,
-      propertyName: PropertyName,
-   ): PropertyName extends keyof Instance
-      ? Instance[PropertyName]
-      : undefined;
+   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   get(instance: object, propertyName: AnyPropertyName): any;
 
-   set<Instance extends object, PropertyName extends AnyPropertyName>(
-      instance: ObjectInstance<Instance>,
-      propertyName: PropertyName,
-      value: PropertyName extends keyof Instance
-         ? Instance[PropertyName]
-         : // eslint-disable-next-line @typescript-eslint/no-explicit-any
-           any,
+   set(
+      instance: object,
+      propertyName: AnyPropertyName,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      value: any,
    ): this;
 
-   clear<Instance extends object>(
-      instance: ObjectInstance<Instance>,
-   ): this;
+   clear(instance: object): this;
 
    clearAll(): this;
 }

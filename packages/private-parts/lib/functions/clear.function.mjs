@@ -1,8 +1,10 @@
-import { GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER } from '../constants/global-contextual-private-parts-manager.contsant.mjs';
-
-function clear(instance) {
-    GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER.clear(instance);
-}
-
-export { clear };
+import {
+  clear
+} from "../chunk-J55MP3A4.mjs";
+import "../chunk-ZRZIIY23.mjs";
+import "../chunk-2PGFWLL4.mjs";
+import "../chunk-QUQOVPUU.mjs";
+export {
+  clear
+};
 //# sourceMappingURL=clear.function.mjs.map

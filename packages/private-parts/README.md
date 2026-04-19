@@ -1,5 +1,18 @@
 # Private Parts
 
+[![npm version](https://img.shields.io/npm/v/@dikolab/private-parts)](https://www.npmjs.com/package/@dikolab/private-parts)
+[![license](https://img.shields.io/npm/l/@dikolab/private-parts)](./LICENSE)
+
+WeakMap storage for private data accessible by object instance and key string.
+
+## Installation
+
+```bash
+npm install @dikolab/private-parts
+```
+
+## [Release Notes](docs/release-notes.md)
+
 ## Usage
 
 Simple Storage of private data using object instance and key string
@@ -36,17 +49,14 @@ class MyProfile {
 To clear values related to Instance, you can use clear(instance) function.
 
 ```ts
-
 import { clear, get } from '@dikolab/private-parts';
 
 const myProfile = new MyProfile('test');
 
-clear('name');
+clear(myProfile);
 
 // should have Undefined value
-console.log('my hidden name? ', get(myProfile, 'name));
-
-
+console.log('my hidden name? ', get(myProfile, 'name'));
 ```
 
 To clear all values in order to test something like `beforeEach()` calls in Unit tests, use clearAll().
@@ -62,3 +72,7 @@ describe('Reset something!', () => {
    });
 });
 ```
+
+## License
+
+[ISC](./LICENSE)

@@ -1,5 +1,5 @@
-import { IntersectTuple } from '../../utils/types/utility.type';
-import { AnyRole } from '../types/utility.type';
+import type { IntersectTuple } from '../../utils/types/utility.type';
+import type { AnyRole } from '../types/utility.type';
 
 export function intersectRoles<
    Pool extends readonly AnyRole[],

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/constants/global-contextual-private-parts-manager.contsant.ts"],
+  "sourcesContent": ["import { ContextualPrivatePartManager } from '../classes/contextual-private-parts-manager.class';\n\nexport const GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER =\n   new ContextualPrivatePartManager();\n"],
+  "mappings": ";;;;;AAEO,IAAM,0CACV,IAAI,6BAA6B;",
+  "names": []
+}

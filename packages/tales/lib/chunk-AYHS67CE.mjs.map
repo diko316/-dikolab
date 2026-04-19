@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/usecase/functions/create-usecase-title.function.ts"],
+  "sourcesContent": ["import { getRoleName } from '../../actor/functions/get-role-name.function';\nimport type {\n   AnyRole,\n   StringifyRoles,\n} from '../../actor/types/utility.type';\nimport { getBoundaryName } from '../../boundary/functions/get-boundary-name.function';\nimport { getGoalBoundary } from '../../goal/functions/get-goal-boundary.function';\n\nimport { getGoalTitle } from '../../goal/functions/get-goal-title.funciton';\nimport type { AnyGoal } from '../../goal/types/utility.type';\nimport type { UsecaseTitleFrom } from '../types/usecase-title-from.type';\n\nexport function createUsecaseTitle<\n   Title extends string,\n   Roles extends readonly AnyRole[],\n   Goal extends AnyGoal,\n>(\n   title: Title,\n   goal: Goal,\n   ...roles: Roles\n): UsecaseTitleFrom<Title, Roles, Goal> {\n   const rolesNames = roles\n      .map((role) => getRoleName(role))\n      .join(',') as StringifyRoles<Roles>;\n\n   const goalTitle = getGoalTitle(goal);\n\n   const boundaryName = getBoundaryName(getGoalBoundary(goal));\n\n   return `As Role<${rolesNames}>, I can ${title} in ${boundaryName}. So that, ${goalTitle}`;\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;AAYO,SAAS,mBAKb,OACA,SACG,OACkC;AACrC,QAAM,aAAa,MACf,IAAI,CAAC,SAAS,YAAY,IAAI,CAAC,EAC/B,KAAK,GAAG;AAEZ,QAAM,YAAY,aAAa,IAAI;AAEnC,QAAM,eAAe,gBAAgB,gBAAgB,IAAI,CAAC;AAE1D,SAAO,WAAW,UAAU,YAAY,KAAK,OAAO,YAAY,cAAc,SAAS;AAC1F;",
+  "names": []
+}

@@ -1,4 +1,4 @@
-import { AnyActor } from '../../actor/types/utility.type';
+import type { AnyActor } from '../../actor/types/utility.type';
 import { Transaction } from '../../usecase/classes/transaction.class';
 /**
  * Assumes actor to perform allowed Use-case based on Roles.

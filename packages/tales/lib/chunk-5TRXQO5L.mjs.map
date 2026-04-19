@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/symbol/functions/get-symbol-by-id.function.ts"],
+  "sourcesContent": ["import { SYMBOL_LOOKUP } from '../constants/symbol-lookup.constant';\nimport type { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';\nimport type { UsecaseSymbolId } from '../types/utility.type';\nimport { createSymbolId } from './create-symbol-id.function';\n\nexport function getSymbolById<Type extends string, Name extends string>(\n   type: Type,\n   name: Name,\n): UsecaseSymbolModel<Type, Name> | null;\n\nexport function getSymbolById<Type extends string, Name extends string>(\n   id: UsecaseSymbolId<Type, Name>,\n): UsecaseSymbolModel<Type, Name> | null;\n\nexport function getSymbolById(typeOrId: string, name?: string) {\n   const fullId =\n      typeof name === 'string'\n         ? createSymbolId(typeOrId, name)\n         : createSymbolId(typeOrId);\n\n   if (SYMBOL_LOOKUP.has(fullId)) {\n      return SYMBOL_LOOKUP.get(fullId);\n   }\n\n   return null;\n}\n"],
+  "mappings": ";;;;;;;;AAcO,SAAS,cAAc,UAAkB,MAAe;AAC5D,QAAM,SACH,OAAO,SAAS,WACX,eAAe,UAAU,IAAI,IAC7B,eAAe,QAAQ;AAE/B,MAAI,cAAc,IAAI,MAAM,GAAG;AAC5B,WAAO,cAAc,IAAI,MAAM;AAAA,EAClC;AAEA,SAAO;AACV;",
+  "names": []
+}

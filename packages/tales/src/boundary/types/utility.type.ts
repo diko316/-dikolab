@@ -1,4 +1,4 @@
-import { BoundaryModel } from './boundary-model.interface';
+import type { BoundaryModel } from './boundary-model.interface';
 
 export type AnyBoundary = BoundaryModel<string, string>;
 

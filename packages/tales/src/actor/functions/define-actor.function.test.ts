@@ -4,7 +4,9 @@ import { defineActor } from './define-actor.function';
 import { defineRole } from './define-role.function';
 
 describe('defineActor()', () => {
-   beforeEach(() => clearSymbols());
+   beforeEach(() => {
+      clearSymbols();
+   });
 
    it('should only define actor once', () => {
       defineActor('admin');

@@ -1,9 +1,8 @@
-import { get } from '@dikolab/private-parts';
-import { BOUNDARY_KEY } from '../../utils/constants/symbol-keys.constant.mjs';
-
-function getGoalBoundary(goal) {
-    return get(goal, BOUNDARY_KEY);
-}
-
-export { getGoalBoundary };
+import {
+  getGoalBoundary
+} from "../../chunk-H2F5IBXB.mjs";
+import "../../chunk-U743HXLL.mjs";
+export {
+  getGoalBoundary
+};
 //# sourceMappingURL=get-goal-boundary.function.mjs.map

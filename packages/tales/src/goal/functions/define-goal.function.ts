@@ -1,4 +1,4 @@
-import { AnyBoundary } from '../../boundary/types/utility.type';
+import type { AnyBoundary } from '../../boundary/types/utility.type';
 import { Goal } from '../classes/goal.class';
 
 export function defineGoal<

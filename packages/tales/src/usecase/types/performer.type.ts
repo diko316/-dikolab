@@ -1,20 +1,20 @@
-import { AnyRole } from '../../actor/types/utility.type';
-import { AnyGoal } from '../../goal/types/utility.type';
-import { AnyType } from '../../utils/types/utility.type';
-import {
+import type { AnyRole } from '../../actor/types/utility.type';
+import type { AnyGoal } from '../../goal/types/utility.type';
+import type { AnyType } from '../../utils/types/utility.type';
+import type {
    NotTransaction,
    TransactionLike,
 } from './transaction-like.type';
 
 // cyclic
-import { TransactionModel } from './transaction-model.type';
+import type { TransactionModel } from './transaction-model.type';
 
-import {
+import type {
    UsecaseHandlerParameters,
    UsecaseHandlerResult,
 } from './usecase-handler.type';
-import { UsecaseModel } from './usecase-model.interface';
-import { AnyUsecase } from './utility.type';
+import type { UsecaseModel } from './usecase-model.interface';
+import type { AnyUsecase } from './utility.type';
 
 // remove Transaction here
 export type PerformParameters<Usecase extends AnyUsecase> =

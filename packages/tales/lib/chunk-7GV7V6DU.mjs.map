@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/utils/constants/function.constant.ts"],
+  "sourcesContent": ["export const FUNCTION_TO_STRING_PATTERN =\n   /^(function [^(]+)?(\\([^)]*\\))/;\n"],
+  "mappings": ";AAAO,IAAM,6BACV;",
+  "names": []
+}

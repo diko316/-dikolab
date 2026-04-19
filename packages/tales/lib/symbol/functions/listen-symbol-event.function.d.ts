@@ -1,7 +1,7 @@
-import { AnyEventMap } from '../../event/types/event-map.type';
-import { AnyList, AnyType } from '../../utils/types/utility.type';
-import { UsecaseSymbolEventMap } from '../types/usecase-symbol-event.type';
-import { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';
+import type { AnyEventMap } from '../../event/types/event-map.type';
+import type { AnyList, AnyType } from '../../utils/types/utility.type';
+import type { UsecaseSymbolEventMap } from '../types/usecase-symbol-event.type';
+import type { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';
 /**
  * Listens to Symbol events
  *

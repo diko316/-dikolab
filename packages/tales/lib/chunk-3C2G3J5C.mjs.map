@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/usecase/functions/is-actor-allow-to-perform.function.ts"],
+  "sourcesContent": ["import { intersectRoles } from '../../actor/functions/intersect-roles.function';\nimport type { AnyActor, AnyRole } from '../../actor/types/utility.type';\nimport { ROLES_KEY } from '../../utils/constants/symbol-keys.constant';\n\nexport function isActorAllowToPerform(\n   actor: AnyActor,\n   roles: readonly AnyRole[],\n): boolean {\n   return intersectRoles(roles, actor[ROLES_KEY]).length > 0;\n}\n"],
+  "mappings": ";;;;;;;;AAIO,SAAS,sBACb,OACA,OACQ;AACR,SAAO,eAAe,OAAO,MAAM,SAAS,CAAC,EAAE,SAAS;AAC3D;",
+  "names": []
+}

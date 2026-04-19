@@ -1,4 +1,4 @@
-import { UsecaseSymbolId } from '../types/utility.type';
+import type { UsecaseSymbolId } from '../types/utility.type';
 
 export function createSymbolId<
    Type extends string,
@@ -8,9 +8,7 @@ export function createSymbolId<
 export function createSymbolId<
    Type extends string,
    Name extends string,
->(
-   id: UsecaseSymbolId<Type, Name> | string,
-): UsecaseSymbolId<Type, Name>;
+>(id: string): UsecaseSymbolId<Type, Name>;
 
 export function createSymbolId(
    typeOrId: string,

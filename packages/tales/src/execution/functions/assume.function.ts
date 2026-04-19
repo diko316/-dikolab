@@ -1,4 +1,4 @@
-import { AnyActor } from '../../actor/types/utility.type';
+import type { AnyActor } from '../../actor/types/utility.type';
 import { emitSymbolEvent } from '../../symbol/functions/emit-symbol-event.function';
 import { Transaction } from '../../usecase/classes/transaction.class';
 

@@ -1,15 +1,16 @@
-import { defineRole } from './define-role.function.mjs';
-import { getSymbolById } from '../../symbol/functions/get-symbol-by-id.function.mjs';
-import { ROLE_TYPE } from '../../utils/constants/symbol-tag.constant.mjs';
-
-function getOrDefineRoles(...roleNames) {
-    return roleNames.map((name) => {
-        if (typeof name !== 'string') {
-            throw new TypeError(`"${name}" in roleNames parameter is invalid.`);
-        }
-        return getSymbolById(ROLE_TYPE, name) || defineRole(name);
-    });
-}
-
-export { getOrDefineRoles };
+import {
+  getOrDefineRoles
+} from "../../chunk-DDW32AO4.mjs";
+import "../../chunk-TB43YAYM.mjs";
+import "../../chunk-XBIOL2OZ.mjs";
+import "../../chunk-5TRXQO5L.mjs";
+import "../../chunk-HLBWIRJA.mjs";
+import "../../chunk-EHWJHZXL.mjs";
+import "../../chunk-IU7WS2GT.mjs";
+import "../../chunk-BPBUJ4OC.mjs";
+import "../../chunk-U743HXLL.mjs";
+import "../../chunk-JYYYY7EP.mjs";
+export {
+  getOrDefineRoles
+};
 //# sourceMappingURL=get-or-define-roles.function.mjs.map

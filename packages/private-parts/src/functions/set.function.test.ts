@@ -29,6 +29,7 @@ describe('set(instance: Instance, propertyName: PropertyName, value: any)', () =
    it('should set property value referenced by the instance.', () => {
       set(instance, propertyName, propertyValue);
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const result = GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER.get(
          instance,
          propertyName,

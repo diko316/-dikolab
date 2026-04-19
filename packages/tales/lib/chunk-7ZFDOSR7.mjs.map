@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/usecase/functions/define-usecase.function.ts"],
+  "sourcesContent": ["import type { AnyRole } from '../../actor/types/utility.type';\nimport type { AnyGoal } from '../../goal/types/utility.type';\nimport type { AnyFunction } from '../../utils/types/utility.type';\nimport { Usecase } from '../classes/usecase.class';\n\nexport function defineUsecase<\n   Title extends string,\n   Roles extends readonly AnyRole[],\n   Handler extends AnyFunction,\n   Goal extends AnyGoal,\n>(title: Title, roles: Roles, goal: Goal, handler: Handler) {\n   return new Usecase(title, roles, goal, handler);\n}\n"],
+  "mappings": ";;;;;AAKO,SAAS,cAKd,OAAc,OAAc,MAAY,SAAkB;AACzD,SAAO,IAAI,QAAQ,OAAO,OAAO,MAAM,OAAO;AACjD;",
+  "names": []
+}

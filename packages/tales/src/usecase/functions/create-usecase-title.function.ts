@@ -1,5 +1,5 @@
 import { getRoleName } from '../../actor/functions/get-role-name.function';
-import {
+import type {
    AnyRole,
    StringifyRoles,
 } from '../../actor/types/utility.type';
@@ -7,8 +7,8 @@ import { getBoundaryName } from '../../boundary/functions/get-boundary-name.func
 import { getGoalBoundary } from '../../goal/functions/get-goal-boundary.function';
 
 import { getGoalTitle } from '../../goal/functions/get-goal-title.funciton';
-import { AnyGoal } from '../../goal/types/utility.type';
-import { UsecaseTitleFrom } from '../types/usecase-title-from.type';
+import type { AnyGoal } from '../../goal/types/utility.type';
+import type { UsecaseTitleFrom } from '../types/usecase-title-from.type';
 
 export function createUsecaseTitle<
    Title extends string,

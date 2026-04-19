@@ -1,6 +1,17 @@
 # Tales
 
+[![npm version](https://img.shields.io/npm/v/@dikolab/tales)](https://www.npmjs.com/package/@dikolab/tales)
+[![license](https://img.shields.io/npm/l/@dikolab/tales)](./LICENSE)
+
 Organize scripts based on a high-level Use-case methodology as a startup intent of the package. Additional features will be introduced in upcoming releases.
+
+## Installation
+
+```bash
+npm install @dikolab/tales
+```
+
+## [Release Notes](docs/release-notes.md)
 
 ## Usage
 
@@ -101,3 +112,6 @@ listen(MakePaymentUsecase, 'perform',
 1. Implement plugins for flexibility
 2. State Management and Store
 
+## License
+
+[ISC](./LICENSE)

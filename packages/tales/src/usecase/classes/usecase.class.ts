@@ -9,16 +9,16 @@ import {
    TITLE_KEY,
 } from '../../utils/constants/symbol-keys.constant';
 
-import { UsecaseModel } from '../types/usecase-model.interface';
-import { AnyGoal } from '../../goal/types/utility.type';
-import { GoalBoundary } from '../../goal/types/goal-boundary.type';
-import { AnyRole } from '../../actor/types/utility.type';
-import { UsecaseTitleFrom } from '../types/usecase-title-from.type';
+import type { UsecaseModel } from '../types/usecase-model.interface';
+import type { AnyGoal } from '../../goal/types/utility.type';
+import type { GoalBoundary } from '../../goal/types/goal-boundary.type';
+import type { AnyRole } from '../../actor/types/utility.type';
+import type { UsecaseTitleFrom } from '../types/usecase-title-from.type';
 import { createUsecaseTitle } from '../functions/create-usecase-title.function';
 import { getSymbolName } from '../../symbol/functions/get-symbol-name.function';
-import { AnyFunction } from '../../utils/types/utility.type';
+import type { AnyFunction } from '../../utils/types/utility.type';
 import { MOCK_HANDLER_KEY } from '../../utils/constants/symbol-keys.constant';
-import { UsecaseEventMap } from '../types/usecase-event-map.type';
+import type { UsecaseEventMap } from '../types/usecase-event-map.type';
 
 export class Usecase<
       Title extends string,
@@ -34,14 +34,17 @@ export class Usecase<
    implements UsecaseModel<Title, Roles, Handler, Goal>
 {
    get [TITLE_KEY](): Title {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, TITLE_KEY);
    }
 
    get [ROLES_KEY](): Roles {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, ROLES_KEY);
    }
 
    get [GOAL_KEY](): Goal {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, GOAL_KEY);
    }
 
@@ -58,6 +61,7 @@ export class Usecase<
    }
 
    get [BOUNDARY_KEY](): GoalBoundary<Goal> {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this[GOAL_KEY], BOUNDARY_KEY);
    }
 

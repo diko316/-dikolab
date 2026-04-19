@@ -3,10 +3,12 @@ import { clearSymbols } from '../../symbol/functions/clear-symbols.function';
 import { defineScope } from '../../definition/functions/define-scope.function';
 import { assume } from './assume.function';
 import { iAm } from '../../definition/functions/i-am.function';
-import { Transaction } from '../../usecase/classes/transaction.class';
+import type { Transaction } from '../../usecase/classes/transaction.class';
 
 describe('assume()', () => {
-   beforeEach(() => clearSymbols());
+   beforeEach(() => {
+      clearSymbols();
+   });
 
    it('should assume actor and perform use-case', async () => {
       const UserEntity = defineScope('Entity:User');
@@ -93,7 +95,7 @@ describe('assume()', () => {
                }
 
                throw new Error(
-                  `name is not ${transaction.get('verifyUsername')} but you passed ${name} instead.`,
+                  `name is not ${String(transaction.get('verifyUsername'))} but you passed ${name} instead.`,
                );
             },
          );

@@ -1,12 +1,12 @@
 import { get, set } from '@dikolab/private-parts';
-import { AnyBoundary } from '../../boundary/types/utility.type';
+import type { AnyBoundary } from '../../boundary/types/utility.type';
 import {
    BOUNDARY_KEY,
    NAME_KEY,
 } from '../../utils/constants/symbol-keys.constant';
-import { Goal } from '../../goal/classes/goal.class';
+import type { Goal } from '../../goal/classes/goal.class';
 import { defineGoal } from '../../goal/functions/define-goal.function';
-import {
+import type {
    AnyRole,
    ResolveRoleNames,
 } from '../../actor/types/utility.type';
@@ -15,6 +15,7 @@ import { AsChain } from './as-chain.class';
 
 export class Scope<Boundary extends AnyBoundary> {
    get [BOUNDARY_KEY](): Boundary {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, BOUNDARY_KEY);
    }
 
@@ -52,9 +53,7 @@ export class Scope<Boundary extends AnyBoundary> {
             return roleOrName[NAME_KEY];
          }
 
-         throw new TypeError(
-            `Role parameter ${roleOrName} is invalid.`,
-         );
+         throw new TypeError('Role parameter is invalid.');
       }) as ResolveRoleNames<Targets>;
 
       return new AsChain(this[BOUNDARY_KEY], roleNames);

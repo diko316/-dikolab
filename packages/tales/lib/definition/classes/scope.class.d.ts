@@ -1,7 +1,7 @@
-import { AnyBoundary } from '../../boundary/types/utility.type';
+import type { AnyBoundary } from '../../boundary/types/utility.type';
 import { BOUNDARY_KEY } from '../../utils/constants/symbol-keys.constant';
-import { Goal } from '../../goal/classes/goal.class';
-import { AnyRole, ResolveRoleNames } from '../../actor/types/utility.type';
+import type { Goal } from '../../goal/classes/goal.class';
+import type { AnyRole, ResolveRoleNames } from '../../actor/types/utility.type';
 import { AsChain } from './as-chain.class';
 export declare class Scope<Boundary extends AnyBoundary> {
     get [BOUNDARY_KEY](): Boundary;

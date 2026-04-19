@@ -1,7 +1,7 @@
-function intersectRoles(pool, target) {
-    const set = new WeakSet(pool);
-    return target.filter((role) => set.has(role));
-}
-
-export { intersectRoles };
+import {
+  intersectRoles
+} from "../../chunk-M4EKON62.mjs";
+export {
+  intersectRoles
+};
 //# sourceMappingURL=intersect-roles.function.mjs.map

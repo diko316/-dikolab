@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/execution/functions/assume.function.ts"],
+  "sourcesContent": ["import type { AnyActor } from '../../actor/types/utility.type';\nimport { emitSymbolEvent } from '../../symbol/functions/emit-symbol-event.function';\nimport { Transaction } from '../../usecase/classes/transaction.class';\n\nimport { Actor } from '../../actor/classes/actor.class';\n\n/**\n * Assumes actor to perform allowed Use-case based on Roles.\n *\n * @param actor Actor to assume for later perform Use-case\n * @returns Transaction\n */\nexport function assume<Source extends AnyActor>(actor: Source) {\n   const transaction = new Transaction({}, actor);\n\n   if (actor instanceof Actor) {\n      emitSymbolEvent(actor, 'assume', actor);\n   }\n\n   return transaction;\n}\n"],
+  "mappings": ";;;;;;;;;;;AAYO,SAAS,OAAgC,OAAe;AAC5D,QAAM,cAAc,IAAI,YAAY,CAAC,GAAG,KAAK;AAE7C,MAAI,iBAAiB,OAAO;AACzB,oBAAgB,OAAO,UAAU,KAAK;AAAA,EACzC;AAEA,SAAO;AACV;",
+  "names": []
+}

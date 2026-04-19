@@ -1,6 +1,6 @@
-import { AnyEventMap } from '../../event/types/event-map.type';
-import { UsecaseSymbolEventMap } from '../types/usecase-symbol-event.type';
-import { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';
+import type { AnyEventMap } from '../../event/types/event-map.type';
+import type { UsecaseSymbolEventMap } from '../types/usecase-symbol-event.type';
+import type { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';
 /**
  * Removes all event listeners of the Target symbol registered for event type.
  *
@@ -8,4 +8,4 @@ import { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';
  * Role, Usecase, Goal, Boundary
  * @param type Event Name
  */
-export declare function clearSymbolEventListeners<Source extends UsecaseSymbolModel<string, string, AnyEventMap>, Type extends keyof UsecaseSymbolEventMap<Source>>(symbol: Source, type: Type): void;
+export declare function clearSymbolEventListeners<Source extends UsecaseSymbolModel<string, string, AnyEventMap>>(symbol: Source, type: keyof UsecaseSymbolEventMap<Source>): void;

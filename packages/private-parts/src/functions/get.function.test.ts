@@ -28,6 +28,7 @@ describe('get(instance: Instance, propertyName: PropertyName, )', () => {
    });
 
    it('should get value of instance property', () => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const result = get(instance, propertyName);
 
       expect(result).toBe(propertyValue);

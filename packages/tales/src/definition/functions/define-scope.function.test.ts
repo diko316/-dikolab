@@ -1,12 +1,12 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { defineScope } from './define-scope.function';
 import { Goal } from '../../goal/classes/goal.class';
-import { Scope } from '../classes/scope.class';
-import { Boundary } from '../../boundary/classes/boundary.class';
+import type { Scope } from '../classes/scope.class';
+import type { Boundary } from '../../boundary/classes/boundary.class';
 import { AsChain } from '../classes/as-chain.class';
 import { clearSymbols } from '../../symbol/functions/clear-symbols.function';
 import { Usecase } from '../../usecase/classes/usecase.class';
-import { Transaction } from '../../usecase/classes/transaction.class';
+import type { Transaction } from '../../usecase/classes/transaction.class';
 
 describe('defineScope()', () => {
    let UserEntity: Scope<Boundary<'Domain', 'User'>>;

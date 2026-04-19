@@ -1,4 +1,4 @@
-import {
+import type {
    AnyBoundary,
    BoundaryName,
 } from '../../boundary/types/utility.type';

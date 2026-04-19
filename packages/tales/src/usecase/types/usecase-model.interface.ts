@@ -1,8 +1,8 @@
-import { AnyRole } from '../../actor/types/utility.type';
-import { GoalBoundary } from '../../goal/types/goal-boundary.type';
-import { AnyGoal } from '../../goal/types/utility.type';
-import { UsecaseSymbolModel } from '../../symbol/types/usecase-symbol-model.interface';
-import {
+import type { AnyRole } from '../../actor/types/utility.type';
+import type { GoalBoundary } from '../../goal/types/goal-boundary.type';
+import type { AnyGoal } from '../../goal/types/utility.type';
+import type { UsecaseSymbolModel } from '../../symbol/types/usecase-symbol-model.interface';
+import type {
    BOUNDARY_KEY,
    GOAL_KEY,
    HANDLER_KEY,
@@ -10,10 +10,10 @@ import {
    ROLES_KEY,
    TITLE_KEY,
 } from '../../utils/constants/symbol-keys.constant';
-import { USECASE_TYPE } from '../../utils/constants/symbol-tag.constant';
-import { AnyFunction } from '../../utils/types/utility.type';
-import { UsecaseEventMap } from './usecase-event-map.type';
-import { UsecaseTitleFrom } from './usecase-title-from.type';
+import type { USECASE_TYPE } from '../../utils/constants/symbol-tag.constant';
+import type { AnyFunction } from '../../utils/types/utility.type';
+import type { UsecaseEventMap } from './usecase-event-map.type';
+import type { UsecaseTitleFrom } from './usecase-title-from.type';
 
 export interface UsecaseModel<
    Title extends string,

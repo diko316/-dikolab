@@ -3,15 +3,14 @@ import {
    CONTEXTUAL_INSTANCE_KEYS_MAP,
 } from '../constants/contextual-map.constant';
 
-import { ContextualPrivatePart } from '../types/contextual-private-part.interface';
+import type { ContextualPrivatePart } from '../types/contextual-private-part.interface';
 
-import {
+import type {
    AccessorMap,
    AnyPropertyName,
    InstanceKeyset,
    InstanceKeysMap,
    InstanceValueMap,
-   ObjectInstance,
 } from '../types/utility.type';
 
 export class ContextualPrivatePartManager
@@ -30,15 +29,13 @@ export class ContextualPrivatePartManager
       CONTEXTUAL_INSTANCE_KEYS_MAP.set(this, new WeakMap());
    }
 
-   protected getInstanceKeyset<Instance extends object>(
-      instance: ObjectInstance<Instance>,
+   protected getInstanceKeyset(
+      instance: object,
    ): InstanceKeyset | null {
       return this.keysetMap.get(instance) || null;
    }
 
-   protected createInstanceKeyset<Instance extends object>(
-      instance: ObjectInstance<Instance>,
-   ): InstanceKeyset {
+   protected createInstanceKeyset(instance: object): InstanceKeyset {
       const keysetMap = this.keysetMap;
 
       if (keysetMap.has(instance)) {
@@ -52,15 +49,15 @@ export class ContextualPrivatePartManager
       return set;
    }
 
-   protected getInstanceValueMap<PropertyName extends AnyPropertyName>(
-      propertyName: PropertyName,
+   protected getInstanceValueMap(
+      propertyName: AnyPropertyName,
    ): InstanceValueMap | null {
       return this.accessorKeyMap.get(propertyName) || null;
    }
 
-   protected createInstanceValueMap<
-      PropertyName extends AnyPropertyName,
-   >(propertyName: PropertyName): InstanceValueMap {
+   protected createInstanceValueMap(
+      propertyName: AnyPropertyName,
+   ): InstanceValueMap {
       const map = this.accessorKeyMap;
 
       if (!map.has(propertyName)) {
@@ -70,26 +67,22 @@ export class ContextualPrivatePartManager
       return map.get(propertyName) as InstanceValueMap;
    }
 
-   get<Instance extends object, PropertyName extends AnyPropertyName>(
-      instance: ObjectInstance<Instance>,
-      propertyName: PropertyName,
-   ) {
+   get(instance: object, propertyName: AnyPropertyName) {
       const repo = this.getInstanceValueMap(propertyName);
 
       if (!repo) {
          return undefined;
       }
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return repo.get(instance);
    }
 
-   set<Instance extends object, PropertyName extends AnyPropertyName>(
-      instance: ObjectInstance<Instance>,
-      propertyName: PropertyName,
-      value: PropertyName extends keyof Instance
-         ? Instance[PropertyName]
-         : // eslint-disable-next-line @typescript-eslint/no-explicit-any
-           any,
+   set(
+      instance: object,
+      propertyName: AnyPropertyName,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      value: any,
    ): this {
       const repo =
          this.getInstanceValueMap(propertyName) ||
@@ -109,9 +102,7 @@ export class ContextualPrivatePartManager
       return this;
    }
 
-   clear<Instance extends object>(
-      instance: ObjectInstance<Instance>,
-   ): this {
+   clear(instance: object): this {
       const keyset = this.getInstanceKeyset(instance);
 
       // return early, no keys registered!

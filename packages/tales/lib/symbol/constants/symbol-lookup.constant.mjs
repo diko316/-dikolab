@@ -1,4 +1,7 @@
-const SYMBOL_LOOKUP = new Map();
-
-export { SYMBOL_LOOKUP };
+import {
+  SYMBOL_LOOKUP
+} from "../../chunk-EHWJHZXL.mjs";
+export {
+  SYMBOL_LOOKUP
+};
 //# sourceMappingURL=symbol-lookup.constant.mjs.map

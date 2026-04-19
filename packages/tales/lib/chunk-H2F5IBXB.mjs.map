@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/goal/functions/get-goal-boundary.function.ts"],
+  "sourcesContent": ["import { get } from '@dikolab/private-parts';\nimport { BOUNDARY_KEY } from '../../utils/constants/symbol-keys.constant';\nimport type { GoalBoundary } from '../types/goal-boundary.type';\nimport type { AnyGoal } from '../types/utility.type';\n\nexport function getGoalBoundary<Goal extends AnyGoal>(\n   goal: Goal,\n): GoalBoundary<Goal> {\n   // eslint-disable-next-line @typescript-eslint/no-unsafe-return\n   return get(goal, BOUNDARY_KEY);\n}\n"],
+  "mappings": ";;;;;AAAA,SAAS,WAAW;AAKb,SAAS,gBACb,MACmB;AAEnB,SAAO,IAAI,MAAM,YAAY;AAChC;",
+  "names": []
+}

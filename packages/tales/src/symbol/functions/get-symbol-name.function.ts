@@ -1,5 +1,5 @@
 import { NAME_KEY } from '../../utils/constants/symbol-keys.constant';
-import {
+import type {
    AnyUsecaseSymbol,
    UsecaseSymbolName,
 } from '../types/utility.type';

@@ -1,2 +1,2 @@
-import { AnyActor, AnyRole } from '../../actor/types/utility.type';
-export declare function isActorAllowToPerform<Actor extends AnyActor, Roles extends readonly AnyRole[]>(actor: Actor, roles: Roles): boolean;
+import type { AnyActor, AnyRole } from '../../actor/types/utility.type';
+export declare function isActorAllowToPerform(actor: AnyActor, roles: readonly AnyRole[]): boolean;

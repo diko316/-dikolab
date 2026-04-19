@@ -1,9 +1,9 @@
-import {
+import type {
    PrependTuple,
    StringifyTuple,
 } from '../../utils/types/utility.type';
-import { ActorModel } from './actor-model.interface';
-import { RoleModel } from './role-model.interface';
+import type { ActorModel } from './actor-model.interface';
+import type { RoleModel } from './role-model.interface';
 
 export type RoleName<Source> =
    Source extends RoleModel<infer Name> ? Name : 'Role:Unknown';
@@ -41,7 +41,7 @@ export type RoleNames<Sources> = Sources extends readonly [infer First]
 export type StringifyRoles<Sources> = Sources extends readonly [
    infer First,
 ]
-   ? `${StringifyTuple<RoleNames<[First]>>}`
+   ? StringifyTuple<RoleNames<[First]>>
    : Sources extends readonly [infer First, ...infer Others]
      ? `${StringifyTuple<RoleNames<[First, ...Others]>>}`
      : Sources extends readonly RoleModel<infer U>[]
