@@ -1,6 +1,6 @@
 {
    "name": "@dikolab/private-parts",
-   "version": "0.7.0",
+   "version": "0.7.1",
    "description": "WeakMap storage for private data accessible by object instance and key string",
    "publishConfig": {
       "access": "public"

@@ -1,6 +1,6 @@
 {
    "name": "@dikolab/tales",
-   "version": "0.1.0",
+   "version": "0.1.1",
    "description": "Helper for organizing structure of the project based on simple Use-case ideology",
    "keywords": [
       "Use-case"
