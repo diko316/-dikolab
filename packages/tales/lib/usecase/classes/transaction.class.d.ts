@@ -2,6 +2,11 @@ import { ACTOR_KEY, TRANSACTION_SESSION, TRANSACTION_SIGNATURE } from '../../uti
 import type { TransactionModel } from '../types/transaction-model.type';
 import type { PerformParameters, PerformAwaitedResult, PerformUsecase } from '../types/performer.type';
 import type { AnyActor } from '../../actor/types/utility.type';
+/**
+ * Encapsulates an actor's execution context with
+ * session data, providing methods to perform use
+ * cases and override session state
+ */
 export declare class Transaction<Data extends object, Actor extends AnyActor = AnyActor> implements TransactionModel<Data> {
     readonly [TRANSACTION_SIGNATURE] = 1;
     get [ACTOR_KEY](): Actor;

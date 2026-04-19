@@ -4,6 +4,10 @@ import type { ICanActionTitle } from '../types/i-can-action-title.interface';
 import { AsICanChain } from './as-i-can-chain.class';
 import type { AnyBoundary } from '../../boundary/types/utility.type';
 import type { BoundaryDefined } from '../types/boundary-defined.interface';
+/**
+ * Fluent chain for declaring use case roles,
+ * continues with an action title via `iCan()`
+ */
 export declare class AsChain<Boundary extends AnyBoundary, RoleNames extends readonly [...string[]]> implements BoundaryDefined<Boundary>, RoleNamesDefined<RoleNames>, ICanActionTitle {
     get [BOUNDARY_KEY](): Boundary;
     get [ROLE_NAMES_KEY](): RoleNames;

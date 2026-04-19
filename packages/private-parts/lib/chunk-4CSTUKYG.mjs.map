@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/functions/clear.function.ts"],
+  "sourcesContent": ["import { GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER } from '../constants/global-contextual-private-parts-manager.contsant';\n\n/**\n * Clears all private data associated with an\n * instance from the global store\n *\n * @param instance The object whose private\n *    data should be removed\n */\nexport function clear(instance: object): void {\n   GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER.clear(instance);\n}\n"],
+  "mappings": ";;;;;AASO,SAAS,MAAM,UAAwB;AAC3C,0CAAwC,MAAM,QAAQ;AACzD;",
+  "names": []
+}

@@ -68,7 +68,7 @@ var __esbuild_iife_result = (() => {
   var CONTEXTUAL_ACCESSOR_MAP = /* @__PURE__ */ new WeakMap();
   var CONTEXTUAL_INSTANCE_KEYS_MAP = /* @__PURE__ */ new WeakMap();
 
-  // ../private-parts/lib/chunk-2PGFWLL4.mjs
+  // ../private-parts/lib/chunk-XZ2KFJHE.mjs
   var ContextualPrivatePartManager = class {
     get accessorKeyMap() {
       return CONTEXTUAL_ACCESSOR_MAP.get(this);
@@ -102,6 +102,13 @@ var __esbuild_iife_result = (() => {
       }
       return map.get(propertyName);
     }
+    /**
+     * Retrieves a stored private property value
+     *
+     * @param instance - Object to read from
+     * @param propertyName - Private property key
+     * @returns The stored value, or `undefined`
+     */
     get(instance, propertyName) {
       const repo = this.getInstanceValueMap(propertyName);
       if (!repo) {
@@ -109,6 +116,13 @@ var __esbuild_iife_result = (() => {
       }
       return repo.get(instance);
     }
+    /**
+     * Stores a private property value on an instance
+     *
+     * @param instance - Object to store data on
+     * @param propertyName - Private property key
+     * @param value - Value to store
+     */
     set(instance, propertyName, value) {
       const repo = this.getInstanceValueMap(propertyName) || this.createInstanceValueMap(propertyName);
       const keys = this.getInstanceKeyset(instance) || this.createInstanceKeyset(instance);
@@ -118,6 +132,11 @@ var __esbuild_iife_result = (() => {
       repo.set(instance, value);
       return this;
     }
+    /**
+     * Removes all private data for an instance
+     *
+     * @param instance - Object whose data to clear
+     */
     clear(instance) {
       const keyset = this.getInstanceKeyset(instance);
       if (!keyset) {
@@ -133,6 +152,7 @@ var __esbuild_iife_result = (() => {
       this.keysetMap.delete(instance);
       return this;
     }
+    /** Removes all private data from this store */
     clearAll() {
       CONTEXTUAL_INSTANCE_KEYS_MAP.set(this, /* @__PURE__ */ new WeakMap());
       this.accessorKeyMap.clear();
@@ -140,10 +160,10 @@ var __esbuild_iife_result = (() => {
     }
   };
 
-  // ../private-parts/lib/chunk-ZRZIIY23.mjs
+  // ../private-parts/lib/chunk-4ESWMRCW.mjs
   var GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER = new ContextualPrivatePartManager();
 
-  // ../private-parts/lib/chunk-RZUVMSK4.mjs
+  // ../private-parts/lib/chunk-CRY3FLGU.mjs
   function get(instance, propertyName) {
     return GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER.get(
       instance,
@@ -151,7 +171,7 @@ var __esbuild_iife_result = (() => {
     );
   }
 
-  // ../private-parts/lib/chunk-ZQKFDWUM.mjs
+  // ../private-parts/lib/chunk-KXKZMYGH.mjs
   function set(instance, propertyName, value) {
     GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER.set(
       instance,
@@ -233,9 +253,11 @@ var __esbuild_iife_result = (() => {
       set(this, ID_KEY, id);
       SYMBOL_LOOKUP.set(id, this);
     }
+    /** Returns the symbol's unique identifier */
     toString() {
       return this[ID_KEY];
     }
+    /** Returns a plain object with type and name */
     toJSON() {
       return {
         type: this[TYPE_KEY],
@@ -260,6 +282,7 @@ var __esbuild_iife_result = (() => {
       super(ACTOR_TYPE, name);
       set(this, ROLES_KEY, roles);
     }
+    /** Returns a plain object with type, name, and role names */
     toJSON() {
       const roles = this[ROLES_KEY].map((role) => role[NAME_KEY]);
       return {
@@ -368,6 +391,7 @@ var __esbuild_iife_result = (() => {
       set(this, SUBTYPE_KEY, type);
       set(this, TITLE_KEY, title);
     }
+    /** Returns a plain object with type, name, and subtype */
     toJSON() {
       return {
         ...super.toJSON(),
@@ -471,6 +495,7 @@ var __esbuild_iife_result = (() => {
       set(this, MOCK_HANDLER_KEY, null);
       set(this, GOAL_KEY, goal);
     }
+    /** Returns the use case's display name */
     toString() {
       return getSymbolName(this);
     }
@@ -732,17 +757,17 @@ var __esbuild_iife_result = (() => {
     return transaction;
   }
 
-  // src/symbol/functions/listen-symbol-event.function.ts
+  // src/event/functions/listen-symbol-event.function.ts
   function listenSymbolEvent(symbol, type, listener) {
     symbol[EVENT_EMITTER_KEY].on(type, listener);
   }
 
-  // src/symbol/functions/unlisten-symbol-event.function.ts
+  // src/event/functions/unlisten-symbol-event.function.ts
   function unlistenSymbolEvent(symbol, type, listener) {
     symbol[EVENT_EMITTER_KEY].removeListener(type, listener);
   }
 
-  // src/symbol/functions/clear-all-symbol-event-listeners.function.ts
+  // src/event/functions/clear-all-symbol-event-listeners.function.ts
   function clearAllSymbolListeners() {
     let eventEmitter;
     SYMBOL_LOOKUP.forEach((symbol) => {
@@ -752,7 +777,7 @@ var __esbuild_iife_result = (() => {
     eventEmitter = null;
   }
 
-  // src/symbol/functions/clear-symbol-event-listeners.function.ts
+  // src/event/functions/clear-symbol-event-listeners.function.ts
   function clearSymbolEventListeners(symbol, type) {
     symbol[EVENT_EMITTER_KEY].removeAllListeners(type);
   }

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../src/symbol/functions/clear-all-symbol-event-listeners.function.ts"],
-  "sourcesContent": ["import type EventEmitter from 'events';\nimport { EVENT_EMITTER_KEY } from '../../event/constants/event-keys';\nimport { SYMBOL_LOOKUP } from '../constants/symbol-lookup.constant';\n\n/**\n * Clears all event listeners of all Symbols.\n * Target symbols. may be one of the following: Actor,\n * Role, Usecase, Goal, Boundary\n */\nexport function clearAllSymbolListeners(): void {\n   let eventEmitter: EventEmitter | null;\n\n   SYMBOL_LOOKUP.forEach((symbol) => {\n      eventEmitter = symbol[EVENT_EMITTER_KEY];\n\n      eventEmitter\n         .eventNames()\n         .forEach((key) => eventEmitter?.removeAllListeners(key));\n   });\n\n   eventEmitter = null;\n}\n"],
-  "mappings": ";;;;;;;;AASO,SAAS,0BAAgC;AAC7C,MAAI;AAEJ,gBAAc,QAAQ,CAAC,WAAW;AAC/B,mBAAe,OAAO,iBAAiB;AAEvC,iBACI,WAAW,EACX,QAAQ,CAAC,QAAQ,cAAc,mBAAmB,GAAG,CAAC;AAAA,EAC7D,CAAC;AAED,iBAAe;AAClB;",
-  "names": []
-}

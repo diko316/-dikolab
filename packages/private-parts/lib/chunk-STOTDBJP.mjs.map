@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../src/functions/create-store.function.ts"],
-  "sourcesContent": ["import { ContextualPrivatePartManager } from '../classes/contextual-private-parts-manager.class';\n\nexport function createStore(): ContextualPrivatePartManager {\n   return new ContextualPrivatePartManager();\n}\n"],
-  "mappings": ";;;;;AAEO,SAAS,cAA4C;AACzD,SAAO,IAAI,6BAA6B;AAC3C;",
-  "names": []
-}

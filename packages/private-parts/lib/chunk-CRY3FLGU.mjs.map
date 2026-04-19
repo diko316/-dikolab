@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/functions/get.function.ts"],
+  "sourcesContent": ["import { GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER } from '../constants/global-contextual-private-parts-manager.contsant';\nimport type { AnyPropertyName } from '../types/utility.type';\n\n/**\n * Retrieves a private property value from an\n * instance in the global store\n *\n * @param instance The object to read from\n * @param propertyName The private property key\n * @returns The stored value, or undefined\n */\nexport function get(instance: object, propertyName: AnyPropertyName) {\n   // eslint-disable-next-line @typescript-eslint/no-unsafe-return\n   return GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER.get(\n      instance,\n      propertyName,\n   );\n}\n"],
+  "mappings": ";;;;;AAWO,SAAS,IAAI,UAAkB,cAA+B;AAElE,SAAO,wCAAwC;AAAA,IAC5C;AAAA,IACA;AAAA,EACH;AACH;",
+  "names": []
+}
