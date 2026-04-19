@@ -2,6 +2,10 @@ import { get, set } from '@dikolab/private-parts';
 import { TITLE_KEY } from '../../utils/constants/symbol-keys.constant';
 import { defineActor } from '../../actor/functions/define-actor.function';
 
+/**
+ * Fluent chain for defining an actor by name
+ * and assigning roles
+ */
 export class IAmChain<ActorName extends string> {
    get [TITLE_KEY](): ActorName {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return

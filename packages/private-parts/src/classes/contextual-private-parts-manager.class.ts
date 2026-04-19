@@ -13,6 +13,10 @@ import type {
    InstanceValueMap,
 } from '../types/utility.type';
 
+/**
+ * Manages isolated private data storage using
+ * WeakMap-backed property maps
+ */
 export class ContextualPrivatePartManager
    implements ContextualPrivatePart
 {
@@ -67,6 +71,13 @@ export class ContextualPrivatePartManager
       return map.get(propertyName) as InstanceValueMap;
    }
 
+   /**
+    * Retrieves a stored private property value
+    *
+    * @param instance - Object to read from
+    * @param propertyName - Private property key
+    * @returns The stored value, or `undefined`
+    */
    get(instance: object, propertyName: AnyPropertyName) {
       const repo = this.getInstanceValueMap(propertyName);
 
@@ -78,6 +89,13 @@ export class ContextualPrivatePartManager
       return repo.get(instance);
    }
 
+   /**
+    * Stores a private property value on an instance
+    *
+    * @param instance - Object to store data on
+    * @param propertyName - Private property key
+    * @param value - Value to store
+    */
    set(
       instance: object,
       propertyName: AnyPropertyName,
@@ -102,6 +120,11 @@ export class ContextualPrivatePartManager
       return this;
    }
 
+   /**
+    * Removes all private data for an instance
+    *
+    * @param instance - Object whose data to clear
+    */
    clear(instance: object): this {
       const keyset = this.getInstanceKeyset(instance);
 
@@ -128,6 +151,7 @@ export class ContextualPrivatePartManager
       return this;
    }
 
+   /** Removes all private data from this store */
    clearAll(): this {
       // clear instance key map
       CONTEXTUAL_INSTANCE_KEYS_MAP.set(this, new WeakMap());

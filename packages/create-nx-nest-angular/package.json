@@ -1,4 +1,5 @@
 {
+   "private": true,
    "name": "@dikolab/create-nx-nestjs-angular",
    "version": "0.0.1",
    "description": "Creates NX, NestJS, Angular mono repo boilerplate",

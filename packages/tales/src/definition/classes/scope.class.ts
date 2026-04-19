@@ -13,6 +13,10 @@ import type {
 import { Role } from '../../actor/classes/role.class';
 import { AsChain } from './as-chain.class';
 
+/**
+ * Provides a scoped context for defining goals
+ * and use cases within a boundary
+ */
 export class Scope<Boundary extends AnyBoundary> {
    get [BOUNDARY_KEY](): Boundary {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return

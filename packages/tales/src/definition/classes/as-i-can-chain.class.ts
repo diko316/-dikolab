@@ -15,6 +15,10 @@ import { AsICanSoThatChain } from './as-i-can-so-that-chain.class';
 import type { AnyBoundary } from '../../boundary/types/utility.type';
 import type { BoundaryDefined } from '../types/boundary-defined.interface';
 
+/**
+ * Fluent chain for declaring a use case action,
+ * continues with a goal via `soThat()`
+ */
 export class AsICanChain<
       Boundary extends AnyBoundary,
       RoleNames extends readonly string[],

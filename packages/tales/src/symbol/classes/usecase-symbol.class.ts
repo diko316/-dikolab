@@ -19,6 +19,10 @@ import type {
    DefaultEventMap,
 } from '../../event/types/event-map.type';
 
+/**
+ * Abstract base for all use case domain symbols
+ * (actors, roles, boundaries, goals, use cases)
+ */
 export abstract class UsecaseSymbol<
       Type extends string,
       Name extends string,
@@ -71,10 +75,12 @@ export abstract class UsecaseSymbol<
       SYMBOL_LOOKUP.set(id, this as UsecaseSymbolLike);
    }
 
+   /** Returns the symbol's unique identifier */
    toString() {
       return this[ID_KEY] as string;
    }
 
+   /** Returns a plain object with type and name */
    toJSON() {
       return {
          type: this[TYPE_KEY],

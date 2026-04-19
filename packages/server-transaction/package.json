@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "@dikolab/server-transaction",
   "version": "1.0.0",
   "description": "Server request and responses are managed here",

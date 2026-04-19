@@ -1,8 +1,8 @@
-import { EVENT_EMITTER_KEY } from '../../event/constants/event-keys';
-import type { AnyEventMap } from '../../event/types/event-map.type';
+import { EVENT_EMITTER_KEY } from '../constants/event-keys';
+import type { AnyEventMap } from '../types/event-map.type';
 import type { AnyList, AnyType } from '../../utils/types/utility.type';
-import type { UsecaseSymbolEventMap } from '../types/usecase-symbol-event.type';
-import type { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';
+import type { UsecaseSymbolEventMap } from '../../symbol/types/usecase-symbol-event.type';
+import type { UsecaseSymbolModel } from '../../symbol/types/usecase-symbol-model.interface';
 
 /**
  * Removes event listener registered in the Target symbol

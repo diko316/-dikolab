@@ -1,6 +1,6 @@
 import type EventEmitter from 'events';
-import { EVENT_EMITTER_KEY } from '../../event/constants/event-keys';
-import { SYMBOL_LOOKUP } from '../constants/symbol-lookup.constant';
+import { EVENT_EMITTER_KEY } from '../constants/event-keys';
+import { SYMBOL_LOOKUP } from '../../symbol/constants/symbol-lookup.constant';
 
 /**
  * Clears all event listeners of all Symbols.
