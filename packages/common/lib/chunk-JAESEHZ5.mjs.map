@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/type-checking/functions/is-method.function.ts"],
+  "sourcesContent": ["import { METHOD } from '../constants/signatures.constant';\nimport type { Any } from '../../typing/types/any.type';\nimport type { AnyFunction } from '../../typing/types/any-function.type';\n\nconst toString = Object.prototype.toString;\n\n/**\n * Tests whether a value is a callable function\n *\n * @param subject - Value to test\n * @returns Type predicate narrowing to AnyFunction\n */\nexport function isMethod<T extends AnyFunction = AnyFunction>(\n   subject: Any,\n): subject is T {\n   return toString.call(subject) === METHOD;\n}\n"],
+  "mappings": ";;;;;AAIA,IAAM,WAAW,OAAO,UAAU;AAQ3B,SAAS,SACb,SACa;AACb,SAAO,SAAS,KAAK,OAAO,MAAM;AACrC;",
+  "names": []
+}

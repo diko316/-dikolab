@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/type-checking/functions/is-array.function.ts"],
+  "sourcesContent": ["import { ARRAY } from '../constants/signatures.constant';\nimport type { Any } from '../../typing/types/any.type';\nimport type { AnyArray } from '../../typing/types/any-array.type';\n\nconst toString = Object.prototype.toString;\n\n/**\n * Tests whether a value is an array\n *\n * @param subject - Value to test\n * @param notEmpty - Require non-empty array\n * @returns Type predicate narrowing to AnyArray\n */\nexport function isArray<T extends AnyArray = AnyArray>(\n   subject: Any,\n   notEmpty = false,\n): subject is T {\n   return (\n      toString.call(subject) === ARRAY &&\n      (!notEmpty || subject.length !== 0)\n   );\n}\n"],
+  "mappings": ";;;;;AAIA,IAAM,WAAW,OAAO,UAAU;AAS3B,SAAS,QACb,SACA,WAAW,OACE;AACb,SACG,SAAS,KAAK,OAAO,MAAM,UAC1B,CAAC,YAAY,QAAQ,WAAW;AAEvC;",
+  "names": []
+}

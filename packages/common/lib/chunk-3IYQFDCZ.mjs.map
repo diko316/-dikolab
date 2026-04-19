@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/type-checking/functions/is-number.function.ts"],
+  "sourcesContent": ["import type { Any } from '../../typing/types/any.type';\n\n/**\n * Tests whether a value is a finite number\n *\n * @param subject - Value to test\n * @returns Type predicate narrowing to number\n */\nexport function isNumber(subject: Any): subject is number {\n   return typeof subject === 'number' && isFinite(subject);\n}\n"],
+  "mappings": ";AAQO,SAAS,SAAS,SAAiC;AACvD,SAAO,OAAO,YAAY,YAAY,SAAS,OAAO;AACzD;",
+  "names": []
+}

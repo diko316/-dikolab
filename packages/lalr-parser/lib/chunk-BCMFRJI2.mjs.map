@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/parser/functions/define.function.ts"],
+  "sourcesContent": ["import { Parser } from '../classes/parser.class';\n\n/**\n * Creates a parser with the given grammar\n *\n * @param root - Root grammar rule name\n * @param definitions - Grammar definitions\n * @param exclusions - Token patterns to skip\n * @returns Configured Parser instance\n */\nexport function define(\n   root: string,\n   definitions: unknown[],\n   exclusions?: unknown[],\n): Parser {\n   return new Parser(root, definitions, exclusions);\n}\n"],
+  "mappings": ";;;;;AAUO,SAAS,OACb,MACA,aACA,YACO;AACP,SAAO,IAAI,OAAO,MAAM,aAAa,UAAU;AAClD;",
+  "names": []
+}

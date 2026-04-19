@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/type-checking/functions/is-scalar.function.ts"],
+  "sourcesContent": ["import type { Any } from '../../typing/types/any.type';\n\n/**\n * Tests whether a value is a scalar\n * (string, number, or boolean)\n *\n * @param subject - Value to test\n * @returns Type predicate narrowing to\n *    string | number | boolean\n */\nexport function isScalar(\n   subject: Any,\n): subject is string | number | boolean {\n   switch (typeof subject) {\n      case 'number':\n         return isFinite(subject);\n      case 'boolean':\n      case 'string':\n         return true;\n   }\n   return false;\n}\n"],
+  "mappings": ";AAUO,SAAS,SACb,SACqC;AACrC,UAAQ,OAAO,SAAS;AAAA,IACrB,KAAK;AACF,aAAO,SAAS,OAAO;AAAA,IAC1B,KAAK;AAAA,IACL,KAAK;AACF,aAAO;AAAA,EACb;AACA,SAAO;AACV;",
+  "names": []
+}

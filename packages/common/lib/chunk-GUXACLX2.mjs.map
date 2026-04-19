@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/string/functions/camelize.function.ts"],
+  "sourcesContent": ["const CAMEL_RE = /[^a-z]+[a-z]/gi;\n\nfunction applyCamelize(all: string): string {\n   return all.charAt(all.length - 1).toUpperCase();\n}\n\n/**\n * Converts a hyphenated string to camelCase\n *\n * @param subject - Hyphenated string\n * @returns camelCase string\n */\nexport function camelize(subject: string): string {\n   return subject.replace(CAMEL_RE, applyCamelize);\n}\n"],
+  "mappings": ";AAAA,IAAM,WAAW;AAEjB,SAAS,cAAc,KAAqB;AACzC,SAAO,IAAI,OAAO,IAAI,SAAS,CAAC,EAAE,YAAY;AACjD;AAQO,SAAS,SAAS,SAAyB;AAC/C,SAAO,QAAQ,QAAQ,UAAU,aAAa;AACjD;",
+  "names": []
+}

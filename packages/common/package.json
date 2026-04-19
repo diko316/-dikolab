@@ -1,0 +1,56 @@
+{
+   "name": "@dikolab/common",
+   "version": "0.1.0",
+   "description": "Common utility helpers for type checking, object manipulation, JSON path, and more",
+   "publishConfig": {
+      "access": "public"
+   },
+   "keywords": [
+      "Utility",
+      "Helper",
+      "Type checking",
+      "JSON path"
+   ],
+   "author": "Diko TechSlave <diko316@gmail.com>",
+   "license": "ISC",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/diko316/-dikolab.git",
+      "directory": "packages/common"
+   },
+   "homepage": "https://github.com/diko316/-dikolab/blob/main/packages/common/README.md",
+   "bugs": {
+      "url": "https://github.com/diko316/-dikolab/issues",
+      "email": "diko316@gmail.com"
+   },
+   "files": [
+      "lib/**/*",
+      "src/**/*",
+      "!src/**/*.test.ts",
+      "LICENSE"
+   ],
+   "type": "module",
+   "main": "./lib/index.cjs",
+   "module": "./lib/index.mjs",
+   "browser": "./lib/index.umd.js",
+   "types": "./lib/index.d.ts",
+   "engines": {
+      "typescript": ">=5.1.3"
+   },
+   "exports": {
+      ".": {
+         "deno": "./src/index.ts",
+         "types": "./lib/index.d.ts",
+         "import": "./lib/index.mjs",
+         "require": "./lib/index.cjs",
+         "browser": "./lib/index.umd.js",
+         "default": "./lib/index.mjs"
+      }
+   },
+   "scripts": {
+      "lint": "eslint",
+      "test": "vitest --run",
+      "build": "node esbuild.config.js",
+      "prepublishOnly": "npm run lint && npm run test && npm run build"
+   }
+}

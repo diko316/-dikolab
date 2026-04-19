@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/object/functions/contains.function.ts"],
+  "sourcesContent": ["import type { Any } from '../../typing/types/any.type';\nimport { isString } from '../../type-checking/functions/is-string.function';\nimport { isNumber } from '../../type-checking/functions/is-number.function';\n\nconst hasOwn = Object.prototype.hasOwnProperty;\n\n/**\n * Checks if a property exists on an object\n *\n * @param subject - Object to inspect\n * @param name - Property name to check\n * @returns True if property exists\n */\nexport function contains(\n   subject: Any,\n   property: string | number,\n): boolean {\n   if (!isString(property) && !isNumber(property)) {\n      throw new Error('Invalid [property] parameter.');\n   }\n\n   return hasOwn.call(subject, property);\n}\n"],
+  "mappings": ";;;;;;;;AAIA,IAAM,SAAS,OAAO,UAAU;AASzB,SAAS,SACb,SACA,UACQ;AACR,MAAI,CAAC,SAAS,QAAQ,KAAK,CAAC,SAAS,QAAQ,GAAG;AAC7C,UAAM,IAAI,MAAM,+BAA+B;AAAA,EAClD;AAEA,SAAO,OAAO,KAAK,SAAS,QAAQ;AACvC;",
+  "names": []
+}

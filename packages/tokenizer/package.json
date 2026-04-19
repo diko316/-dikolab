@@ -1,0 +1,60 @@
+{
+   "name": "@dikolab/tokenizer",
+   "version": "0.1.0",
+   "description": "NFA-based tokenizer that converts regex patterns to state machines for lexing",
+   "keywords": [
+      "Tokenizer",
+      "Lexer",
+      "NFA",
+      "Regex"
+   ],
+   "publishConfig": {
+      "access": "public"
+   },
+   "author": "Diko TechSlave <diko316@gmail.com>",
+   "license": "ISC",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/diko316/-dikolab.git",
+      "directory": "packages/tokenizer"
+   },
+   "homepage": "https://github.com/diko316/-dikolab/blob/main/packages/tokenizer/README.md",
+   "bugs": {
+      "url": "https://github.com/diko316/-dikolab/issues",
+      "email": "diko316@gmail.com"
+   },
+   "files": [
+      "lib/**/*",
+      "src/**/*",
+      "!src/**/*.test.ts",
+      "LICENSE"
+   ],
+   "type": "module",
+   "main": "./lib/index.cjs",
+   "module": "./lib/index.mjs",
+   "browser": "./lib/index.umd.js",
+   "types": "./lib/index.d.ts",
+   "engines": {
+      "typescript": ">=5.1.3"
+   },
+   "exports": {
+      ".": {
+         "deno": "./src/index.ts",
+         "types": "./lib/index.d.ts",
+         "import": "./lib/index.mjs",
+         "require": "./lib/index.cjs",
+         "browser": "./lib/index.umd.js",
+         "default": "./lib/index.mjs"
+      }
+   },
+   "scripts": {
+      "test": "vitest --run",
+      "lint": "eslint",
+      "lint:fix": "eslint --fix",
+      "build": "node esbuild.config.js",
+      "prepublishOnly": "npm run lint && npm run test && npm run build"
+   },
+   "dependencies": {
+      "@dikolab/common": "^0.1.0"
+   }
+}

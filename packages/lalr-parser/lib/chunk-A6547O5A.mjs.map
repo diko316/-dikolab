@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/state/define/classes/item-pointer.class.ts"],
+  "sourcesContent": ["import { isArray } from '@dikolab/common';\n\nimport type { Item } from './item.class';\n\nexport class ItemPointer {\n   item: string;\n   ruleIds: string[];\n   to: Item;\n   next: ItemPointer | null = null;\n\n   constructor(lexeme: string, state: Item, ruleId: string | string[]) {\n      this.item = lexeme;\n      this.ruleIds = isArray(ruleId) ? ruleId : [ruleId];\n      this.to = state;\n   }\n}\n"],
+  "mappings": ";AAAA,SAAS,eAAe;AAIjB,IAAM,cAAN,MAAkB;AAAA,EACtB;AAAA,EACA;AAAA,EACA;AAAA,EACA,OAA2B;AAAA,EAE3B,YAAY,QAAgB,OAAa,QAA2B;AACjE,SAAK,OAAO;AACZ,SAAK,UAAU,QAAQ,MAAM,IAAI,SAAS,CAAC,MAAM;AACjD,SAAK,KAAK;AAAA,EACb;AACH;",
+  "names": []
+}

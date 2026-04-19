@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/processor/functions/set-async.function.ts"],
+  "sourcesContent": ["import type { Any } from '../../typing/types/any.type';\nimport type { AnyFunction } from '../../typing/types/any-function.type';\nimport { isMethod } from '../../type-checking/functions/is-method.function';\n\nconst G = globalThis;\nconst hasSetImmediate = typeof G.setImmediate === 'function';\n\n/**\n * Schedules a callback for async execution\n *\n * @param handler - Callback to schedule\n * @returns Handle for clearing\n */\nexport function setAsync(handler: AnyFunction): Any {\n   if (!isMethod(handler)) {\n      throw new Error('Invalid [handler] parameter.');\n   }\n\n   if (hasSetImmediate) {\n      return G.setImmediate(handler);\n   }\n\n   return G.setTimeout(handler, 1);\n}\n\n/**\n * Cancels a scheduled async callback\n *\n * @param id - Handle from setAsync\n */\nexport function clearAsync(id: Any): void {\n   try {\n      if (hasSetImmediate) {\n         G.clearImmediate(id);\n      } else {\n         G.clearTimeout(id);\n      }\n   } catch (_e) {\n      // ignore\n   }\n}\n"],
+  "mappings": ";;;;;AAIA,IAAM,IAAI;AACV,IAAM,kBAAkB,OAAO,EAAE,iBAAiB;AAQ3C,SAAS,SAAS,SAA2B;AACjD,MAAI,CAAC,SAAS,OAAO,GAAG;AACrB,UAAM,IAAI,MAAM,8BAA8B;AAAA,EACjD;AAEA,MAAI,iBAAiB;AAClB,WAAO,EAAE,aAAa,OAAO;AAAA,EAChC;AAEA,SAAO,EAAE,WAAW,SAAS,CAAC;AACjC;AAOO,SAAS,WAAW,IAAe;AACvC,MAAI;AACD,QAAI,iBAAiB;AAClB,QAAE,eAAe,EAAE;AAAA,IACtB,OAAO;AACJ,QAAE,aAAa,EAAE;AAAA,IACpB;AAAA,EACH,SAAS,IAAI;AAAA,EAEb;AACH;",
+  "names": []
+}

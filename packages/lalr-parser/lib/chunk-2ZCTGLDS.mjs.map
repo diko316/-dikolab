@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/lexeme/types/lexeme.type.ts"],
+  "sourcesContent": ["/**\n * Lexeme type codes mapping type names\n * to numeric identifiers\n *\n * - `terminal` (1): leaf token from input\n * - `nonterminal` (2): reduced grammar rule\n * - `compound` (3): composite node\n * - `end` (4): augmented root acceptance\n */\nexport const LEXEME_TYPE = {\n   terminal: 1,\n   nonterminal: 2,\n   compound: 3,\n   end: 4,\n} as const;\n\n/** Key of the LEXEME_TYPE mapping */\nexport type LexemeTypeName = keyof typeof LEXEME_TYPE;\n\n/** Numeric type code from LEXEME_TYPE */\nexport type LexemeTypeCode = (typeof LEXEME_TYPE)[LexemeTypeName];\n"],
+  "mappings": ";AASO,IAAM,cAAc;AAAA,EACxB,UAAU;AAAA,EACV,aAAa;AAAA,EACb,UAAU;AAAA,EACV,KAAK;AACR;",
+  "names": []
+}

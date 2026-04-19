@@ -16,12 +16,11 @@
    "author": "",
    "license": "ISC",
    "workspaces": [
-      "packages/server",
-      "packages/server-route",
-      "packages/server-transaction",
-      "packages/tales",
+      "packages/common",
       "packages/private-parts",
-      "packages/create-nx-nest-angular"
+      "packages/tales",
+      "packages/tokenizer",
+      "packages/lalr-parser"
    ],
    "devDependencies": {
       "@eslint/js": "^9.36.0",

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/object/functions/fillin.function.ts"],
+  "sourcesContent": ["import type { Any } from '../../typing/types/any.type';\nimport type { AnyObject } from '../../typing/types/any-object.type';\nimport { each, isValidObject } from './each.function';\nimport { contains } from './contains.function';\n\nfunction applyFillin(this: AnyObject, value: Any, name: string): void {\n   if (!contains(this, name)) {\n      this[name] = value;\n   }\n}\n\n/**\n * Copies properties from source to target\n * only where target lacks them\n *\n * @param target - Object to fill\n * @param source - Object providing defaults\n * @returns The modified target\n */\nexport function fillin(\n   target: AnyObject,\n   source: AnyObject,\n   hasown = true,\n): AnyObject {\n   if (!isValidObject(target)) {\n      throw new Error('Invalid [target] parameter');\n   }\n   each(source, applyFillin, target, hasown);\n   return target;\n}\n"],
+  "mappings": ";;;;;;;;;AAKA,SAAS,YAA6B,OAAY,MAAoB;AACnE,MAAI,CAAC,SAAS,MAAM,IAAI,GAAG;AACxB,SAAK,IAAI,IAAI;AAAA,EAChB;AACH;AAUO,SAAS,OACb,QACA,QACA,SAAS,MACC;AACV,MAAI,CAAC,cAAc,MAAM,GAAG;AACzB,UAAM,IAAI,MAAM,4BAA4B;AAAA,EAC/C;AACA,OAAK,QAAQ,aAAa,QAAQ,MAAM;AACxC,SAAO;AACV;",
+  "names": []
+}

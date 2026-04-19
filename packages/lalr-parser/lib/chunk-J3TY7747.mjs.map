@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/parser/functions/load.function.ts"],
+  "sourcesContent": ["import { isString, isObject } from '@dikolab/common';\n\nimport { Parser } from '../classes/parser.class';\nimport type { StateMapData } from '../../state/types/state-map.type';\n\n/**\n * Loads a parser from exported JSON data\n *\n * @param json - JSON string or state object\n * @returns Parser loaded from data\n */\nexport function load(json: string | StateMapData): Parser {\n   if (isString(json)) {\n      try {\n         json = JSON.parse(json) as StateMapData;\n      } catch (e) {\n         throw new Error(\n            'Unable to load from invalid ' +\n               'json JSON String parameter: ' +\n               String(e),\n         );\n      }\n   } else if (!isObject(json)) {\n      throw new Error(\n         'Unable to load from invalid json ' + 'Object parameter.',\n      );\n   }\n\n   const parser = new Parser();\n\n   try {\n      parser.fromJSON(json);\n   } catch (e) {\n      throw new Error(String(e));\n   }\n\n   return parser;\n}\n"],
+  "mappings": ";;;;;AAAA,SAAS,UAAU,gBAAgB;AAW5B,SAAS,KAAK,MAAqC;AACvD,MAAI,SAAS,IAAI,GAAG;AACjB,QAAI;AACD,aAAO,KAAK,MAAM,IAAI;AAAA,IACzB,SAAS,GAAG;AACT,YAAM,IAAI;AAAA,QACP,6DAEG,OAAO,CAAC;AAAA,MACd;AAAA,IACH;AAAA,EACH,WAAW,CAAC,SAAS,IAAI,GAAG;AACzB,UAAM,IAAI;AAAA,MACP;AAAA,IACH;AAAA,EACH;AAEA,QAAM,SAAS,IAAI,OAAO;AAE1B,MAAI;AACD,WAAO,SAAS,IAAI;AAAA,EACvB,SAAS,GAAG;AACT,UAAM,IAAI,MAAM,OAAO,CAAC,CAAC;AAAA,EAC5B;AAEA,SAAO;AACV;",
+  "names": []
+}

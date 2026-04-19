@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/parser/functions/is-parser.function.ts"],
+  "sourcesContent": ["import { Parser } from '../classes/parser.class';\n\n/**\n * Checks if a value is a Parser instance\n *\n * @param parser - Value to check\n * @returns true if parser is a Parser\n */\nexport function isParser(parser: unknown): parser is Parser {\n   return parser instanceof Parser;\n}\n"],
+  "mappings": ";;;;;AAQO,SAAS,SAAS,QAAmC;AACzD,SAAO,kBAAkB;AAC5B;",
+  "names": []
+}

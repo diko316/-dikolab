@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/type-checking/functions/is-native-object.function.ts"],
+  "sourcesContent": ["import { OBJECT } from '../constants/signatures.constant';\nimport type { Any } from '../../typing/types/any.type';\nimport type { AnyObject } from '../../typing/types/any-object.type';\nimport { signature } from './signature.function';\n\nconst O = Object;\nconst hasOwn = O.prototype.hasOwnProperty;\n\n/**\n * Tests whether a value is a native object\n * (not subclass)\n *\n * @param subject - Value to test\n * @returns Type predicate narrowing to AnyObject\n */\nexport function isNativeObject<T extends AnyObject = AnyObject>(\n   subject: Any,\n): subject is T {\n   if (signature(subject) !== OBJECT) {\n      return false;\n   }\n\n   const constructor = subject.constructor;\n\n   if (hasOwn.call(subject, 'constructor')) {\n      delete subject.constructor;\n      const result = subject.constructor === O;\n      subject.constructor = constructor;\n      return result;\n   }\n\n   return constructor === O;\n}\n"],
+  "mappings": ";;;;;;;;AAKA,IAAM,IAAI;AACV,IAAM,SAAS,EAAE,UAAU;AASpB,SAAS,eACb,SACa;AACb,MAAI,UAAU,OAAO,MAAM,QAAQ;AAChC,WAAO;AAAA,EACV;AAEA,QAAM,cAAc,QAAQ;AAE5B,MAAI,OAAO,KAAK,SAAS,aAAa,GAAG;AACtC,WAAO,QAAQ;AACf,UAAM,SAAS,QAAQ,gBAAgB;AACvC,YAAQ,cAAc;AACtB,WAAO;AAAA,EACV;AAEA,SAAO,gBAAgB;AAC1B;",
+  "names": []
+}

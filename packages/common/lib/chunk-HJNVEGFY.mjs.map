@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/type-checking/functions/signature.function.ts"],
+  "sourcesContent": ["import { NULL, UNDEFINED } from '../constants/signatures.constant';\nimport type { Any } from '../../typing/types/any.type';\nimport type { SignatureString } from '../../typing/types/signature.type';\n\nconst toString = Object.prototype.toString;\n\n/**\n * Returns the Object.prototype.toString tag\n *\n * @param subject - Value to inspect\n * @returns Signature like \"[object Object]\"\n */\nexport function signature(subject: Any): SignatureString {\n   if (subject === undefined) {\n      return UNDEFINED;\n   }\n\n   if (\n      subject === null ||\n      (typeof subject === 'number' && !isFinite(subject))\n   ) {\n      return NULL;\n   }\n\n   return toString.call(subject) as SignatureString;\n}\n"],
+  "mappings": ";;;;;;AAIA,IAAM,WAAW,OAAO,UAAU;AAQ3B,SAAS,UAAU,SAA+B;AACtD,MAAI,YAAY,QAAW;AACxB,WAAO;AAAA,EACV;AAEA,MACG,YAAY,QACX,OAAO,YAAY,YAAY,CAAC,SAAS,OAAO,GAClD;AACC,WAAO;AAAA,EACV;AAEA,SAAO,SAAS,KAAK,OAAO;AAC/B;",
+  "names": []
+}

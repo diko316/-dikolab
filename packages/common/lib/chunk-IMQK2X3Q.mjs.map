@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/type-checking/functions/is-string.function.ts"],
+  "sourcesContent": ["import { STRING } from '../constants/signatures.constant';\nimport type { Any } from '../../typing/types/any.type';\n\nconst toString = Object.prototype.toString;\n\n/**\n * Tests whether a value is a string\n *\n * @param subject - Value to test\n * @param allowEmpty - Allow empty strings\n * @returns Type predicate narrowing to string\n */\nexport function isString(\n   subject: Any,\n   allowEmpty = false,\n): subject is string {\n   return (\n      (typeof subject === 'string' ||\n         toString.call(subject) === STRING) &&\n      (allowEmpty || subject.length !== 0)\n   );\n}\n"],
+  "mappings": ";;;;;AAGA,IAAM,WAAW,OAAO,UAAU;AAS3B,SAAS,SACb,SACA,aAAa,OACK;AAClB,UACI,OAAO,YAAY,YACjB,SAAS,KAAK,OAAO,MAAM,YAC7B,cAAc,QAAQ,WAAW;AAExC;",
+  "names": []
+}
