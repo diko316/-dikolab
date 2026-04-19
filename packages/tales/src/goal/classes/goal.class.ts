@@ -11,6 +11,10 @@ import type { GoalName } from '../types/goal-name.type';
 import { createGoalName } from '../functions/create-goal-name.function';
 import type { GoalEventMap } from '../types/goal-event-map.type';
 
+/**
+ * Represents an outcome that a use case aims
+ * to achieve within a boundary
+ */
 export class Goal<Title extends string, Boundary extends AnyBoundary>
    extends UsecaseSymbol<
       typeof GOAL_TYPE,

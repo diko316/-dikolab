@@ -20,6 +20,10 @@ import type { ImplementedAs } from '../types/implemented-as.interface';
 import type { AnyBoundary } from '../../boundary/types/utility.type';
 import type { BoundaryDefined } from '../types/boundary-defined.interface';
 
+/**
+ * Fluent chain for declaring a use case goal,
+ * finalized with a handler via `implementedAs()`
+ */
 export class AsICanSoThatChain<
       Boundary extends AnyBoundary,
       RoleNames extends readonly string[],

@@ -22,6 +22,11 @@ import type { AnyFunction } from '../../utils/types/utility.type';
 import { emitSymbolEvent } from '../../symbol/functions/emit-symbol-event.function';
 import type { AnyUsecase } from '../types/utility.type';
 
+/**
+ * Encapsulates an actor's execution context with
+ * session data, providing methods to perform use
+ * cases and override session state
+ */
 export class Transaction<
    Data extends object,
    Actor extends AnyActor = AnyActor,

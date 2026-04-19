@@ -20,6 +20,10 @@ import type { AnyFunction } from '../../utils/types/utility.type';
 import { MOCK_HANDLER_KEY } from '../../utils/constants/symbol-keys.constant';
 import type { UsecaseEventMap } from '../types/usecase-event-map.type';
 
+/**
+ * Represents a use case that maps roles, a goal,
+ * and a handler into an executable action
+ */
 export class Usecase<
       Title extends string,
       Roles extends readonly AnyRole[],
@@ -80,6 +84,7 @@ export class Usecase<
       set(this, GOAL_KEY, goal);
    }
 
+   /** Returns the use case's display name */
    toString(): string {
       return getSymbolName(this);
    }

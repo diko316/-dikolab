@@ -10,6 +10,10 @@ import type { ActorModel } from '../types/actor-model.interface';
 import type { AnyRole, RoleNames } from '../types/utility.type';
 import type { ActorEventMap } from '../types/actor-events.type';
 
+/**
+ * Represents a named actor with assigned roles
+ * that determine which use cases it can perform
+ */
 export class Actor<
       Name extends string,
       Roles extends readonly AnyRole[],
@@ -28,6 +32,7 @@ export class Actor<
       set(this, ROLES_KEY, roles);
    }
 
+   /** Returns a plain object with type, name, and role names */
    toJSON() {
       const roles = this[ROLES_KEY].map((role) => role[NAME_KEY]);
 
