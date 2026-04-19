@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/regex/functions/proto-clone.function.ts"],
+  "sourcesContent": ["/**\n * Clones an object preserving its prototype chain\n * via Object.create \u2014 mutations to the clone do not\n * affect the original, but shared prototype\n * properties remain linked.\n */\nexport function protoClone<T>(instance: T): T {\n   return Object.create(instance as object) as T;\n}\n"],
+  "mappings": ";AAMO,SAAS,WAAc,UAAgB;AAC3C,SAAO,OAAO,OAAO,QAAkB;AAC1C;",
+  "names": []
+}

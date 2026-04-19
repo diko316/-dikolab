@@ -18,7 +18,8 @@
    "workspaces": [
       "packages/common",
       "packages/private-parts",
-      "packages/tales"
+      "packages/tales",
+      "packages/tokenizer"
    ],
    "devDependencies": {
       "@eslint/js": "^9.36.0",

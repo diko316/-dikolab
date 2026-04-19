@@ -1,24 +1,24 @@
 {
-   "name": "@dikolab/common",
+   "name": "@dikolab/tokenizer",
    "version": "0.1.0",
-   "description": "Common utility helpers for type checking, object manipulation, JSON path, and more",
+   "description": "NFA-based tokenizer that converts regex patterns to state machines for lexing",
+   "keywords": [
+      "Tokenizer",
+      "Lexer",
+      "NFA",
+      "Regex"
+   ],
    "publishConfig": {
       "access": "public"
    },
-   "keywords": [
-      "Utility",
-      "Helper",
-      "Type checking",
-      "JSON path"
-   ],
    "author": "Diko TechSlave <diko316@gmail.com>",
    "license": "ISC",
    "repository": {
       "type": "git",
       "url": "git+https://github.com/diko316/-dikolab.git",
-      "directory": "packages/common"
+      "directory": "packages/tokenizer"
    },
-   "homepage": "https://github.com/diko316/-dikolab/blob/main/packages/common/README.md",
+   "homepage": "https://github.com/diko316/-dikolab/blob/main/packages/tokenizer/README.md",
    "bugs": {
       "url": "https://github.com/diko316/-dikolab/issues",
       "email": "diko316@gmail.com"
@@ -48,9 +48,13 @@
       }
    },
    "scripts": {
-      "lint": "eslint",
       "test": "vitest --run",
+      "lint": "eslint",
+      "lint:fix": "eslint --fix",
       "build": "node esbuild.config.js",
       "prepublishOnly": "npm run lint && npm run test && npm run build"
+   },
+   "dependencies": {
+      "@dikolab/common": "^0.1.0"
    }
 }
