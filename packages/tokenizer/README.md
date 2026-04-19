@@ -107,6 +107,8 @@ loaded.fromJSON(obj);
 | `toObject()` | Export state machine as plain object |
 | `fromJSON(data)` | Import from JSON string or object |
 
+## [Release Notes](docs/release-notes.md)
+
 ## License
 
 [ISC](./LICENSE)

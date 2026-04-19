@@ -214,6 +214,8 @@ if (nodejs) {
 | `jsonFill(data, path, value)` | Fill if missing |
 | `jsonParsePath(path)` | Parse path string |
 
+## [Release Notes](docs/release-notes.md)
+
 ## License
 
 [ISC](./LICENSE)

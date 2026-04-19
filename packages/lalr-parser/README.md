@@ -213,6 +213,8 @@ alternation `|`, optional `?`, repeat `+`,
 Kleene star `*`, character classes `[]` `[^]`,
 and grouping `()`.
 
+## [Release Notes](docs/release-notes.md)
+
 ## License
 
 [ISC](./LICENSE)
