@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../src/symbol/functions/clear-symbol-event-listeners.function.ts"],
-  "sourcesContent": ["import { EVENT_EMITTER_KEY } from '../../event/constants/event-keys';\nimport type { AnyEventMap } from '../../event/types/event-map.type';\nimport type { UsecaseSymbolEventMap } from '../types/usecase-symbol-event.type';\nimport type { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';\n\n/**\n * Removes all event listeners of the Target symbol registered for event type.\n *\n * @param symbol Target symbol. may be one of the following: Actor,\n * Role, Usecase, Goal, Boundary\n * @param type Event Name\n */\nexport function clearSymbolEventListeners<\n   Source extends UsecaseSymbolModel<string, string, AnyEventMap>,\n>(symbol: Source, type: keyof UsecaseSymbolEventMap<Source>): void {\n   symbol[EVENT_EMITTER_KEY].removeAllListeners(type);\n}\n"],
-  "mappings": ";;;;;AAYO,SAAS,0BAEd,QAAgB,MAAiD;AAChE,SAAO,iBAAiB,EAAE,mBAAmB,IAAI;AACpD;",
-  "names": []
-}

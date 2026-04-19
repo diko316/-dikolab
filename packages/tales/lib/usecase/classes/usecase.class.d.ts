@@ -9,6 +9,10 @@ import type { UsecaseTitleFrom } from '../types/usecase-title-from.type';
 import type { AnyFunction } from '../../utils/types/utility.type';
 import { MOCK_HANDLER_KEY } from '../../utils/constants/symbol-keys.constant';
 import type { UsecaseEventMap } from '../types/usecase-event-map.type';
+/**
+ * Represents a use case that maps roles, a goal,
+ * and a handler into an executable action
+ */
 export declare class Usecase<Title extends string, Roles extends readonly AnyRole[], Handler extends AnyFunction, Goal extends AnyGoal> extends UsecaseSymbol<typeof USECASE_TYPE, UsecaseTitleFrom<Title, Roles, Goal>, UsecaseEventMap> implements UsecaseModel<Title, Roles, Handler, Goal> {
     get [TITLE_KEY](): Title;
     get [ROLES_KEY](): Roles;
@@ -18,5 +22,6 @@ export declare class Usecase<Title extends string, Roles extends readonly AnyRol
     set [MOCK_HANDLER_KEY](handler: Handler | null);
     get [BOUNDARY_KEY](): GoalBoundary<Goal>;
     constructor(title: Title, roles: Roles, goal: Goal, handler: Handler);
+    /** Returns the use case's display name */
     toString(): string;
 }

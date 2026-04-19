@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../src/functions/set.function.ts"],
-  "sourcesContent": ["import { GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER } from '../constants/global-contextual-private-parts-manager.contsant';\nimport type { AnyPropertyName } from '../types/utility.type';\n\nexport function set(\n   instance: object,\n   propertyName: AnyPropertyName,\n   value: unknown,\n): void {\n   GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER.set(\n      instance,\n      propertyName,\n      value,\n   );\n}\n"],
-  "mappings": ";;;;;AAGO,SAAS,IACb,UACA,cACA,OACK;AACL,0CAAwC;AAAA,IACrC;AAAA,IACA;AAAA,IACA;AAAA,EACH;AACH;",
-  "names": []
-}

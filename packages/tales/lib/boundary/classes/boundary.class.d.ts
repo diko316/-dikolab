@@ -2,10 +2,16 @@ import { UsecaseSymbol } from '../../symbol/classes/usecase-symbol.class';
 import { SUBTYPE_KEY, TITLE_KEY } from '../../utils/constants/symbol-keys.constant';
 import { BOUNDARY_TYPE } from '../../utils/constants/symbol-tag.constant';
 import type { BoundaryModel } from '../types/boundary-model.interface';
+/**
+ * Represents a system boundary that groups
+ * related goals and use cases under a typed
+ * domain scope
+ */
 export declare class Boundary<Type extends string, Title extends string> extends UsecaseSymbol<typeof BOUNDARY_TYPE, `${Type}:${Title}`> implements BoundaryModel<Type, Title> {
     get [SUBTYPE_KEY](): Type;
     get [TITLE_KEY](): Title;
     constructor(type: Type, title: Title);
+    /** Returns a plain object with type, name, and subtype */
     toJSON(): {
         subtype: Type;
         type: "Boundary";

@@ -1,4 +1,8 @@
 import { TITLE_KEY } from '../../utils/constants/symbol-keys.constant';
+/**
+ * Fluent chain for defining an actor by name
+ * and assigning roles
+ */
 export declare class IAmChain<ActorName extends string> {
     get [TITLE_KEY](): ActorName;
     constructor(actorName: ActorName);

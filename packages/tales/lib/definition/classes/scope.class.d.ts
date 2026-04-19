@@ -3,6 +3,10 @@ import { BOUNDARY_KEY } from '../../utils/constants/symbol-keys.constant';
 import type { Goal } from '../../goal/classes/goal.class';
 import type { AnyRole, ResolveRoleNames } from '../../actor/types/utility.type';
 import { AsChain } from './as-chain.class';
+/**
+ * Provides a scoped context for defining goals
+ * and use cases within a boundary
+ */
 export declare class Scope<Boundary extends AnyBoundary> {
     get [BOUNDARY_KEY](): Boundary;
     constructor(boundary: Boundary);

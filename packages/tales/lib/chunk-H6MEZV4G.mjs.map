@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/usecase/functions/mock-usecase-handler.funtion.ts"],
+  "sourcesContent": ["import { MOCK_HANDLER_KEY } from '../../utils/constants/symbol-keys.constant';\nimport type { UsecaseHandler } from '../types/usecase-handler.type';\nimport type { AnyUsecase } from '../types/utility.type';\n\n/**\n * Replaces a use case's handler with a mock\n * for testing purposes\n *\n * @param usecase The use case to mock\n * @param handler The mock handler function\n * @returns The use case with mocked handler\n */\nexport function mockUsecaseHandler<Usecase extends AnyUsecase>(\n   usecase: Usecase,\n   handler: UsecaseHandler<Usecase>,\n): Usecase {\n   usecase[MOCK_HANDLER_KEY] = handler;\n   return usecase;\n}\n"],
+  "mappings": ";;;;;AAYO,SAAS,mBACb,SACA,SACQ;AACR,UAAQ,gBAAgB,IAAI;AAC5B,SAAO;AACV;",
+  "names": []
+}

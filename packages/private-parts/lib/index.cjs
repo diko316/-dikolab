@@ -65,6 +65,13 @@ var ContextualPrivatePartManager = class {
     }
     return map.get(propertyName);
   }
+  /**
+   * Retrieves a stored private property value
+   *
+   * @param instance - Object to read from
+   * @param propertyName - Private property key
+   * @returns The stored value, or `undefined`
+   */
   get(instance, propertyName) {
     const repo = this.getInstanceValueMap(propertyName);
     if (!repo) {
@@ -72,6 +79,13 @@ var ContextualPrivatePartManager = class {
     }
     return repo.get(instance);
   }
+  /**
+   * Stores a private property value on an instance
+   *
+   * @param instance - Object to store data on
+   * @param propertyName - Private property key
+   * @param value - Value to store
+   */
   set(instance, propertyName, value) {
     const repo = this.getInstanceValueMap(propertyName) || this.createInstanceValueMap(propertyName);
     const keys = this.getInstanceKeyset(instance) || this.createInstanceKeyset(instance);
@@ -81,6 +95,11 @@ var ContextualPrivatePartManager = class {
     repo.set(instance, value);
     return this;
   }
+  /**
+   * Removes all private data for an instance
+   *
+   * @param instance - Object whose data to clear
+   */
   clear(instance) {
     const keyset = this.getInstanceKeyset(instance);
     if (!keyset) {
@@ -96,6 +115,7 @@ var ContextualPrivatePartManager = class {
     this.keysetMap.delete(instance);
     return this;
   }
+  /** Removes all private data from this store */
   clearAll() {
     CONTEXTUAL_INSTANCE_KEYS_MAP.set(this, /* @__PURE__ */ new WeakMap());
     this.accessorKeyMap.clear();

@@ -130,9 +130,11 @@ var UsecaseSymbol = class {
     (0, import_private_parts.set)(this, ID_KEY, id);
     SYMBOL_LOOKUP.set(id, this);
   }
+  /** Returns the symbol's unique identifier */
   toString() {
     return this[ID_KEY];
   }
+  /** Returns a plain object with type and name */
   toJSON() {
     return {
       type: this[TYPE_KEY],
@@ -157,6 +159,7 @@ var Actor = class extends UsecaseSymbol {
     super(ACTOR_TYPE, name);
     (0, import_private_parts2.set)(this, ROLES_KEY, roles);
   }
+  /** Returns a plain object with type, name, and role names */
   toJSON() {
     const roles = this[ROLES_KEY].map((role) => role[NAME_KEY]);
     return {
@@ -266,6 +269,7 @@ var Boundary = class extends UsecaseSymbol {
     (0, import_private_parts4.set)(this, SUBTYPE_KEY, type);
     (0, import_private_parts4.set)(this, TITLE_KEY, title);
   }
+  /** Returns a plain object with type, name, and subtype */
   toJSON() {
     return {
       ...super.toJSON(),
@@ -391,6 +395,7 @@ var Usecase = class extends UsecaseSymbol {
     (0, import_private_parts10.set)(this, MOCK_HANDLER_KEY, null);
     (0, import_private_parts10.set)(this, GOAL_KEY, goal);
   }
+  /** Returns the use case's display name */
   toString() {
     return getSymbolName(this);
   }
@@ -656,17 +661,17 @@ function assume(actor) {
   return transaction;
 }
 
-// src/symbol/functions/listen-symbol-event.function.ts
+// src/event/functions/listen-symbol-event.function.ts
 function listenSymbolEvent(symbol, type, listener) {
   symbol[EVENT_EMITTER_KEY].on(type, listener);
 }
 
-// src/symbol/functions/unlisten-symbol-event.function.ts
+// src/event/functions/unlisten-symbol-event.function.ts
 function unlistenSymbolEvent(symbol, type, listener) {
   symbol[EVENT_EMITTER_KEY].removeListener(type, listener);
 }
 
-// src/symbol/functions/clear-all-symbol-event-listeners.function.ts
+// src/event/functions/clear-all-symbol-event-listeners.function.ts
 function clearAllSymbolListeners() {
   let eventEmitter;
   SYMBOL_LOOKUP.forEach((symbol) => {
@@ -676,7 +681,7 @@ function clearAllSymbolListeners() {
   eventEmitter = null;
 }
 
-// src/symbol/functions/clear-symbol-event-listeners.function.ts
+// src/event/functions/clear-symbol-event-listeners.function.ts
 function clearSymbolEventListeners(symbol, type) {
   symbol[EVENT_EMITTER_KEY].removeAllListeners(type);
 }

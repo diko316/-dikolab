@@ -6,6 +6,10 @@ import type { AnyGoal, AnyGoalBoundTo } from '../../goal/types/utility.type';
 import { AsICanSoThatChain } from './as-i-can-so-that-chain.class';
 import type { AnyBoundary } from '../../boundary/types/utility.type';
 import type { BoundaryDefined } from '../types/boundary-defined.interface';
+/**
+ * Fluent chain for declaring a use case action,
+ * continues with a goal via `soThat()`
+ */
 export declare class AsICanChain<Boundary extends AnyBoundary, RoleNames extends readonly string[], ActionTitle extends string> implements BoundaryDefined<Boundary>, RoleNamesDefined<RoleNames>, ActionTitleDefined<ActionTitle>, SoThatGoal<Boundary> {
     get [BOUNDARY_KEY](): Boundary;
     get [ROLE_NAMES_KEY](): RoleNames;

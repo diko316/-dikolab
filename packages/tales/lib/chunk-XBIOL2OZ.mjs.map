@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../src/actor/classes/role.class.ts"],
-  "sourcesContent": ["import { UsecaseSymbol } from '../../symbol/classes/usecase-symbol.class';\nimport { ROLE_TYPE } from '../../utils/constants/symbol-tag.constant';\nimport type { RoleModel } from '../types/role-model.interface';\n\nexport class Role<Name extends string>\n   extends UsecaseSymbol<typeof ROLE_TYPE, Name>\n   implements RoleModel<Name>\n{\n   constructor(name: Name) {\n      super(ROLE_TYPE, name);\n   }\n}\n"],
-  "mappings": ";;;;;;;;AAIO,IAAM,OAAN,cACI,cAEX;AAAA,EACG,YAAY,MAAY;AACrB,UAAM,WAAW,IAAI;AAAA,EACxB;AACH;",
-  "names": []
-}
