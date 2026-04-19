@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/definition/functions/define-scope.function.ts"],
+  "sourcesContent": ["import { createBoundaryNameDetails } from '../../boundary/functions/create-boundary-name-details.function';\nimport { defineBoundary } from '../../boundary/functions/define-boundary.function';\nimport { Scope } from '../classes/scope.class';\n\n/**\n * Defines a Boundary and declaration scope.\n *\n * @param name Name of the Boundary in this format `${Type}:${Title}`\n * @returns declaration Scope\n */\nexport function defineScope<Type extends string, Title extends string>(\n   name: `${Type}:${Title}`,\n) {\n   const [type, title] = createBoundaryNameDetails(name);\n\n   const boundary = defineBoundary(type, title);\n\n   return new Scope(boundary);\n}\n"],
+  "mappings": ";;;;;;;;;;;AAUO,SAAS,YACb,MACD;AACC,QAAM,CAAC,MAAM,KAAK,IAAI,0BAA0B,IAAI;AAEpD,QAAM,WAAW,eAAe,MAAM,KAAK;AAE3C,SAAO,IAAI,MAAM,QAAQ;AAC5B;",
+  "names": []
+}

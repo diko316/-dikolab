@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/boundary/functions/define-boundary.function.ts"],
+  "sourcesContent": ["import { Boundary } from '../classes/boundary.class';\n\nexport function defineBoundary<\n   Type extends string,\n   Title extends string,\n>(type: Type, title: Title): Boundary<Type, Title> {\n   return new Boundary(type, title);\n}\n"],
+  "mappings": ";;;;;AAEO,SAAS,eAGd,MAAY,OAAqC;AAChD,SAAO,IAAI,SAAS,MAAM,KAAK;AAClC;",
+  "names": []
+}

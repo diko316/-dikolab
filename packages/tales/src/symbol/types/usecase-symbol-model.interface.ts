@@ -1,15 +1,15 @@
-import { EventDriven } from '../../event/types/event-driven.interface';
-import {
+import type { EventDriven } from '../../event/types/event-driven.interface';
+import type {
    AnyEventMap,
    DefaultEventMap,
 } from '../../event/types/event-map.type';
-import {
+import type {
    ID_KEY,
    NAME_KEY,
    TYPE_KEY,
 } from '../../utils/constants/symbol-keys.constant';
 
-import { UsecaseSymbolId } from './utility.type';
+import type { UsecaseSymbolId } from './utility.type';
 
 export interface UsecaseSymbolModel<
    Type extends string,

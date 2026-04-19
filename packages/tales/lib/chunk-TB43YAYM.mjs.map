@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/actor/functions/define-role.function.ts"],
+  "sourcesContent": ["import { Role } from '../classes/role.class';\n\nexport function defineRole<Name extends string>(name: Name) {\n   return new Role(name);\n}\n"],
+  "mappings": ";;;;;AAEO,SAAS,WAAgC,MAAY;AACzD,SAAO,IAAI,KAAK,IAAI;AACvB;",
+  "names": []
+}

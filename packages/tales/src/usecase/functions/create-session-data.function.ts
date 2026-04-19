@@ -10,6 +10,7 @@ export function createSessionData<Data extends object>(
             enumerable: true,
             configurable: false,
             get() {
+               // eslint-disable-next-line @typescript-eslint/no-unsafe-return
                return get(newData, key);
             },
          });

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/symbol/constants/symbol-lookup.constant.ts"],
+  "sourcesContent": ["import type { UsecaseSymbolLike } from '../types/usecase-symbol-model.interface';\n\nexport const SYMBOL_LOOKUP = new Map<string, UsecaseSymbolLike>();\n"],
+  "mappings": ";AAEO,IAAM,gBAAgB,oBAAI,IAA+B;",
+  "names": []
+}

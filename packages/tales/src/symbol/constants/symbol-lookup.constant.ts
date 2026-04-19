@@ -1,3 +1,3 @@
-import { UsecaseSymbolLike } from '../types/usecase-symbol-model.interface';
+import type { UsecaseSymbolLike } from '../types/usecase-symbol-model.interface';
 
 export const SYMBOL_LOOKUP = new Map<string, UsecaseSymbolLike>();

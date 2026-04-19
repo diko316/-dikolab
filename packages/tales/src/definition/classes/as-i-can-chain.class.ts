@@ -4,13 +4,16 @@ import {
    ROLE_NAMES_KEY,
    TITLE_KEY,
 } from '../../utils/constants/symbol-keys.constant';
-import { ActionTitleDefined } from '../types/action-title-defined.interface';
-import { RoleNamesDefined } from '../types/role-names-defined.interface';
-import { SoThatGoal } from '../types/so-that-goal.interface';
-import { AnyGoal, AnyGoalBoundTo } from '../../goal/types/utility.type';
+import type { ActionTitleDefined } from '../types/action-title-defined.interface';
+import type { RoleNamesDefined } from '../types/role-names-defined.interface';
+import type { SoThatGoal } from '../types/so-that-goal.interface';
+import type {
+   AnyGoal,
+   AnyGoalBoundTo,
+} from '../../goal/types/utility.type';
 import { AsICanSoThatChain } from './as-i-can-so-that-chain.class';
-import { AnyBoundary } from '../../boundary/types/utility.type';
-import { BoundaryDefined } from '../types/boundary-defined.interface';
+import type { AnyBoundary } from '../../boundary/types/utility.type';
+import type { BoundaryDefined } from '../types/boundary-defined.interface';
 
 export class AsICanChain<
       Boundary extends AnyBoundary,
@@ -24,14 +27,17 @@ export class AsICanChain<
       SoThatGoal<Boundary>
 {
    get [BOUNDARY_KEY](): Boundary {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, BOUNDARY_KEY);
    }
 
    get [ROLE_NAMES_KEY](): RoleNames {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, ROLE_NAMES_KEY);
    }
 
    get [TITLE_KEY](): ActionTitle {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, TITLE_KEY);
    }
 

@@ -1,9 +1,8 @@
-import { MOCK_HANDLER_KEY } from '../../utils/constants/symbol-keys.constant.mjs';
-
-function mockUsecaseHandler(usecase, handler) {
-    usecase[MOCK_HANDLER_KEY] = handler;
-    return usecase;
-}
-
-export { mockUsecaseHandler };
+import {
+  mockUsecaseHandler
+} from "../../chunk-5HSHAIMN.mjs";
+import "../../chunk-U743HXLL.mjs";
+export {
+  mockUsecaseHandler
+};
 //# sourceMappingURL=mock-usecase-handler.funtion.mjs.map

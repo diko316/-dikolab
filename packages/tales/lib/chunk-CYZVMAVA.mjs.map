@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/goal/functions/get-goal-title.funciton.ts"],
+  "sourcesContent": ["import { get } from '@dikolab/private-parts';\nimport { TITLE_KEY } from '../../utils/constants/symbol-keys.constant';\nimport type { GoalTitle } from '../types/goal-title.type';\nimport type { AnyGoal } from '../types/utility.type';\n\nexport function getGoalTitle<Goal extends AnyGoal>(\n   goal: Goal,\n): GoalTitle<Goal> {\n   // eslint-disable-next-line @typescript-eslint/no-unsafe-return\n   return get(goal, TITLE_KEY);\n}\n"],
+  "mappings": ";;;;;AAAA,SAAS,WAAW;AAKb,SAAS,aACb,MACgB;AAEhB,SAAO,IAAI,MAAM,SAAS;AAC7B;",
+  "names": []
+}

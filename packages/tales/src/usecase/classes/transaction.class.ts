@@ -8,19 +8,19 @@ import {
    TRANSACTION_SESSION,
    TRANSACTION_SIGNATURE,
 } from '../../utils/constants/symbol-keys.constant';
-import { TransactionModel } from '../types/transaction-model.type';
-import {
+import type { TransactionModel } from '../types/transaction-model.type';
+import type {
    PerformParameters,
    PerformAwaitedResult,
    PerformUsecase,
 } from '../types/performer.type';
 
-import { AnyActor } from '../../actor/types/utility.type';
+import type { AnyActor } from '../../actor/types/utility.type';
 import { isActorAllowToPerform } from '../functions/is-actor-allow-to-perform.function';
 import { createSessionData } from '../functions/create-session-data.function';
-import { AnyFunction } from '../../utils/types/utility.type';
+import type { AnyFunction } from '../../utils/types/utility.type';
 import { emitSymbolEvent } from '../../symbol/functions/emit-symbol-event.function';
-import { AnyUsecase } from '../types/utility.type';
+import type { AnyUsecase } from '../types/utility.type';
 
 export class Transaction<
    Data extends object,
@@ -30,10 +30,12 @@ export class Transaction<
    readonly [TRANSACTION_SIGNATURE] = 1;
 
    get [ACTOR_KEY](): Actor {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, ACTOR_KEY);
    }
 
    get [TRANSACTION_SESSION](): Readonly<Data> {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, TRANSACTION_SESSION);
    }
 
@@ -88,7 +90,7 @@ export class Transaction<
 
       if (!isActorAllowToPerform(actor, roles)) {
          throw new Error(
-            `${this[ACTOR_KEY]} is not allowed to perform "${usecase}"`,
+            `${String(this[ACTOR_KEY])} is not allowed to perform "${String(usecase)}"`,
          );
       }
 
@@ -101,6 +103,7 @@ export class Transaction<
          actor,
       );
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const result = await handler(...params, transaction);
 
       emitSymbolEvent(
@@ -115,6 +118,7 @@ export class Transaction<
 
       emitSymbolEvent(goal, 'achieved', goal, usecase, result);
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return result;
    }
 }

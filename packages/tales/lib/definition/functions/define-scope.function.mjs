@@ -1,18 +1,35 @@
-import { createBoundaryNameDetails } from '../../boundary/functions/create-boundary-name-details.function.mjs';
-import { defineBoundary } from '../../boundary/functions/define-boundary.function.mjs';
-import { Scope } from '../classes/scope.class.mjs';
-
-/**
- * Defines a Boundary and declaration scope.
- *
- * @param name Name of the Boundary in this format `${Type}:${Title}`
- * @returns declaration Scope
- */
-function defineScope(name) {
-    const [type, title] = createBoundaryNameDetails(name);
-    const boundary = defineBoundary(type, title);
-    return new Scope(boundary);
-}
-
-export { defineScope };
+import {
+  defineScope
+} from "../../chunk-RXTOI6WV.mjs";
+import "../../chunk-LEF663XT.mjs";
+import "../../chunk-3N4THWK6.mjs";
+import "../../chunk-VGFGGUFU.mjs";
+import "../../chunk-7B4ZIT5T.mjs";
+import "../../chunk-PEZKR53F.mjs";
+import "../../chunk-4AVML4N3.mjs";
+import "../../chunk-CPH6B747.mjs";
+import "../../chunk-DDW32AO4.mjs";
+import "../../chunk-TB43YAYM.mjs";
+import "../../chunk-XBIOL2OZ.mjs";
+import "../../chunk-VDZ6Q2OD.mjs";
+import "../../chunk-YTTGKDV7.mjs";
+import "../../chunk-FA3DEVSB.mjs";
+import "../../chunk-5TRXQO5L.mjs";
+import "../../chunk-7ZFDOSR7.mjs";
+import "../../chunk-KZIG5SQB.mjs";
+import "../../chunk-UG5NBXPT.mjs";
+import "../../chunk-HLBWIRJA.mjs";
+import "../../chunk-EHWJHZXL.mjs";
+import "../../chunk-IU7WS2GT.mjs";
+import "../../chunk-AYHS67CE.mjs";
+import "../../chunk-NQGCVMYI.mjs";
+import "../../chunk-67JGDFGE.mjs";
+import "../../chunk-H2F5IBXB.mjs";
+import "../../chunk-CYZVMAVA.mjs";
+import "../../chunk-BPBUJ4OC.mjs";
+import "../../chunk-U743HXLL.mjs";
+import "../../chunk-JYYYY7EP.mjs";
+export {
+  defineScope
+};
 //# sourceMappingURL=define-scope.function.mjs.map

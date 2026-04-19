@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/actor/functions/intersect-roles.function.ts"],
+  "sourcesContent": ["import type { IntersectTuple } from '../../utils/types/utility.type';\nimport type { AnyRole } from '../types/utility.type';\n\nexport function intersectRoles<\n   Pool extends readonly AnyRole[],\n   Target extends readonly AnyRole[],\n>(pool: Pool, target: Target) {\n   const set = new WeakSet<AnyRole>(pool);\n   return target.filter((role) => set.has(role)) as [\n      ...IntersectTuple<Pool, Target>,\n   ];\n}\n"],
+  "mappings": ";AAGO,SAAS,eAGd,MAAY,QAAgB;AAC3B,QAAM,MAAM,IAAI,QAAiB,IAAI;AACrC,SAAO,OAAO,OAAO,CAAC,SAAS,IAAI,IAAI,IAAI,CAAC;AAG/C;",
+  "names": []
+}

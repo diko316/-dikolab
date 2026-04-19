@@ -1,11 +1,11 @@
-import { UsecaseSymbol } from '../../symbol/classes/usecase-symbol.class';
-import {
+import type { UsecaseSymbol } from '../../symbol/classes/usecase-symbol.class';
+import type {
    NAME_KEY,
    ROLES_KEY,
 } from '../../utils/constants/symbol-keys.constant';
-import { ACTOR_TYPE } from '../../utils/constants/symbol-tag.constant';
-import { ActorEventMap } from './actor-events.type';
-import { AnyRole, RoleNames } from './utility.type';
+import type { ACTOR_TYPE } from '../../utils/constants/symbol-tag.constant';
+import type { ActorEventMap } from './actor-events.type';
+import type { AnyRole, RoleNames } from './utility.type';
 
 export interface ActorModel<
    Name extends string,

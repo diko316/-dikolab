@@ -1,8 +1,8 @@
 import { EVENT_EMITTER_KEY } from '../../event/constants/event-keys';
-import { AnyEventMap } from '../../event/types/event-map.type';
-import { AnyList } from '../../utils/types/utility.type';
-import { UsecaseSymbolEventMap } from '../types/usecase-symbol-event.type';
-import { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';
+import type { AnyEventMap } from '../../event/types/event-map.type';
+import type { AnyList } from '../../utils/types/utility.type';
+import type { UsecaseSymbolEventMap } from '../types/usecase-symbol-event.type';
+import type { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';
 
 /**
  * Disptaches Target Symbol event.

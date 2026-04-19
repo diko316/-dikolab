@@ -1,7 +1,7 @@
-import { Usecase } from '../../usecase/classes/usecase.class';
-import { AnyFunction } from '../../utils/types/utility.type';
-import { AnyGoal } from '../../goal/types/utility.type';
-import { ResolveRoles } from '../../actor/types/utility.type';
+import type { Usecase } from '../../usecase/classes/usecase.class';
+import type { AnyFunction } from '../../utils/types/utility.type';
+import type { AnyGoal } from '../../goal/types/utility.type';
+import type { ResolveRoles } from '../../actor/types/utility.type';
 
 export interface ImplementedAs<
    RoleNames extends readonly [...string[]],

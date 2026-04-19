@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/definition/classes/iam-chain.class.ts"],
+  "sourcesContent": ["import { get, set } from '@dikolab/private-parts';\nimport { TITLE_KEY } from '../../utils/constants/symbol-keys.constant';\nimport { defineActor } from '../../actor/functions/define-actor.function';\n\nexport class IAmChain<ActorName extends string> {\n   get [TITLE_KEY](): ActorName {\n      // eslint-disable-next-line @typescript-eslint/no-unsafe-return\n      return get(this, TITLE_KEY);\n   }\n\n   constructor(actorName: ActorName) {\n      set(this, TITLE_KEY, actorName);\n   }\n\n   /**\n    * Defines an Actor with the given Roles.\n    *\n    * @param roles Roles to attach\n    * @returns Actor\n    */\n   as<RoleNames extends readonly string[]>(...roles: RoleNames) {\n      return defineActor(this[TITLE_KEY], ...roles);\n   }\n}\n"],
+  "mappings": ";;;;;;;;AAAA,SAAS,KAAK,WAAW;AAIlB,IAAM,WAAN,MAAyC;AAAA,EAC7C,KAAK,SAAS,IAAe;AAE1B,WAAO,IAAI,MAAM,SAAS;AAAA,EAC7B;AAAA,EAEA,YAAY,WAAsB;AAC/B,QAAI,MAAM,WAAW,SAAS;AAAA,EACjC;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,EAQA,MAA2C,OAAkB;AAC1D,WAAO,YAAY,KAAK,SAAS,GAAG,GAAG,KAAK;AAAA,EAC/C;AACH;",
+  "names": []
+}

@@ -1,9 +1,8 @@
-import { MOCK_HANDLER_KEY } from '../../utils/constants/symbol-keys.constant.mjs';
-
-function clearMockeUsecaseHandler(usecase) {
-    usecase[MOCK_HANDLER_KEY] = null;
-    return usecase;
-}
-
-export { clearMockeUsecaseHandler };
+import {
+  clearMockeUsecaseHandler
+} from "../../chunk-OKPQ5VG5.mjs";
+import "../../chunk-U743HXLL.mjs";
+export {
+  clearMockeUsecaseHandler
+};
 //# sourceMappingURL=clear-mock-usecase-handler.function.mjs.map

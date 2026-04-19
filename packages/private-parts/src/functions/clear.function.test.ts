@@ -7,6 +7,7 @@ import { clearAll } from './clear-all.function';
 describe('clear(instance)', () => {
    class MyClass {
       get name(): string {
+         // eslint-disable-next-line @typescript-eslint/no-unsafe-return
          return get(this, 'name');
       }
 
@@ -31,9 +32,11 @@ describe('clear(instance)', () => {
    it('should clear all key/value related to instance', () => {
       clear(targetInstance1);
 
+      /* eslint-disable @typescript-eslint/no-unsafe-assignment */
       const hiddeName = get(targetInstance1, 'hiddenName');
       const age = get(targetInstance1, 'age');
       const name = get(targetInstance1, 'name');
+      /* eslint-enable @typescript-eslint/no-unsafe-assignment */
 
       expect(hiddeName).toBeUndefined();
       expect(age).toBeUndefined();

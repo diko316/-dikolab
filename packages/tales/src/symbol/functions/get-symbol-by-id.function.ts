@@ -1,6 +1,6 @@
 import { SYMBOL_LOOKUP } from '../constants/symbol-lookup.constant';
-import { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';
-import { UsecaseSymbolId } from '../types/utility.type';
+import type { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';
+import type { UsecaseSymbolId } from '../types/utility.type';
 import { createSymbolId } from './create-symbol-id.function';
 
 export function getSymbolById<Type extends string, Name extends string>(

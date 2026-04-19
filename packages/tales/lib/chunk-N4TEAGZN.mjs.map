@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/symbol/functions/unlisten-symbol-event.function.ts"],
+  "sourcesContent": ["import { EVENT_EMITTER_KEY } from '../../event/constants/event-keys';\nimport type { AnyEventMap } from '../../event/types/event-map.type';\nimport type { AnyList, AnyType } from '../../utils/types/utility.type';\nimport type { UsecaseSymbolEventMap } from '../types/usecase-symbol-event.type';\nimport type { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';\n\n/**\n * Removes event listener registered in the Target symbol\n *\n * @param symbol Target symbol. may be one of the following: Actor,\n * Role, Usecase, Goal, Boundary\n * @param type Event Name\n * @param listener The registered event listener callback function.\n */\nexport function unlistenSymbolEvent<\n   Source extends UsecaseSymbolModel<string, string, AnyEventMap>,\n   Type extends keyof UsecaseSymbolEventMap<Source>,\n   Params extends UsecaseSymbolEventMap<Source>[Type],\n>(\n   symbol: Source,\n   type: Type,\n   listener: (\n      ...args: Params extends AnyList ? [...Params] : []\n   ) => AnyType,\n): void {\n   symbol[EVENT_EMITTER_KEY].removeListener(type, listener);\n}\n"],
+  "mappings": ";;;;;AAcO,SAAS,oBAKb,QACA,MACA,UAGK;AACL,SAAO,iBAAiB,EAAE,eAAe,MAAM,QAAQ;AAC1D;",
+  "names": []
+}

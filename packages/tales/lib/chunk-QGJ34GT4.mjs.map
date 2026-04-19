@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/symbol/functions/listen-symbol-event.function.ts"],
+  "sourcesContent": ["import { EVENT_EMITTER_KEY } from '../../event/constants/event-keys';\nimport type { AnyEventMap } from '../../event/types/event-map.type';\nimport type { AnyList, AnyType } from '../../utils/types/utility.type';\nimport type { UsecaseSymbolEventMap } from '../types/usecase-symbol-event.type';\nimport type { UsecaseSymbolModel } from '../types/usecase-symbol-model.interface';\n\n/**\n * Listens to Symbol events\n *\n * @param symbol Target symbol. may be one of the following: Actor,\n * Role, Usecase, Goal, Boundary\n * @param type Event type\n * @param listener the function callback to execute when event is dispatched.\n */\nexport function listenSymbolEvent<\n   Source extends UsecaseSymbolModel<string, string, AnyEventMap>,\n   Type extends keyof UsecaseSymbolEventMap<Source>,\n   Params extends UsecaseSymbolEventMap<Source>[Type],\n>(\n   symbol: Source,\n   type: Type,\n   listener: (\n      ...args: Params extends AnyList ? [...Params] : []\n   ) => AnyType,\n): void {\n   symbol[EVENT_EMITTER_KEY].on(type, listener);\n}\n"],
+  "mappings": ";;;;;AAcO,SAAS,kBAKb,QACA,MACA,UAGK;AACL,SAAO,iBAAiB,EAAE,GAAG,MAAM,QAAQ;AAC9C;",
+  "names": []
+}

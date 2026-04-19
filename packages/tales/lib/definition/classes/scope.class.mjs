@@ -1,44 +1,31 @@
-import { get, set } from '@dikolab/private-parts';
-import { BOUNDARY_KEY, NAME_KEY } from '../../utils/constants/symbol-keys.constant.mjs';
-import { defineGoal } from '../../goal/functions/define-goal.function.mjs';
-import { Role } from '../../actor/classes/role.class.mjs';
-import { AsChain } from './as-chain.class.mjs';
-
-class Scope {
-    get [BOUNDARY_KEY]() {
-        return get(this, BOUNDARY_KEY);
-    }
-    constructor(boundary) {
-        set(this, BOUNDARY_KEY, boundary);
-    }
-    /**
-     * Creates Goal to be used for declaring a Use-case
-     *
-     * @param title Unique goal title of what you want to achieve.
-     * @returns Goal
-     */
-    defineGoal(title) {
-        return defineGoal(title, this[BOUNDARY_KEY]);
-    }
-    /**
-     * Creates declaration of Roles that guards the Use-case execution
-     *
-     * @param roles Role names or Roles included in the context
-     * @returns declaration chain object
-     */
-    as(...roles) {
-        const roleNames = roles.map((roleOrName) => {
-            if (typeof roleOrName === 'string') {
-                return roleOrName;
-            }
-            if (roleOrName instanceof Role) {
-                return roleOrName[NAME_KEY];
-            }
-            throw new TypeError(`Role parameter ${roleOrName} is invalid.`);
-        });
-        return new AsChain(this[BOUNDARY_KEY], roleNames);
-    }
-}
-
-export { Scope };
+import {
+  Scope
+} from "../../chunk-LEF663XT.mjs";
+import "../../chunk-PEZKR53F.mjs";
+import "../../chunk-4AVML4N3.mjs";
+import "../../chunk-CPH6B747.mjs";
+import "../../chunk-DDW32AO4.mjs";
+import "../../chunk-TB43YAYM.mjs";
+import "../../chunk-XBIOL2OZ.mjs";
+import "../../chunk-VDZ6Q2OD.mjs";
+import "../../chunk-YTTGKDV7.mjs";
+import "../../chunk-FA3DEVSB.mjs";
+import "../../chunk-5TRXQO5L.mjs";
+import "../../chunk-7ZFDOSR7.mjs";
+import "../../chunk-KZIG5SQB.mjs";
+import "../../chunk-UG5NBXPT.mjs";
+import "../../chunk-HLBWIRJA.mjs";
+import "../../chunk-EHWJHZXL.mjs";
+import "../../chunk-IU7WS2GT.mjs";
+import "../../chunk-AYHS67CE.mjs";
+import "../../chunk-NQGCVMYI.mjs";
+import "../../chunk-67JGDFGE.mjs";
+import "../../chunk-H2F5IBXB.mjs";
+import "../../chunk-CYZVMAVA.mjs";
+import "../../chunk-BPBUJ4OC.mjs";
+import "../../chunk-U743HXLL.mjs";
+import "../../chunk-JYYYY7EP.mjs";
+export {
+  Scope
+};
 //# sourceMappingURL=scope.class.mjs.map

@@ -1,5 +1,8 @@
-import { ContextualPrivatePart } from '../types/contextual-private-part.interface';
-import { AccessorMap, InstanceKeysMap } from '../types/utility.type';
+import type { ContextualPrivatePart } from '../types/contextual-private-part.interface';
+import type {
+   AccessorMap,
+   InstanceKeysMap,
+} from '../types/utility.type';
 
 export const CONTEXTUAL_ACCESSOR_MAP = new WeakMap<
    ContextualPrivatePart,

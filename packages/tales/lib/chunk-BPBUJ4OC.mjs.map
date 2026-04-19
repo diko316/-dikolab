@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/event/constants/event-keys.ts"],
+  "sourcesContent": ["export const EVENT_EMITTER_KEY: unique symbol = Symbol('Event Emitter');\n\nexport const EVENT_EMIT_KEY: unique symbol = Symbol('Emit Event');\n"],
+  "mappings": ";AAAO,IAAM,oBAAmC,OAAO,eAAe;AAE/D,IAAM,iBAAgC,OAAO,YAAY;",
+  "names": []
+}

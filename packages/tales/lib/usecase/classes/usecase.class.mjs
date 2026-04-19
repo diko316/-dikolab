@@ -1,44 +1,19 @@
-import { get, set } from '@dikolab/private-parts';
-import { UsecaseSymbol } from '../../symbol/classes/usecase-symbol.class.mjs';
-import { USECASE_TYPE } from '../../utils/constants/symbol-tag.constant.mjs';
-import { TITLE_KEY, ROLES_KEY, GOAL_KEY, HANDLER_KEY, MOCK_HANDLER_KEY, BOUNDARY_KEY } from '../../utils/constants/symbol-keys.constant.mjs';
-import { createUsecaseTitle } from '../functions/create-usecase-title.function.mjs';
-import { getSymbolName } from '../../symbol/functions/get-symbol-name.function.mjs';
-
-class Usecase extends UsecaseSymbol {
-    get [TITLE_KEY]() {
-        return get(this, TITLE_KEY);
-    }
-    get [ROLES_KEY]() {
-        return get(this, ROLES_KEY);
-    }
-    get [GOAL_KEY]() {
-        return get(this, GOAL_KEY);
-    }
-    get [HANDLER_KEY]() {
-        return get(this, HANDLER_KEY);
-    }
-    get [MOCK_HANDLER_KEY]() {
-        return get(this, MOCK_HANDLER_KEY);
-    }
-    set [MOCK_HANDLER_KEY](handler) {
-        set(this, MOCK_HANDLER_KEY, handler);
-    }
-    get [BOUNDARY_KEY]() {
-        return get(this[GOAL_KEY], BOUNDARY_KEY);
-    }
-    constructor(title, roles, goal, handler) {
-        super(USECASE_TYPE, createUsecaseTitle(title, goal, ...roles));
-        set(this, TITLE_KEY, title);
-        set(this, ROLES_KEY, roles);
-        set(this, HANDLER_KEY, handler);
-        set(this, MOCK_HANDLER_KEY, null);
-        set(this, GOAL_KEY, goal);
-    }
-    toString() {
-        return getSymbolName(this);
-    }
-}
-
-export { Usecase };
+import {
+  Usecase
+} from "../../chunk-KZIG5SQB.mjs";
+import "../../chunk-UG5NBXPT.mjs";
+import "../../chunk-HLBWIRJA.mjs";
+import "../../chunk-EHWJHZXL.mjs";
+import "../../chunk-IU7WS2GT.mjs";
+import "../../chunk-AYHS67CE.mjs";
+import "../../chunk-NQGCVMYI.mjs";
+import "../../chunk-67JGDFGE.mjs";
+import "../../chunk-H2F5IBXB.mjs";
+import "../../chunk-CYZVMAVA.mjs";
+import "../../chunk-BPBUJ4OC.mjs";
+import "../../chunk-U743HXLL.mjs";
+import "../../chunk-JYYYY7EP.mjs";
+export {
+  Usecase
+};
 //# sourceMappingURL=usecase.class.mjs.map

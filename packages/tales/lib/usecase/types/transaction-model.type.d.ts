@@ -1,7 +1,7 @@
-import { TRANSACTION_SESSION } from '../../utils/constants/symbol-keys.constant';
-import { AnyUsecase } from './utility.type';
-import { TransactionLike } from './transaction-like.type';
-import { PerformAwaitedResult, PerformParameters } from './performer.type';
+import type { TRANSACTION_SESSION } from '../../utils/constants/symbol-keys.constant';
+import type { AnyUsecase } from './utility.type';
+import type { TransactionLike } from './transaction-like.type';
+import type { PerformAwaitedResult, PerformParameters } from './performer.type';
 export interface TransactionModel<Data extends object> extends TransactionLike {
     readonly [TRANSACTION_SESSION]: Readonly<Data>;
     get<Key extends keyof Data>(name: Key): Data[Key] | undefined;

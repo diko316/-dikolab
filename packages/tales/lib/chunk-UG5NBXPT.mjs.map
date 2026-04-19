@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/symbol/functions/get-symbol-name.function.ts"],
+  "sourcesContent": ["import { NAME_KEY } from '../../utils/constants/symbol-keys.constant';\nimport type {\n   AnyUsecaseSymbol,\n   UsecaseSymbolName,\n} from '../types/utility.type';\n\nexport function getSymbolName<UsecaseSymbol extends AnyUsecaseSymbol>(\n   usecaseSymbol: UsecaseSymbol,\n) {\n   return usecaseSymbol[NAME_KEY] as UsecaseSymbolName<UsecaseSymbol>;\n}\n"],
+  "mappings": ";;;;;AAMO,SAAS,cACb,eACD;AACC,SAAO,cAAc,QAAQ;AAChC;",
+  "names": []
+}

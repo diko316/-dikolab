@@ -3,11 +3,11 @@ import {
    BOUNDARY_KEY,
    ROLE_NAMES_KEY,
 } from '../../utils/constants/symbol-keys.constant';
-import { RoleNamesDefined } from '../types/role-names-defined.interface';
-import { ICanActionTitle } from '../types/i-can-action-title.interface';
+import type { RoleNamesDefined } from '../types/role-names-defined.interface';
+import type { ICanActionTitle } from '../types/i-can-action-title.interface';
 import { AsICanChain } from './as-i-can-chain.class';
-import { AnyBoundary } from '../../boundary/types/utility.type';
-import { BoundaryDefined } from '../types/boundary-defined.interface';
+import type { AnyBoundary } from '../../boundary/types/utility.type';
+import type { BoundaryDefined } from '../types/boundary-defined.interface';
 
 export class AsChain<
       Boundary extends AnyBoundary,
@@ -19,10 +19,12 @@ export class AsChain<
       ICanActionTitle
 {
    get [BOUNDARY_KEY](): Boundary {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, BOUNDARY_KEY);
    }
 
    get [ROLE_NAMES_KEY](): RoleNames {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, ROLE_NAMES_KEY);
    }
 

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/utils/functions/get-function-details.function.ts"],
+  "sourcesContent": ["import { FUNCTION_TO_STRING_PATTERN } from '../constants/function.constant';\nimport type { AnyFunction } from '../types/utility.type';\n\nexport function getFunctionDetails(\n   fn: AnyFunction,\n): [name: string, parameters: string] {\n   const matches = fn.toString().match(FUNCTION_TO_STRING_PATTERN) || [\n      '',\n      '',\n   ];\n\n   return [fn.name, matches[2]];\n}\n"],
+  "mappings": ";;;;;AAGO,SAAS,mBACb,IACmC;AACnC,QAAM,UAAU,GAAG,SAAS,EAAE,MAAM,0BAA0B,KAAK;AAAA,IAChE;AAAA,IACA;AAAA,EACH;AAEA,SAAO,CAAC,GAAG,MAAM,QAAQ,CAAC,CAAC;AAC9B;",
+  "names": []
+}

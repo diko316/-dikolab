@@ -1,6 +1,6 @@
 import { MOCK_HANDLER_KEY } from '../../utils/constants/symbol-keys.constant';
-import { UsecaseHandler } from '../types/usecase-handler.type';
-import { AnyUsecase } from '../types/utility.type';
+import type { UsecaseHandler } from '../types/usecase-handler.type';
+import type { AnyUsecase } from '../types/utility.type';
 
 export function mockUsecaseHandler<Usecase extends AnyUsecase>(
    usecase: Usecase,

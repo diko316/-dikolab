@@ -1,27 +1,13 @@
-import { get, set } from '@dikolab/private-parts';
-import { UsecaseSymbol } from '../../symbol/classes/usecase-symbol.class.mjs';
-import { SUBTYPE_KEY, TITLE_KEY } from '../../utils/constants/symbol-keys.constant.mjs';
-import { BOUNDARY_TYPE } from '../../utils/constants/symbol-tag.constant.mjs';
-
-class Boundary extends UsecaseSymbol {
-    get [SUBTYPE_KEY]() {
-        return get(this, SUBTYPE_KEY);
-    }
-    get [TITLE_KEY]() {
-        return get(this, TITLE_KEY);
-    }
-    constructor(type, title) {
-        super(BOUNDARY_TYPE, `${type}:${title}`);
-        set(this, SUBTYPE_KEY, type);
-        set(this, TITLE_KEY, title);
-    }
-    toJSON() {
-        return {
-            ...super.toJSON(),
-            subtype: this[SUBTYPE_KEY],
-        };
-    }
-}
-
-export { Boundary };
+import {
+  Boundary
+} from "../../chunk-7B4ZIT5T.mjs";
+import "../../chunk-HLBWIRJA.mjs";
+import "../../chunk-EHWJHZXL.mjs";
+import "../../chunk-IU7WS2GT.mjs";
+import "../../chunk-BPBUJ4OC.mjs";
+import "../../chunk-U743HXLL.mjs";
+import "../../chunk-JYYYY7EP.mjs";
+export {
+  Boundary
+};
 //# sourceMappingURL=boundary.class.mjs.map

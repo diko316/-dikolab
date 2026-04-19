@@ -1,10 +1,10 @@
 import { UsecaseSymbol } from '../../symbol/classes/usecase-symbol.class';
 import { GOAL_TYPE } from '../../utils/constants/symbol-tag.constant';
-import { GoalModel } from '../types/goal-model.interface';
-import { AnyBoundary } from '../../boundary/types/utility.type';
+import type { GoalModel } from '../types/goal-model.interface';
+import type { AnyBoundary } from '../../boundary/types/utility.type';
 import { BOUNDARY_KEY, TITLE_KEY } from '../../utils/constants/symbol-keys.constant';
-import { GoalName } from '../types/goal-name.type';
-import { GoalEventMap } from '../types/goal-event-map.type';
+import type { GoalName } from '../types/goal-name.type';
+import type { GoalEventMap } from '../types/goal-event-map.type';
 export declare class Goal<Title extends string, Boundary extends AnyBoundary> extends UsecaseSymbol<typeof GOAL_TYPE, GoalName<Title, Boundary>, GoalEventMap> implements GoalModel<Title, Boundary> {
     get [TITLE_KEY](): Title;
     get [BOUNDARY_KEY](): Boundary;

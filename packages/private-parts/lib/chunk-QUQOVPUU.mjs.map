@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/constants/contextual-map.constant.ts"],
+  "sourcesContent": ["import type { ContextualPrivatePart } from '../types/contextual-private-part.interface';\nimport type {\n   AccessorMap,\n   InstanceKeysMap,\n} from '../types/utility.type';\n\nexport const CONTEXTUAL_ACCESSOR_MAP = new WeakMap<\n   ContextualPrivatePart,\n   AccessorMap\n>();\n\nexport const CONTEXTUAL_INSTANCE_KEYS_MAP = new WeakMap<\n   ContextualPrivatePart,\n   InstanceKeysMap\n>();\n"],
+  "mappings": ";AAMO,IAAM,0BAA0B,oBAAI,QAGzC;AAEK,IAAM,+BAA+B,oBAAI,QAG9C;",
+  "names": []
+}

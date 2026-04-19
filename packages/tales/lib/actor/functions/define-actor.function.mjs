@@ -1,16 +1,18 @@
-import { Actor } from '../classes/actor.class.mjs';
-import { getOrDefineRoles } from './get-or-define-roles.function.mjs';
-
-function defineActor(name, ...roleOrNames) {
-    if (!name || typeof name !== 'string') {
-        throw new TypeError(`"${name}" name parameter is invald.`);
-    }
-    // get role or create if do not exist!
-    const [role] = getOrDefineRoles(name);
-    const others = getOrDefineRoles(...roleOrNames);
-    const roles = [role, ...others];
-    return new Actor(name, roles);
-}
-
-export { defineActor };
+import {
+  defineActor
+} from "../../chunk-Z4YSNXD3.mjs";
+import "../../chunk-DDW32AO4.mjs";
+import "../../chunk-TB43YAYM.mjs";
+import "../../chunk-XBIOL2OZ.mjs";
+import "../../chunk-UNVUUG3R.mjs";
+import "../../chunk-5TRXQO5L.mjs";
+import "../../chunk-HLBWIRJA.mjs";
+import "../../chunk-EHWJHZXL.mjs";
+import "../../chunk-IU7WS2GT.mjs";
+import "../../chunk-BPBUJ4OC.mjs";
+import "../../chunk-U743HXLL.mjs";
+import "../../chunk-JYYYY7EP.mjs";
+export {
+  defineActor
+};
 //# sourceMappingURL=define-actor.function.mjs.map

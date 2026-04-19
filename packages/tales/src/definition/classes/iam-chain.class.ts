@@ -4,6 +4,7 @@ import { defineActor } from '../../actor/functions/define-actor.function';
 
 export class IAmChain<ActorName extends string> {
    get [TITLE_KEY](): ActorName {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, TITLE_KEY);
    }
 

@@ -1,5 +1,5 @@
-import { AnyBoundary } from '../../boundary/types/utility.type';
-import { GoalModel } from './goal-model.interface';
+import type { AnyBoundary } from '../../boundary/types/utility.type';
+import type { GoalModel } from './goal-model.interface';
 
 export type AnyGoal = GoalModel<string, AnyBoundary>;
 

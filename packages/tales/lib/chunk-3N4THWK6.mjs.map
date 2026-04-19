@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/boundary/functions/create-boundary-name-details.function.ts"],
+  "sourcesContent": ["const BOUNDARY_NAME_PATTERN = /^([^:]+):(.+)$/;\n\nexport function createBoundaryNameDetails<\n   Type extends string,\n   Title extends string,\n>(name: `${Type}:${Title}`) {\n   if (!BOUNDARY_NAME_PATTERN.test(name)) {\n      throw new SyntaxError(`${name} Boundary Name is malformed.`);\n   }\n\n   const [rawType, rawTitle] = name\n      .match(BOUNDARY_NAME_PATTERN)\n      ?.slice(1) || ['', ''];\n\n   const type = rawType.trim() as Type;\n   const title = rawTitle.trim() as Title;\n   const id = `${type}:${title}`;\n\n   return [type, title, id] as const;\n}\n"],
+  "mappings": ";AAAA,IAAM,wBAAwB;AAEvB,SAAS,0BAGd,MAA0B;AACzB,MAAI,CAAC,sBAAsB,KAAK,IAAI,GAAG;AACpC,UAAM,IAAI,YAAY,GAAG,IAAI,8BAA8B;AAAA,EAC9D;AAEA,QAAM,CAAC,SAAS,QAAQ,IAAI,KACxB,MAAM,qBAAqB,GAC1B,MAAM,CAAC,KAAK,CAAC,IAAI,EAAE;AAExB,QAAM,OAAO,QAAQ,KAAK;AAC1B,QAAM,QAAQ,SAAS,KAAK;AAC5B,QAAM,KAAK,GAAG,IAAI,IAAI,KAAK;AAE3B,SAAO,CAAC,MAAM,OAAO,EAAE;AAC1B;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/functions/clear.function.ts"],
+  "sourcesContent": ["import { GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER } from '../constants/global-contextual-private-parts-manager.contsant';\n\nexport function clear(instance: object): void {\n   GLOBAL_CONTEXTUAL_PRIVATE_PARTS_MANAGER.clear(instance);\n}\n"],
+  "mappings": ";;;;;AAEO,SAAS,MAAM,UAAwB;AAC3C,0CAAwC,MAAM,QAAQ;AACzD;",
+  "names": []
+}

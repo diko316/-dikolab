@@ -6,9 +6,9 @@ import {
 } from '../../utils/constants/symbol-keys.constant';
 
 import { ACTOR_TYPE } from '../../utils/constants/symbol-tag.constant';
-import { ActorModel } from '../types/actor-model.interface';
-import { AnyRole, RoleNames } from '../types/utility.type';
-import { ActorEventMap } from '../types/actor-events.type';
+import type { ActorModel } from '../types/actor-model.interface';
+import type { AnyRole, RoleNames } from '../types/utility.type';
+import type { ActorEventMap } from '../types/actor-events.type';
 
 export class Actor<
       Name extends string,
@@ -18,6 +18,7 @@ export class Actor<
    implements ActorModel<Name, Roles>
 {
    get [ROLES_KEY](): Roles {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return get(this, ROLES_KEY);
    }
 

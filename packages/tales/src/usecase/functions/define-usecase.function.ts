@@ -1,6 +1,6 @@
-import { AnyRole } from '../../actor/types/utility.type';
-import { AnyGoal } from '../../goal/types/utility.type';
-import { AnyFunction } from '../../utils/types/utility.type';
+import type { AnyRole } from '../../actor/types/utility.type';
+import type { AnyGoal } from '../../goal/types/utility.type';
+import type { AnyFunction } from '../../utils/types/utility.type';
 import { Usecase } from '../classes/usecase.class';
 
 export function defineUsecase<

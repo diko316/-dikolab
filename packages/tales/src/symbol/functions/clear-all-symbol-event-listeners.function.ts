@@ -1,4 +1,4 @@
-import EventEmitter from 'events';
+import type EventEmitter from 'events';
 import { EVENT_EMITTER_KEY } from '../../event/constants/event-keys';
 import { SYMBOL_LOOKUP } from '../constants/symbol-lookup.constant';
 

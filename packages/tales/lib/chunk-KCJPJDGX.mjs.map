@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/definition/functions/i-am.function.ts"],
+  "sourcesContent": ["import { IAmChain } from '../classes/iam-chain.class';\n\n/**\n * A chain call to create Actor and attached roles\n *\n * @param name Actor name\n * @returns Chain declaration instance of Actor.\n */\nexport function iAm<Name extends string>(name: Name) {\n   if (!name || typeof name !== 'string') {\n      throw new TypeError(`\"${name}\" name parameter is invald.`);\n   }\n\n   return new IAmChain(name);\n}\n"],
+  "mappings": ";;;;;AAQO,SAAS,IAAyB,MAAY;AAClD,MAAI,CAAC,QAAQ,OAAO,SAAS,UAAU;AACpC,UAAM,IAAI,UAAU,IAAI,IAAI,6BAA6B;AAAA,EAC5D;AAEA,SAAO,IAAI,SAAS,IAAI;AAC3B;",
+  "names": []
+}

@@ -1,5 +1,5 @@
-import { AnyEventMap } from '../../event/types/event-map.type';
-import { UsecaseSymbolModel } from './usecase-symbol-model.interface';
+import type { AnyEventMap } from '../../event/types/event-map.type';
+import type { UsecaseSymbolModel } from './usecase-symbol-model.interface';
 
 export type UsecaseSymbolId<
    Type extends string,

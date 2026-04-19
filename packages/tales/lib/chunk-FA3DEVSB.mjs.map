@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/goal/functions/create-goal-name.function.ts"],
+  "sourcesContent": ["import type { AnyBoundary } from '../../boundary/types/utility.type';\nimport { NAME_KEY } from '../../utils/constants/symbol-keys.constant';\nimport type { GoalName } from '../types/goal-name.type';\n\nexport function createGoalName<\n   Title extends string,\n   Boundary extends AnyBoundary,\n>(title: Title, boundary: Boundary) {\n   const boundaryName = boundary[NAME_KEY];\n\n   return `${boundaryName}-${title}` as GoalName<Title, Boundary>;\n}\n"],
+  "mappings": ";;;;;AAIO,SAAS,eAGd,OAAc,UAAoB;AACjC,QAAM,eAAe,SAAS,QAAQ;AAEtC,SAAO,GAAG,YAAY,IAAI,KAAK;AAClC;",
+  "names": []
+}

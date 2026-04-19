@@ -1,6 +1,6 @@
 {
    "name": "@dikolab/private-parts",
-   "version": "0.6.0",
+   "version": "0.7.0",
    "description": "WeakMap storage for private data accessible by object instance and key string",
    "publishConfig": {
       "access": "public"
@@ -13,7 +13,7 @@
    "license": "ISC",
    "repository": {
       "type": "git",
-      "url": "git@github.com:diko316/-dikolab.git",
+      "url": "git+https://github.com/diko316/-dikolab.git",
       "directory": "packages/private-parts"
    },
    "homepage": "https://github.com/diko316/-dikolab/blob/main/packages/private-parts/README.md",
@@ -22,26 +22,33 @@
       "email": "diko316@gmail.com"
    },
    "files": [
-      "lib/**/*"
+      "lib/**/*",
+      "src/**/*",
+      "!src/**/*.test.ts",
+      "LICENSE"
    ],
    "type": "module",
-   "main": "./lib/index.js",
+   "main": "./lib/index.cjs",
    "module": "./lib/index.mjs",
+   "browser": "./lib/index.umd.js",
    "types": "./lib/index.d.ts",
    "engines": {
       "typescript": ">=5.1.3"
    },
    "exports": {
       ".": {
+         "deno": "./src/index.ts",
          "types": "./lib/index.d.ts",
-         "require": "./lib/index.js",
-         "import": "./lib/index.mjs"
+         "import": "./lib/index.mjs",
+         "require": "./lib/index.cjs",
+         "browser": "./lib/index.umd.js",
+         "default": "./lib/index.mjs"
       }
    },
    "scripts": {
       "lint": "eslint",
       "test": "vitest --run",
-      "build": "rollup -c rollup.config.js",
+      "build": "node esbuild.config.js",
       "prepublishOnly": "npm run lint && npm run test && npm run build"
    }
 }

@@ -1,6 +1,6 @@
 import { Actor } from '../classes/actor.class';
-import { Role } from '../classes/role.class';
-import { ResolveRoles } from '../types/utility.type';
+import type { Role } from '../classes/role.class';
+import type { ResolveRoles } from '../types/utility.type';
 import { getOrDefineRoles } from './get-or-define-roles.function';
 
 export function defineActor<

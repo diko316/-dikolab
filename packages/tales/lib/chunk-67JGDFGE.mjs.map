@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/boundary/functions/get-boundary-name.function.ts"],
+  "sourcesContent": ["import { get } from '@dikolab/private-parts';\nimport type { AnyBoundary, BoundaryName } from '../types/utility.type';\nimport { NAME_KEY } from '../../utils/constants/symbol-keys.constant';\n\nexport function getBoundaryName<Boundary extends AnyBoundary>(\n   boundary: Boundary,\n): BoundaryName<Boundary> {\n   // eslint-disable-next-line @typescript-eslint/no-unsafe-return\n   return get(boundary, NAME_KEY);\n}\n"],
+  "mappings": ";;;;;AAAA,SAAS,WAAW;AAIb,SAAS,gBACb,UACuB;AAEvB,SAAO,IAAI,UAAU,QAAQ;AAChC;",
+  "names": []
+}

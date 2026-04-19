@@ -1,4 +1,4 @@
-import { ActionTitleDefined } from './action-title-defined.interface';
+import type { ActionTitleDefined } from './action-title-defined.interface';
 export interface ICanActionTitle {
     /**
      * Defines an Action description for the Use-case

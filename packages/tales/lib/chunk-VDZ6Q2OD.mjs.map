@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/goal/functions/define-goal.function.ts"],
+  "sourcesContent": ["import type { AnyBoundary } from '../../boundary/types/utility.type';\nimport { Goal } from '../classes/goal.class';\n\nexport function defineGoal<\n   Title extends string,\n   Boundary extends AnyBoundary,\n>(title: Title, boundary: Boundary) {\n   return new Goal(title, boundary);\n}\n"],
+  "mappings": ";;;;;AAGO,SAAS,WAGd,OAAc,UAAoB;AACjC,SAAO,IAAI,KAAK,OAAO,QAAQ;AAClC;",
+  "names": []
+}

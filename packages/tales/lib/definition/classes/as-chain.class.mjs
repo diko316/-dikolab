@@ -1,28 +1,27 @@
-import { get, set } from '@dikolab/private-parts';
-import { BOUNDARY_KEY, ROLE_NAMES_KEY } from '../../utils/constants/symbol-keys.constant.mjs';
-import { AsICanChain } from './as-i-can-chain.class.mjs';
-
-class AsChain {
-    get [BOUNDARY_KEY]() {
-        return get(this, BOUNDARY_KEY);
-    }
-    get [ROLE_NAMES_KEY]() {
-        return get(this, ROLE_NAMES_KEY);
-    }
-    constructor(boundary, roleNames) {
-        set(this, BOUNDARY_KEY, boundary);
-        set(this, ROLE_NAMES_KEY, roleNames);
-    }
-    /**
-     * Declares text title of the Use-case.
-     *
-     * @param title Text title of the Use-case
-     * @returns declaration chain
-     */
-    iCan(title) {
-        return new AsICanChain(this[BOUNDARY_KEY], this[ROLE_NAMES_KEY], title);
-    }
-}
-
-export { AsChain };
+import {
+  AsChain
+} from "../../chunk-PEZKR53F.mjs";
+import "../../chunk-4AVML4N3.mjs";
+import "../../chunk-CPH6B747.mjs";
+import "../../chunk-DDW32AO4.mjs";
+import "../../chunk-TB43YAYM.mjs";
+import "../../chunk-XBIOL2OZ.mjs";
+import "../../chunk-5TRXQO5L.mjs";
+import "../../chunk-7ZFDOSR7.mjs";
+import "../../chunk-KZIG5SQB.mjs";
+import "../../chunk-UG5NBXPT.mjs";
+import "../../chunk-HLBWIRJA.mjs";
+import "../../chunk-EHWJHZXL.mjs";
+import "../../chunk-IU7WS2GT.mjs";
+import "../../chunk-AYHS67CE.mjs";
+import "../../chunk-NQGCVMYI.mjs";
+import "../../chunk-67JGDFGE.mjs";
+import "../../chunk-H2F5IBXB.mjs";
+import "../../chunk-CYZVMAVA.mjs";
+import "../../chunk-BPBUJ4OC.mjs";
+import "../../chunk-U743HXLL.mjs";
+import "../../chunk-JYYYY7EP.mjs";
+export {
+  AsChain
+};
 //# sourceMappingURL=as-chain.class.mjs.map

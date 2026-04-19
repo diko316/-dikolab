@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/symbol/functions/clear-symbols.function.ts"],
+  "sourcesContent": ["import { SYMBOL_LOOKUP } from '../constants/symbol-lookup.constant';\n\n/**\n * Unregisters Symbol. This is only used for running Unit tests.\n */\nexport function clearSymbols(): void {\n   SYMBOL_LOOKUP.clear();\n}\n"],
+  "mappings": ";;;;;AAKO,SAAS,eAAqB;AAClC,gBAAc,MAAM;AACvB;",
+  "names": []
+}

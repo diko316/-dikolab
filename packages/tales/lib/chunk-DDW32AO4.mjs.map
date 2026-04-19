@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/actor/functions/get-or-define-roles.function.ts"],
+  "sourcesContent": ["import { defineRole } from '../../actor/functions/define-role.function';\nimport { getSymbolById } from '../../symbol/functions/get-symbol-by-id.function';\nimport { ROLE_TYPE } from '../../utils/constants/symbol-tag.constant';\nimport type { ResolveRoles } from '../types/utility.type';\n\nexport function getOrDefineRoles<Names extends readonly string[]>(\n   ...roleNames: Names\n) {\n   return roleNames.map((name) => {\n      if (typeof name !== 'string') {\n         throw new TypeError(\n            `\"${String(name)}\" in roleNames parameter is invalid.`,\n         );\n      }\n\n      return getSymbolById(ROLE_TYPE, name) || defineRole(name);\n   }) as ResolveRoles<Names>;\n}\n"],
+  "mappings": ";;;;;;;;;;;AAKO,SAAS,oBACV,WACJ;AACC,SAAO,UAAU,IAAI,CAAC,SAAS;AAC5B,QAAI,OAAO,SAAS,UAAU;AAC3B,YAAM,IAAI;AAAA,QACP,IAAI,OAAO,IAAI,CAAC;AAAA,MACnB;AAAA,IACH;AAEA,WAAO,cAAc,WAAW,IAAI,KAAK,WAAW,IAAI;AAAA,EAC3D,CAAC;AACJ;",
+  "names": []
+}

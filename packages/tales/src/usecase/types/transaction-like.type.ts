@@ -1,5 +1,5 @@
-import { TRANSACTION_SIGNATURE } from '../../utils/constants/symbol-keys.constant';
-import { AnyFunction } from '../../utils/types/utility.type';
+import type { TRANSACTION_SIGNATURE } from '../../utils/constants/symbol-keys.constant';
+import type { AnyFunction } from '../../utils/types/utility.type';
 
 export type NotTransaction =
    | (object & {
