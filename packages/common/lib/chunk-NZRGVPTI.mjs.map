@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/object/functions/instantiate.function.ts"],
+  "sourcesContent": ["import type { Any } from '../../typing/types/any.type';\nimport type { AnyObject } from '../../typing/types/any-object.type';\nimport type { AnyConstructor } from '../../typing/types/any-constructor.type';\nimport { isObject } from '../../type-checking/functions/is-object.function';\nimport { assign } from './assign.function';\n\n/**\n * Creates an instance of a constructor with\n * pre-applied properties\n *\n * @param Class - Constructor to instantiate\n * @param properties - Properties to assign\n * @returns New instance with properties applied\n */\nexport function instantiate(\n   Class: AnyConstructor,\n   overrides?: AnyObject,\n): Any {\n   const instance = Object.create(Class.prototype as AnyObject);\n\n   if (isObject(overrides)) {\n      return assign(instance, overrides);\n   }\n\n   return instance;\n}\n"],
+  "mappings": ";;;;;;;;AAcO,SAAS,YACb,OACA,WACI;AACJ,QAAM,WAAW,OAAO,OAAO,MAAM,SAAsB;AAE3D,MAAI,SAAS,SAAS,GAAG;AACtB,WAAO,OAAO,UAAU,SAAS;AAAA,EACpC;AAEA,SAAO;AACV;",
+  "names": []
+}

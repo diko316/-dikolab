@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/type-checking/functions/is-thenable.function.ts"],
+  "sourcesContent": ["import {\n   BOOLEAN,\n   NULL,\n   NUMBER,\n   STRING,\n   UNDEFINED,\n} from '../constants/signatures.constant';\nimport type { Any } from '../../typing/types/any.type';\nimport { signature } from './signature.function';\nimport { isMethod } from './is-method.function';\n\n/**\n * Tests whether a value is a thenable\n * (has .then method)\n *\n * @param subject - Value to test\n * @returns Type predicate narrowing to\n *    PromiseLike\n */\nexport function isThenable<T = Any>(\n   subject: Any,\n): subject is PromiseLike<T> {\n   switch (subject) {\n      case undefined:\n      case null:\n      case true:\n      case false:\n         return false;\n   }\n\n   switch (signature(subject)) {\n      case NUMBER:\n      case STRING:\n      case BOOLEAN:\n      case NULL:\n      case UNDEFINED:\n         return false;\n   }\n\n   return 'then' in subject && isMethod(subject.then);\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;AAmBO,SAAS,WACb,SAC0B;AAC1B,UAAQ,SAAS;AAAA,IACd,KAAK;AAAA,IACL,KAAK;AAAA,IACL,KAAK;AAAA,IACL,KAAK;AACF,aAAO;AAAA,EACb;AAEA,UAAQ,UAAU,OAAO,GAAG;AAAA,IACzB,KAAK;AAAA,IACL,KAAK;AAAA,IACL,KAAK;AAAA,IACL,KAAK;AAAA,IACL,KAAK;AACF,aAAO;AAAA,EACb;AAEA,SAAO,UAAU,WAAW,SAAS,QAAQ,IAAI;AACpD;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/object/functions/clear.function.ts"],
+  "sourcesContent": ["import type { Any } from '../../typing/types/any.type';\nimport type { AnyObject } from '../../typing/types/any-object.type';\nimport { each } from './each.function';\n\nfunction applyClear(\n   _value: Any,\n   name: string,\n   subject: AnyObject,\n): void {\n   delete subject[name];\n}\n\n/**\n * Removes all own enumerable properties\n * from an object\n *\n * @param subject - Object to clear\n * @returns The emptied object\n */\nexport function clear(subject: AnyObject): AnyObject {\n   each(subject, applyClear, null, true);\n   return subject;\n}\n"],
+  "mappings": ";;;;;AAIA,SAAS,WACN,QACA,MACA,SACK;AACL,SAAO,QAAQ,IAAI;AACtB;AASO,SAAS,MAAM,SAA+B;AAClD,OAAK,SAAS,YAAY,MAAM,IAAI;AACpC,SAAO;AACV;",
+  "names": []
+}

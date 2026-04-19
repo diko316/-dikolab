@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/string/functions/trim.function.ts"],
+  "sourcesContent": ["import { isString } from '../../type-checking/functions/is-string.function';\n\nconst TRIM_RE = /^\\s+|\\s+$/g;\n\n/**\n * Trims leading and trailing whitespace\n *\n * @param subject - String to trim\n * @returns Trimmed string\n */\nexport function trim(subject: string): string {\n   if (!isString(subject, true)) {\n      throw new Error('Invalid [subject] parameter.');\n   }\n\n   return subject ? subject.replace(TRIM_RE, '') : subject;\n}\n"],
+  "mappings": ";;;;;AAEA,IAAM,UAAU;AAQT,SAAS,KAAK,SAAyB;AAC3C,MAAI,CAAC,SAAS,SAAS,IAAI,GAAG;AAC3B,UAAM,IAAI,MAAM,8BAA8B;AAAA,EACjD;AAEA,SAAO,UAAU,QAAQ,QAAQ,SAAS,EAAE,IAAI;AACnD;",
+  "names": []
+}

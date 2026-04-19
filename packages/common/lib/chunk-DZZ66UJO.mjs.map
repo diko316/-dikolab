@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/type-checking/constants/signatures.constant.ts"],
+  "sourcesContent": ["/** Object.prototype.toString tag for plain objects */\nexport const OBJECT = '[object Object]';\n/** Object.prototype.toString tag for arrays */\nexport const ARRAY = '[object Array]';\n/** Object.prototype.toString tag for null */\nexport const NULL = '[object Null]';\n/** Object.prototype.toString tag for undefined */\nexport const UNDEFINED = '[object Undefined]';\n/** Object.prototype.toString tag for numbers */\nexport const NUMBER = '[object Number]';\n/** Object.prototype.toString tag for strings */\nexport const STRING = '[object String]';\n/** Object.prototype.toString tag for booleans */\nexport const BOOLEAN = '[object Boolean]';\n/** Object.prototype.toString tag for functions */\nexport const METHOD = '[object Function]';\n/** Object.prototype.toString tag for functions */\nexport const FUNCTION = METHOD;\n/** Object.prototype.toString tag for dates */\nexport const DATE = '[object Date]';\n/** Object.prototype.toString tag for regular expressions */\nexport const REGEX = '[object RegExp]';\n"],
+  "mappings": ";AACO,IAAM,SAAS;AAEf,IAAM,QAAQ;AAEd,IAAM,OAAO;AAEb,IAAM,YAAY;AAElB,IAAM,SAAS;AAEf,IAAM,SAAS;AAEf,IAAM,UAAU;AAEhB,IAAM,SAAS;AAEf,IAAM,WAAW;AAEjB,IAAM,OAAO;AAEb,IAAM,QAAQ;",
+  "names": []
+}

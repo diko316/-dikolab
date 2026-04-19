@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/string/functions/uncamelize.function.ts"],
+  "sourcesContent": ["const UNCAMEL_RE = /\\-*[A-Z]/g;\n\nfunction applyUncamelize(all: string): string {\n   return '-' + all.charAt(all.length - 1).toLowerCase();\n}\n\n/**\n * Converts camelCase to hyphen-separated\n *\n * @param subject - camelCase string\n * @returns Hyphenated string\n */\nexport function uncamelize(subject: string): string {\n   return subject.replace(UNCAMEL_RE, applyUncamelize);\n}\n"],
+  "mappings": ";AAAA,IAAM,aAAa;AAEnB,SAAS,gBAAgB,KAAqB;AAC3C,SAAO,MAAM,IAAI,OAAO,IAAI,SAAS,CAAC,EAAE,YAAY;AACvD;AAQO,SAAS,WAAW,SAAyB;AACjD,SAAO,QAAQ,QAAQ,YAAY,eAAe;AACrD;",
+  "names": []
+}

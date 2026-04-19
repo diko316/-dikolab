@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/json-path/functions/json-clone.function.ts"],
+  "sourcesContent": ["import type { Any } from '../../typing/types/any.type';\nimport { clone } from '../../object/functions/clone.function';\nimport { jsonFind } from './json-find.function';\n\n/**\n * Deep-clones the value at a JSON path\n *\n * @param path - JSON path\n * @param object - Root object\n * @param deep - Whether to deep clone\n * @returns Cloned value, or undefined\n */\nexport function jsonClone(\n   path: string,\n   object: Any,\n   deep = false,\n): Any {\n   return clone(jsonFind(path, object), deep);\n}\n"],
+  "mappings": ";;;;;;;;AAYO,SAAS,UACb,MACA,QACA,OAAO,OACH;AACJ,SAAO,MAAM,SAAS,MAAM,MAAM,GAAG,IAAI;AAC5C;",
+  "names": []
+}

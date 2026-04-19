@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/json-path/functions/json-compare.function.ts"],
+  "sourcesContent": ["import type { Any } from '../../typing/types/any.type';\nimport { compare } from '../../object/functions/compare.function';\nimport { jsonFind } from './json-find.function';\n\n/**\n * Compares a value at a JSON path against\n * an expected value\n *\n * @param path - JSON path\n * @param object1 - Root object\n * @param object2 - Value to compare against\n * @returns True if values are equal\n */\nexport function jsonCompare(\n   path: string,\n   object1: Any,\n   object2: Any,\n): boolean {\n   return compare(jsonFind(path, object1), object2);\n}\n"],
+  "mappings": ";;;;;;;;AAaO,SAAS,YACb,MACA,SACA,SACQ;AACR,SAAO,QAAQ,SAAS,MAAM,OAAO,GAAG,OAAO;AAClD;",
+  "names": []
+}

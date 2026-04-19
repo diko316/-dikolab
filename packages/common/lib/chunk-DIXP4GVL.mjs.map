@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/json-path/functions/json-exists.function.ts"],
+  "sourcesContent": ["import type { Any } from '../../typing/types/any.type';\nimport { jsonEach } from './json-each.function';\nimport { isAccessible } from './json-find.function';\n\nfunction existsCallback(\n   item: string,\n   last: boolean,\n   context: Any[],\n): boolean {\n   const subject = context[0];\n   const exists = isAccessible(subject, item);\n\n   if (exists) {\n      context[0] = subject[item];\n   }\n\n   if (last) {\n      context[1] = !!exists;\n   }\n\n   return !!exists;\n}\n\n/**\n * Checks whether a value exists at a\n * JSON path\n *\n * @param subject - Root object\n * @param path - JSON path\n * @returns True if path exists\n */\nexport function jsonExists(path: string, subject: Any): boolean {\n   const operation: Any[] = [subject, false];\n   jsonEach(path, existsCallback, operation);\n   operation[0] = null;\n   return operation[1] as boolean;\n}\n"],
+  "mappings": ";;;;;;;;AAIA,SAAS,eACN,MACA,MACA,SACQ;AACR,QAAM,UAAU,QAAQ,CAAC;AACzB,QAAM,SAAS,aAAa,SAAS,IAAI;AAEzC,MAAI,QAAQ;AACT,YAAQ,CAAC,IAAI,QAAQ,IAAI;AAAA,EAC5B;AAEA,MAAI,MAAM;AACP,YAAQ,CAAC,IAAI,CAAC,CAAC;AAAA,EAClB;AAEA,SAAO,CAAC,CAAC;AACZ;AAUO,SAAS,WAAW,MAAc,SAAuB;AAC7D,QAAM,YAAmB,CAAC,SAAS,KAAK;AACxC,WAAS,MAAM,gBAAgB,SAAS;AACxC,YAAU,CAAC,IAAI;AACf,SAAO,UAAU,CAAC;AACrB;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/json-path/functions/json-parse-path.function.ts"],
+  "sourcesContent": ["import { jsonEach } from './json-each.function';\n\nfunction onParsePath(\n   property: string,\n   _last: boolean,\n   context: string[],\n): void {\n   context[context.length] = property;\n}\n\n/**\n * Parses a JSON path string into an array\n * of property keys\n *\n * @param path - JSON path like \"a.b[0].c\"\n * @returns Array of path segments\n */\nexport function jsonParsePath(path: string): string[] | null {\n   const items: string[] = [];\n   return jsonEach(path, onParsePath, items) && items.length\n      ? items\n      : null;\n}\n"],
+  "mappings": ";;;;;AAEA,SAAS,YACN,UACA,OACA,SACK;AACL,UAAQ,QAAQ,MAAM,IAAI;AAC7B;AASO,SAAS,cAAc,MAA+B;AAC1D,QAAM,QAAkB,CAAC;AACzB,SAAO,SAAS,MAAM,aAAa,KAAK,KAAK,MAAM,SAC9C,QACA;AACR;",
+  "names": []
+}

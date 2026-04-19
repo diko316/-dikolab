@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/object/functions/max-object-index.function.ts"],
+  "sourcesContent": ["import type { Any } from '../../typing/types/any.type';\nimport type { AnyObject } from '../../typing/types/any-object.type';\nimport { isArray } from '../../type-checking/functions/is-array.function';\nimport { each, isValidObject } from './each.function';\n\nconst ARRAY_INDEX_RE = /^[1-9][0-9]*|0$/;\n\nfunction onMaxNumericIndex(\n   _value: Any,\n   name: string,\n   _subject: AnyObject,\n): void {\n   if (ARRAY_INDEX_RE.test(name)) {\n      const context = this as unknown as [number];\n      context[0] = Math.max(Number(name), context[0]);\n   }\n}\n\n/**\n * Finds the highest numeric key in an\n * object's own properties\n *\n * @param subject - Object to scan\n * @returns Highest numeric index, or false\n */\nexport function maxObjectIndex(subject: Any): number | false {\n   if (isArray(subject)) {\n      return subject.length - 1;\n   }\n\n   if (isValidObject(subject)) {\n      const context: [number] = [-1];\n      each(subject, onMaxNumericIndex, context);\n      return context[0];\n   }\n\n   return false;\n}\n"],
+  "mappings": ";;;;;;;;;AAKA,IAAM,iBAAiB;AAEvB,SAAS,kBACN,QACA,MACA,UACK;AACL,MAAI,eAAe,KAAK,IAAI,GAAG;AAC5B,UAAM,UAAU;AAChB,YAAQ,CAAC,IAAI,KAAK,IAAI,OAAO,IAAI,GAAG,QAAQ,CAAC,CAAC;AAAA,EACjD;AACH;AASO,SAAS,eAAe,SAA8B;AAC1D,MAAI,QAAQ,OAAO,GAAG;AACnB,WAAO,QAAQ,SAAS;AAAA,EAC3B;AAEA,MAAI,cAAc,OAAO,GAAG;AACzB,UAAM,UAAoB,CAAC,EAAE;AAC7B,SAAK,SAAS,mBAAmB,OAAO;AACxC,WAAO,QAAQ,CAAC;AAAA,EACnB;AAEA,SAAO;AACV;",
+  "names": []
+}
