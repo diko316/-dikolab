@@ -19,7 +19,8 @@
       "packages/common",
       "packages/private-parts",
       "packages/tales",
-      "packages/tokenizer"
+      "packages/tokenizer",
+      "packages/lalr-parser"
    ],
    "devDependencies": {
       "@eslint/js": "^9.36.0",
